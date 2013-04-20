@@ -1,0 +1,7 @@
+-buildpath: lib/pax-web-extender-war-3.0.0.M3-sources.jar;version=file
+Export-Package: org.ops4j.pax.web.extender.war.internal;version=${Bundle-Version},\
+	org.ops4j.pax.web.extender.war.internal.model;version=${Bundle-Version},\
+	org.ops4j.pax.web.extender.war.internal.parser.dom;version=${Bundle-Version},\
+	org.ops4j.pax.web.extender.war.internal.util;version=${Bundle-Version},\
+	OSGI-INF;version=${Bundle-Version}
+Bundle-Version: 0.0.0

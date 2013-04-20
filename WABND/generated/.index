@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<repository increment='1366213234969' name='WABND' xmlns='http://www.osgi.org/xmlns/repository/v1.0.0'>
+  <resource>
+    <capability namespace='osgi.identity'>
+      <attribute name='osgi.identity' value='WABND'/>
+      <attribute name='type' value='osgi.bundle'/>
+      <attribute name='version' type='Version' value='0.1.2'/>
+    </capability>
+    <capability namespace='osgi.content'>
+      <attribute name='osgi.content' value='b647ea93c12c830d292380d8dc077dcf86bc47810c1d4ea021058de88687ead4'/>
+      <attribute name='url' value='generated/WABND.jar'/>
+      <attribute name='size' type='Long' value='9516'/>
+      <attribute name='mime' value='application/vnd.osgi.bundle'/>
+    </capability>
+    <capability namespace='osgi.wiring.bundle'>
+      <attribute name='osgi.wiring.bundle' value='WABND'/>
+      <attribute name='bundle-version' type='Version' value='0.1.2'/>
+    </capability>
+    <capability namespace='osgi.wiring.host'>
+      <attribute name='osgi.wiring.host' value='WABND'/>
+      <attribute name='bundle-version' type='Version' value='0.1.2'/>
+    </capability>
+    <capability namespace='bndtools.workspace'>
+      <attribute name='bndtools.workspace' value='file:/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese'/>
+      <attribute name='project.path' value='/WABND'/>
+    </capability>
+    <requirement namespace='osgi.wiring.package'>
+      <directive name='filter' value='(&amp;(osgi.wiring.package=javax.servlet)(version&gt;=2.5.0)(!(version&gt;=3.0.0)))'/>
+    </requirement>
+    <requirement namespace='osgi.wiring.package'>
+      <directive name='filter' value='(&amp;(osgi.wiring.package=javax.servlet.http)(version&gt;=2.5.0)(!(version&gt;=3.0.0)))'/>
+    </requirement>
+    <requirement namespace='osgi.wiring.package'>
+      <directive name='filter' value='(&amp;(osgi.wiring.package=org.osgi.framework)(version&gt;=1.3.0)(!(version&gt;=2.0.0)))'/>
+    </requirement>
+    <requirement namespace='osgi.extender'>
+      <directive name='filter' value='(&amp;(osgi.extender=osgi.ds)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))'/>
+      <directive name='effective' value='active'/>
+    </requirement>
+  </resource>
+</repository>

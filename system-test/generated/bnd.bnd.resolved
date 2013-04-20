@@ -1,0 +1,3 @@
+Consumer-Bundle;version=latest;resolution=file:/Users/joaopedroalmeidabrandao/Desktop/Tese/generated/Consumer-Bundle.jar
+service-bundle;version=latest;resolution=file:/Users/joaopedroalmeidabrandao/Desktop/Tese/generated/service-bundle.jar
+org.exemple.api;version=latest;resolution=file:/Users/joaopedroalmeidabrandao/Desktop/Tese/generated/org.exemple.api.jar

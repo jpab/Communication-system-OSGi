@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<repository increment='1365354625111' name='Web' xmlns='http://www.osgi.org/xmlns/repository/v1.0.0'>
+  <resource>
+    <capability namespace='osgi.identity'>
+      <attribute name='osgi.identity' value='Web'/>
+      <attribute name='type' value='osgi.bundle'/>
+      <attribute name='version' type='Version' value='0.0.0'/>
+    </capability>
+    <capability namespace='osgi.content'>
+      <attribute name='osgi.content' value='fd5605a22d8111a0d98e39905581de63472d59850c877116de11eb046341bed8'/>
+      <attribute name='url' value='generated/Web.jar'/>
+      <attribute name='size' type='Long' value='316'/>
+      <attribute name='mime' value='application/vnd.osgi.bundle'/>
+    </capability>
+    <capability namespace='osgi.wiring.bundle'>
+      <attribute name='osgi.wiring.bundle' value='Web'/>
+      <attribute name='bundle-version' type='Version' value='0.0.0'/>
+    </capability>
+    <capability namespace='osgi.wiring.host'>
+      <attribute name='osgi.wiring.host' value='Web'/>
+      <attribute name='bundle-version' type='Version' value='0.0.0'/>
+    </capability>
+    <capability namespace='bndtools.workspace'>
+      <attribute name='bndtools.workspace' value='file:/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese'/>
+      <attribute name='project.path' value='/Web'/>
+    </capability>
+  </resource>
+</repository>

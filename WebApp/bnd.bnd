@@ -1,0 +1,7 @@
+-buildpath: javax.servlet,\
+	javax.servlet.jsp,\
+	org.apache.felix.http.jetty,\
+	osgi.core
+Bundle-Name: WebApp
+Bundle-Category: Web
+Bundle-Vendor: ISLAb

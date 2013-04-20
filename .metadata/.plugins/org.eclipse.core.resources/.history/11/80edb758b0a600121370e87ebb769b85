@@ -1,0 +1,27 @@
+package org.exemple.impls;
+
+
+import java.util.Dictionary;
+
+import org.example.api.Greeting;
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+
+public class Activator implements BundleActivator{
+
+	BundleContext bc= null;
+	@Override
+	public void start(BundleContext context) throws Exception {
+		bc = context;
+		Dictionary<String,String> prop = new Dictionary<String,String>();
+		bc.registerService(Greeting.class.getName(), new ExampleComponent(), null);
+		
+	}
+
+	@Override
+	public void stop(BundleContext context) throws Exception {
+		bc = null;
+		
+	}
+
+}

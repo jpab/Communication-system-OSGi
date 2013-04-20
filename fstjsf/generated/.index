@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<repository increment='1366063305579' name='fstjsf' xmlns='http://www.osgi.org/xmlns/repository/v1.0.0'>
+  <resource>
+    <capability namespace='osgi.identity'>
+      <attribute name='osgi.identity' value='fstjsf'/>
+      <attribute name='type' value='osgi.bundle'/>
+      <attribute name='version' type='Version' value='0.0.1'/>
+    </capability>
+    <capability namespace='osgi.content'>
+      <attribute name='osgi.content' value='5adab47952158245da097ea80a895fb02212b3b2218999fdf7e640bb1bb73dfd'/>
+      <attribute name='url' value='generated/fstjsf.jar'/>
+      <attribute name='size' type='Long' value='3193'/>
+      <attribute name='mime' value='application/vnd.osgi.bundle'/>
+    </capability>
+    <capability namespace='osgi.wiring.bundle'>
+      <attribute name='osgi.wiring.bundle' value='fstjsf'/>
+      <attribute name='bundle-version' type='Version' value='0.0.1'/>
+    </capability>
+    <capability namespace='osgi.wiring.host'>
+      <attribute name='osgi.wiring.host' value='fstjsf'/>
+      <attribute name='bundle-version' type='Version' value='0.0.1'/>
+    </capability>
+    <capability namespace='bndtools.workspace'>
+      <attribute name='bndtools.workspace' value='file:/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese'/>
+      <attribute name='project.path' value='/fstjsf'/>
+    </capability>
+  </resource>
+</repository>

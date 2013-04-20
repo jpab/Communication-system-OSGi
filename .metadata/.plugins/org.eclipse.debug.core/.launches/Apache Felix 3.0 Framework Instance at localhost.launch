@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.libra.framework.felix.launchConfigurationType">
+<listAttribute key="org.eclipse.jdt.launching.CLASSPATH">
+<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;runtimeClasspathEntry containerPath=&quot;org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/Java SE 6 (MacOS X Default)&quot; path=&quot;2&quot; type=&quot;4&quot;/&gt;&#10;"/>
+<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/Users/joaopedroalmeidabrandao/Desktop/Tese/Framework/felix-framework-3.0.4/bin/felix.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
+</listAttribute>
+<booleanAttribute key="org.eclipse.jdt.launching.DEFAULT_CLASSPATH" value="false"/>
+<stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/Java SE 6 (MacOS X Default)"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value=" /Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/cache"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dcom.sun.management.jmxremote.port=12345 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dfelix.config.properties=file:/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/config.properties -Dosgi.java.profile=file:/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/java.profile"/>
+<stringAttribute key="server-id" value="Apache Felix 3.0 Framework Instance at localhost"/>
+</launchConfiguration>

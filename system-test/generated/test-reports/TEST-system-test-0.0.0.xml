@@ -1,0 +1,91 @@
+
+<testsuite name='test.system-test' tests='4' time='0.16' failures='0' skipped='0' target='reference:file:/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/system-test/generated/system-test.jar' timestamp='2013-03-15T01:56:51' hostname='new-host-4.home' framework='org.apache.felix.framework [0]' errors='0' framework-version='4.0.3'>
+  <properties>
+    <property name='java.vendor' value='Apple Inc.'/>
+    <property name='sun.java.launcher' value='SUN_STANDARD'/>
+    <property name='sun.management.compiler' value='HotSpot 64-Bit Tiered Compilers'/>
+    <property name='os.name' value='Mac OS X'/>
+    <property name='sun.boot.class.path' value='/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsfd.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar:/System/Library/Frameworks/JavaVM.framework/Frameworks/JavaRuntimeSupport.framework/Resources/Java/JavaRuntimeSupport.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/ui.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/laf.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/sunrsasign.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsse.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jce.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/charsets.jar'/>
+    <property name='tester.continuous' value='false'/>
+    <property name='java.vm.specification.vendor' value='Sun Microsystems Inc.'/>
+    <property name='java.runtime.version' value='1.6.0_37-b06-434-10M3909'/>
+    <property name='launch.services' value='true'/>
+    <property name='launcher.properties' value='/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/system-test/generated/launch5663529976667664453.properties'/>
+    <property name='user.name' value='joaopedroalmeidabrandao'/>
+    <property name='awt.nativeDoubleBuffering' value='true'/>
+    <property name='launch.bundles' value='/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/Consumer-Bundle/generated/Consumer-Bundle.jar,/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/org.exemple.api/generated/org.exemple.api.jar,/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/service-bundle/generated/service-bundle.jar,/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/system-test/generated/system-test.jar'/>
+    <property name='user.language' value='pt'/>
+    <property name='sun.boot.library.path' value='/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries'/>
+    <property name='java.version' value='1.6.0_37'/>
+    <property name='user.timezone' value='Europe/Lisbon'/>
+    <property name='tester.dir' value='/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/system-test/generated/test-reports'/>
+    <property name='sun.arch.data.model' value='64'/>
+    <property name='http.nonProxyHosts' value='local|*.local|169.254/16|*.169.254/16'/>
+    <property name='java.endorsed.dirs' value='/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/endorsed'/>
+    <property name='sun.cpu.isalist' value=''/>
+    <property name='sun.jnu.encoding' value='MacRoman'/>
+    <property name='file.encoding.pkg' value='sun.io'/>
+    <property name='file.separator' value='/'/>
+    <property name='java.specification.name' value='Java Platform API Specification'/>
+    <property name='java.class.version' value='50.0'/>
+    <property name='user.country' value='PT'/>
+    <property name='java.home' value='/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home'/>
+    <property name='java.vm.info' value='mixed mode'/>
+    <property name='os.version' value='10.6.8'/>
+    <property name='path.separator' value=':'/>
+    <property name='java.vm.version' value='20.12-b01-434'/>
+    <property name='java.awt.printerjob' value='apple.awt.CPrinterJob'/>
+    <property name='sun.io.unicode.encoding' value='UnicodeLittle'/>
+    <property name='awt.toolkit' value='apple.awt.CToolkit'/>
+    <property name='socksNonProxyHosts' value='local|*.local|169.254/16|*.169.254/16'/>
+    <property name='ftp.nonProxyHosts' value='local|*.local|169.254/16|*.169.254/16'/>
+    <property name='user.home' value='/Users/joaopedroalmeidabrandao'/>
+    <property name='java.specification.vendor' value='Sun Microsystems Inc.'/>
+    <property name='java.library.path' value='.:/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java'/>
+    <property name='java.vendor.url' value='http://www.apple.com/'/>
+    <property name='java.vm.vendor' value='Apple Inc.'/>
+    <property name='gopherProxySet' value='false'/>
+    <property name='java.runtime.name' value='Java(TM) SE Runtime Environment'/>
+    <property name='tester.port' value='52475'/>
+    <property name='sun.java.command' value='aQute.launcher.Launcher'/>
+    <property name='java.class.path' value='/Users/joaopedroalmeidabrandao/.bnd/cache/https%3A%2F%2Fgithub.com%2Fbndtools%2Fbundle-hub%2Fraw%2Fmaster%2Forg.apache.felix.framework/org.apache.felix.framework-4.0.3.jar:/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/cnf/cache/biz.aQute.launcher/biz.aQute.launcher-1.0.5.jar:/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/cnf/cache/biz.aQute.junit/biz.aQute.junit-1.1.0.jar'/>
+    <property name='launch.name' value='system-test'/>
+    <property name='launch.timeout' value='0'/>
+    <property name='launch.storage.dir' value='/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/system-test/generated/fw'/>
+    <property name='launch.keep' value='false'/>
+    <property name='java.vm.specification.name' value='Java Virtual Machine Specification'/>
+    <property name='java.vm.specification.version' value='1.0'/>
+    <property name='sun.cpu.endian' value='little'/>
+    <property name='sun.os.patch.level' value='unknown'/>
+    <property name='java.io.tmpdir' value='/var/folders/db/dbgmuDX+FXOJXeFTh7pqsk+++TI/-Tmp-/'/>
+    <property name='java.vendor.url.bug' value='http://bugreport.apple.com/'/>
+    <property name='mrj.build' value='10M3909'/>
+    <property name='os.arch' value='x86_64'/>
+    <property name='java.awt.graphicsenv' value='apple.awt.CGraphicsEnvironment'/>
+    <property name='java.ext.dirs' value='/Library/Java/Extensions:/System/Library/Java/Extensions:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/ext'/>
+    <property name='mrj.version' value='1060.1.6.0_37-434'/>
+    <property name='user.dir' value='/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/system-test'/>
+    <property name='launch.trace' value='false'/>
+    <property name='line.separator' value='
+'/>
+    <property name='java.vm.name' value='Java HotSpot(TM) 64-Bit Server VM'/>
+    <property name='launch.embedded' value='false'/>
+    <property name='launch.activators' value='aQute.junit.Activator'/>
+    <property name='file.encoding' value='MacRoman'/>
+    <property name='launch.system.packages' value='sun.reflect,org.osgi.framework.startlevel;uses:="org.osgi.framework";version="1.0",org.osgi.framework.wiring;uses:="org.osgi.framework";version="1.0",org.osgi.framework.hooks.bundle;uses:="org.osgi.framework";version="1.0",org.osgi.framework.hooks.service;uses:="org.osgi.framework";version="1.1",org.osgi.framework.hooks.resolver;uses:="org.osgi.framework.wiring";version="1.0",org.osgi.framework.launch;uses:="org.osgi.framework";version="1.0",org.osgi.framework;version="1.6",org.osgi.framework.hooks.weaving;uses:="org.osgi.framework.wiring";version="1.0",org.osgi.service.packageadmin;uses:="org.osgi.framework";version="1.2",org.osgi.service.url;version="1.0",org.osgi.service.startlevel;uses:="org.osgi.framework";version="1.1",org.osgi.util.tracker;uses:="org.osgi.framework";version="1.5",junit.framework;version="3.8";uses:="org.junit.runner.notification,org.junit.runner,org.junit.runner.manipulation",org.junit;version="4.10";uses:="org.junit.internal,org.hamcrest",org.junit.experimental;version="4.10";uses:="org.junit.runner,org.junit.runners.model",org.junit.experimental.categories;version="4.10";uses:="org.junit.runner,org.junit.runner.manipulation,org.junit.runners,org.junit.runners.model",org.junit.experimental.max;version="4.10";uses:="org.junit.runner.notification,org.junit.runner",org.junit.experimental.results;version="4.10";uses:="org.junit.runner.notification,org.junit.runner,org.hamcrest",org.junit.experimental.runners;version="4.10";uses:="org.junit.runners,org.junit.runners.model",org.junit.experimental.theories;version="4.10";uses:="org.junit.internal,org.junit.runners,org.junit.runners.model,org.junit.experimental.theories.internal",org.junit.experimental.theories.internal;version="4.10";uses:="org.junit.experimental.theories,org.junit.runners.model",org.junit.experimental.theories.suppliers;version="4.10";uses:="org.junit.experimental.theories",org.junit.internal;version="4.10";uses:="org.junit.runner.notification,org.junit.runner,org.hamcrest",org.junit.internal.builders;version="4.10";uses:="org.junit.runner.notification,org.junit.runner,org.junit.runners.model",org.junit.internal.matchers;version="4.10";uses:="org.hamcrest",org.junit.internal.requests;version="4.10";uses:="org.junit.runner,org.junit.runner.manipulation",org.junit.internal.runners;version="4.10";uses:="junit.framework,org.junit.runner.notification,org.junit.runner,org.junit.runner.manipulation",org.junit.internal.runners.model;version="4.10";uses:="org.junit.internal,org.junit.runner.notification,org.junit.runner,org.junit.runners.model",org.junit.internal.runners.rules;version="4.10";uses:="org.junit.runners.model",org.junit.internal.runners.statements;version="4.10";uses:="org.junit.runners.model",org.junit.matchers;version="4.10";uses:="org.hamcrest,org.junit.internal.matchers",org.junit.rules;version="4.10";uses:="org.junit.runner,org.hamcrest,org.junit.runners.model",org.junit.runner;version="4.10";uses:="junit.framework,org.junit.internal,org.junit.runner.notification,org.junit.runner.manipulation,org.junit.runners.model",org.junit.runner.manipulation;version="4.10";uses:="org.junit.runner",org.junit.runner.notification;version="4.10";uses:="org.junit.runner",org.junit.runners;version="4.10";uses:="org.junit.runner.notification,org.junit.runner,org.junit.runner.manipulation,org.junit.rules,org.junit.internal.runners,org.junit.runners.model",org.junit.runners.model;version="4.10";uses:="org.junit.runner",org.hamcrest;version="1.0.0",org.hamcrest.core;version="1.0.0";uses:="org.hamcrest",org.hamcrest.internal;version="1.0.0";uses:="org.hamcrest"'/>
+    <property name='java.specification.version' value='1.6'/>
+  </properties>
+  <bundles>
+    <bundle version='4.0.3' location='System Bundle' bsn='org.apache.felix.framework' modified='1970-01-01T01:00:00' state='32' id='0'/>
+    <bundle version='0.5.0' location='reference:file:/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/Consumer-Bundle/generated/Consumer-Bundle.jar' bsn='Consumer-Bundle' modified='2013-03-15T01:56:51' state='32' id='1'/>
+    <bundle version='0.5.0' location='reference:file:/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/org.exemple.api/generated/org.exemple.api.jar' bsn='org.exemple.api' modified='2013-03-15T01:56:51' state='32' id='2'/>
+    <bundle version='0.5.0' location='reference:file:/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/service-bundle/generated/service-bundle.jar' bsn='service-bundle' modified='2013-03-15T01:56:51' state='32' id='3'/>
+    <bundle version='0.0.0' location='reference:file:/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/system-test/generated/system-test.jar' bsn='system-test' modified='2013-03-15T01:56:51' state='32' target='true' id='4'/>
+  </bundles>
+  <testcase name='testServiceRegistered' time='0.1' classname='org.example.tests.ExampleTest'/>
+  <testcase name='testServiceConsumed' time='0.1' classname='org.example.tests.ExampleTest'>
+    <system-out>
+      usingB: [Lorg.osgi.framework.Bundle;@2b03be0
+    </system-out>
+  </testcase>
+</testsuite>

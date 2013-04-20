@@ -1,0 +1,8 @@
+Service-Component: *
+-buildpath: osgi.core,\
+	osgi.cmpn,\
+	biz.aQute.bnd.annotation,\
+	org.ops4j.pax.web.pax-web-jetty-bundle,\
+	org.ops4j.pax.web.pax-web-jsp,\
+	org.apache.felix.http.whiteboard,\
+	org.ops4j.pax.web.pax-web-extender-war

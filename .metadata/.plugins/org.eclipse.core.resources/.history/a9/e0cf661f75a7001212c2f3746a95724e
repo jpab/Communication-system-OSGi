@@ -1,0 +1,19 @@
+package org.example;
+
+import java.util.HashMap;
+import org.osgi.framework.Bundle;
+
+public class TrackingBundles {
+	HashMap<String,Bundle> bnds;
+	
+	public TrackingBundles(){
+		bnds =  new HashMap<String,Bundle>();
+		}
+	public void addBundle(Bundle b){
+		
+	}
+	public Bundle getBundle(String s){
+		return bnds.get(s);
+	}
+	
+}

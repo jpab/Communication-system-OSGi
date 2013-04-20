@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?>
+
+<target name="Apache Felix 3.0 Framework Instance at localhost" sequenceNumber="9">
+<locations>
+<location path="/Users/joaopedroalmeidabrandao/Desktop/Tese/Framework/felix-framework-3.0.4/bin" type="Directory"/>
+<location path="/Users/joaopedroalmeidabrandao/Desktop/Tese/Framework/felix-framework-3.0.4/bundle" type="Directory"/>
+<location path="/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/cnf/localrepo/org.apache.felix.http.whiteboard" type="Directory"/>
+</locations>
+</target>

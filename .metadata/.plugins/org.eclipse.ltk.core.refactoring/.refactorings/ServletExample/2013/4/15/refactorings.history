@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ExampleComponent.java&apos; to &apos;WABND/src/org.example&apos;&#x0A;- Original project: &apos;ServletExample&apos;&#x0A;- Destination element: &apos;WABND/src/org.example&apos;&#x0A;- Original element: &apos;org.example.ExampleComponent.java&apos;" description="Copy compilation unit" destination="=WABND/src&lt;org.example" element1="/src&lt;org.example{ExampleComponent.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1365638362381" units="1" version="1.0"/>
+</session>

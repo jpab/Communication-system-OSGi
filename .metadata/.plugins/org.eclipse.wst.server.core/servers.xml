@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server configuration-id="/Servers/Apache Felix 3.0 Framework Instance at localhost-config" deployDir="auto" hostname="localhost" id="Apache Felix 3.0 Framework Instance at localhost" instanceDir="/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/.metadata/.plugins/org.eclipse.wst.server.core/tmp0" name="Apache Felix 3.0 Framework Instance at localhost" runtime-id="Apache Felix 3.0 OSGi Service Platform" server-type="org.eclipse.libra.framework.felix.serverType.30x" server-type-id="org.eclipse.libra.framework.felix.serverType.30x" start-timeout="120" stop-timeout="120" timestamp="3">
+    <list key="modules" value0="Web::org.eclipse.libra.runtime.internal.deployables.osgi.bundle:Web::osgi.bundle::4.2"/>
+  </server>
+</servers>

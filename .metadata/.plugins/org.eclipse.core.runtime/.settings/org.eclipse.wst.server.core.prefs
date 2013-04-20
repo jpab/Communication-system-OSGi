@@ -1,0 +1,3 @@
+eclipse.preferences.version=1
+module-start-timeout=300000
+runtimes=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<runtimes>\n  <runtime id\="Apache Felix 3.0 OSGi Service Platform" location\="/Users/joaopedroalmeidabrandao/Desktop/Tese/Framework/felix-framework-3.0.4" name\="Apache Felix 3.0 OSGi Service Platform" runtime-type-id\="org.eclipse.libra.framework.felix.runtimeType.30x" timestamp\="0"/>\n</runtimes>\n

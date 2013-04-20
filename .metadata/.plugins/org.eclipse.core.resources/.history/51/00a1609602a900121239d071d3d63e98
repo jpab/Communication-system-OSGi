@@ -1,0 +1,7 @@
+-buildpath: osgi.core,\
+	org.exemple.api;version=latest,\
+	osgi.cmpn
+Bundle-Version: 0.5
+Bundle-Activator: org.exemple.consumer.Activator
+Private-Package: org.exemple.consumer
+Bundle-Name: consumer

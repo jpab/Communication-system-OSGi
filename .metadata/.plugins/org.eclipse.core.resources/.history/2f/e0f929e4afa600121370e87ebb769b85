@@ -1,0 +1,14 @@
+package org.exemple.impls;
+
+import org.example.api.Greeting;
+
+public class ExampleComponent implements Greeting{
+	String name = "Dizerol‡";
+	@Override
+	public String sayHello(String name) {
+		return "Hello "+name;
+	}
+
+	// TODO: class provided by template
+
+}

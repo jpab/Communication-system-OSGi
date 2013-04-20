@@ -1,0 +1,15 @@
+#Wed Mar 13 23:05:15 WET 2013
+environments/OSGi_Minimum-1.0/Libraries/Library\ 0/Jar=/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/.metadata/.plugins/org.knopflerfish.eclipse.core/ee.minimum.jar
+environments/OSGi_Minimum-1.0/Type=1
+environments/CDC-1.0_Foundation-1.0/Name=CDC-1.0/Foundation-1.0
+environments/Default\ JRE/Type=0
+environments/CDC-1.0_Foundation-1.0/Libraries/Library\ 0/Jar=/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/.metadata/.plugins/org.knopflerfish.eclipse.core/ee.foundation.jar
+environments/CDC-1.0_Foundation-1.0/DefaultEnvironment=false
+environments/OSGi_Minimum-1.0/Name=OSGi/Minimum-1.0
+environments/OSGi_Minimum-1.0/DefaultEnvironment=false
+environments/OSGi_Minimum-1.0/Libraries/Library\ 0/Source=/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/.metadata/.plugins/org.knopflerfish.eclipse.core/ee.minimum.jar
+environments/Default\ JRE/DefaultEnvironment=true
+environments/CDC-1.0_Foundation-1.0/Libraries/Library\ 0/Source=/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/.metadata/.plugins/org.knopflerfish.eclipse.core/ee.foundation.jar
+environments/Default\ JRE/Name=Default JRE
+eclipse.preferences.version=1
+environments/CDC-1.0_Foundation-1.0/Type=1

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;org.exemple.impl.MyOSGiServiceImplTest.java&apos; to &apos;ExampleComponentTest.java&apos;&#x0A;- Original project: &apos;service-bundle&apos;&#x0A;- Original element: &apos;org.exemple.impl.MyOSGiServiceImplTest.java&apos;&#x0A;- Renamed element: &apos;org.exemple.impl.ExampleComponentTest.java&apos;" description="Rename compilation unit &apos;MyOSGiServiceImplTest.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/test&lt;org.exemple.impl{MyOSGiServiceImplTest.java" name="ExampleComponentTest.java" references="false" stamp="1363280787089" version="1.0"/>
+</session>

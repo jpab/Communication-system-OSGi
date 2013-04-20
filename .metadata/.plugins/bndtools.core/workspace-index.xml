@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='http://www.osgi.org/www/obr2html.xsl'?>
+<repository lastmodified="20130405232110.394" name="Bndtools Workspace Repository">
+  <resource id="Consumer-Bundle/0.5.0" presentationname="consumer" symbolicname="Consumer-Bundle" uri="file:/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/Consumer-Bundle/generated/Consumer-Bundle.jar" version="0.5.0"><category id="__WORKSPACE"/>
+    <size>
+      3929
+    </size>
+    <capability name="bundle">
+      <p n="manifestversion" v="2"/>
+      <p n="presentationname" v="consumer"/>
+      <p n="symbolicname" v="Consumer-Bundle"/>
+      <p n="version" t="version" v="0.5.0"/>
+    </capability>
+    <require extend="false" filter="(&amp;(package=org.example.api)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))" multiple="false" name="package" optional="false">
+      Import package org.example.api ;version=[1.0.0,2.0.0)
+    </require>
+    <require extend="false" filter="(&amp;(package=org.osgi.framework)(version&gt;=1.3.0)(!(version&gt;=2.0.0)))" multiple="false" name="package" optional="false">
+      Import package org.osgi.framework ;version=[1.3.0,2.0.0)
+    </require>
+    <require extend="false" filter="(&amp;(package=org.osgi.util.tracker)(version&gt;=1.4.0)(!(version&gt;=2.0.0)))" multiple="false" name="package" optional="false">
+      Import package org.osgi.util.tracker ;version=[1.4.0,2.0.0)
+    </require>
+  </resource>
+  <resource id="PhidgetTemperature/0.5.0" presentationname="PhidgetTemperature" symbolicname="PhidgetTemperature" uri="file:/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/PhidgetTemperature/generated/PhidgetTemperature.jar" version="0.5.0"><category id="__WORKSPACE"/>
+    <size>
+      8921
+    </size>
+    <capability name="bundle">
+      <p n="manifestversion" v="2"/>
+      <p n="presentationname" v="PhidgetTemperature"/>
+      <p n="symbolicname" v="PhidgetTemperature"/>
+      <p n="version" t="version" v="0.5.0"/>
+    </capability>
+    <require extend="false" filter="(&amp;(package=com.phidgets)(version&gt;=0.0.0))" multiple="false" name="package" optional="false">
+      Import package com.phidgets
+    </require>
+    <require extend="false" filter="(&amp;(package=com.phidgets.event)(version&gt;=0.0.0))" multiple="false" name="package" optional="false">
+      Import package com.phidgets.event
+    </require>
+    <require extend="false" filter="(&amp;(package=org.phidgets.temperature.api)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))" multiple="false" name="package" optional="false">
+      Import package org.phidgets.temperature.api ;version=[1.0.0,2.0.0)
+    </require>
+  </resource>
+  <resource id="PhidgetTemperatureAPI/0.5.0" presentationname="PhidgetTemperatureAPI" symbolicname="PhidgetTemperatureAPI" uri="file:/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/PhidgetTemperatureAPI/generated/PhidgetTemperatureAPI.jar" version="0.5.0"><category id="__WORKSPACE"/>
+    <size>
+      3064
+    </size>
+    <capability name="bundle">
+      <p n="manifestversion" v="2"/>
+      <p n="presentationname" v="PhidgetTemperatureAPI"/>
+      <p n="symbolicname" v="PhidgetTemperatureAPI"/>
+      <p n="version" t="version" v="0.5.0"/>
+    </capability>
+    <capability name="package">
+      <p n="package" v="org.phidgets.temperature.api"/>
+      <p n="version" t="version" v="1.0.0"/>
+    </capability>
+  </resource>
+  <resource id="ServletExample/0.5.0" presentationname="ServletExample" symbolicname="ServletExample" uri="file:/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/ServletExample/generated/ServletExample.jar" version="0.5.0"><category id="__WORKSPACE"/>
+    <size>
+      2844
+    </size>
+    <capability name="bundle">
+      <p n="manifestversion" v="2"/>
+      <p n="presentationname" v="ServletExample"/>
+      <p n="symbolicname" v="ServletExample"/>
+      <p n="version" t="version" v="0.5.0"/>
+    </capability>
+    <require extend="false" filter="(&amp;(package=javax.servlet)(version&gt;=2.5.0)(!(version&gt;=3.0.0)))" multiple="false" name="package" optional="false">
+      Import package javax.servlet ;version=[2.5.0,3.0.0)
+    </require>
+    <require extend="false" filter="(&amp;(package=javax.servlet.http)(version&gt;=2.5.0)(!(version&gt;=3.0.0)))" multiple="false" name="package" optional="false">
+      Import package javax.servlet.http ;version=[2.5.0,3.0.0)
+    </require>
+  </resource>
+  <resource id="WebApp/0.5.0" presentationname="WebApp" symbolicname="WebApp" uri="file:/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/WebApp/generated/WebApp.jar" version="0.5.0"><category id="__WORKSPACE"/>
+    <size>
+      339
+    </size>
+    <capability name="bundle">
+      <p n="manifestversion" v="2"/>
+      <p n="presentationname" v="WebApp"/>
+      <p n="symbolicname" v="WebApp"/>
+      <p n="version" t="version" v="0.5.0"/>
+    </capability>
+  </resource>
+  <resource id="org.exemple.api/0.5.0" presentationname="ExempleBundle" symbolicname="org.exemple.api" uri="file:/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/org.exemple.api/generated/org.exemple.api.jar" version="0.5.0"><category id="__WORKSPACE"/>
+    <size>
+      2540
+    </size>
+    <category id="exemple"/>
+    <capability name="bundle">
+      <p n="manifestversion" v="2"/>
+      <p n="presentationname" v="ExempleBundle"/>
+      <p n="symbolicname" v="org.exemple.api"/>
+      <p n="version" t="version" v="0.5.0"/>
+    </capability>
+    <capability name="package">
+      <p n="package" v="org.example.api"/>
+      <p n="version" t="version" v="1.0.0"/>
+    </capability>
+  </resource>
+  <resource id="service-bundle/0.5.0" presentationname="provider" symbolicname="service-bundle" uri="file:/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/service-bundle/generated/service-bundle.jar" version="0.5.0"><category id="__WORKSPACE"/>
+    <size>
+      3475
+    </size>
+    <capability name="bundle">
+      <p n="manifestversion" v="2"/>
+      <p n="presentationname" v="provider"/>
+      <p n="symbolicname" v="service-bundle"/>
+      <p n="version" t="version" v="0.5.0"/>
+    </capability>
+    <require extend="false" filter="(&amp;(package=org.example.api)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))" multiple="false" name="package" optional="false">
+      Import package org.example.api ;version=[1.0.0,2.0.0)
+    </require>
+    <require extend="false" filter="(&amp;(package=org.osgi.framework)(version&gt;=1.3.0)(!(version&gt;=2.0.0)))" multiple="false" name="package" optional="false">
+      Import package org.osgi.framework ;version=[1.3.0,2.0.0)
+    </require>
+  </resource>
+  <resource id="system-test/0.0.0" presentationname="system-test" symbolicname="system-test" uri="file:/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/system-test/generated/system-test.jar" version="0.0.0"><category id="__WORKSPACE"/>
+    <size>
+      3326
+    </size>
+    <capability name="bundle">
+      <p n="manifestversion" v="2"/>
+      <p n="presentationname" v="system-test"/>
+      <p n="symbolicname" v="system-test"/>
+      <p n="version" t="version" v="0.0.0"/>
+    </capability>
+    <require extend="false" filter="(&amp;(package=junit.framework)(version&gt;=3.8.0)(!(version&gt;=4.0.0)))" multiple="false" name="package" optional="false">
+      Import package junit.framework ;version=[3.8.0,4.0.0)
+    </require>
+    <require extend="false" filter="(&amp;(package=org.example.api)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))" multiple="false" name="package" optional="false">
+      Import package org.example.api ;version=[1.0.0,2.0.0)
+    </require>
+    <require extend="false" filter="(&amp;(package=org.osgi.framework)(version&gt;=1.5.0)(!(version&gt;=2.0.0)))" multiple="false" name="package" optional="false">
+      Import package org.osgi.framework ;version=[1.5.0,2.0.0)
+    </require>
+  </resource>
+  <resource id="test/0.0.0" presentationname="test" symbolicname="test" uri="file:/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/test/generated/test.jar" version="0.0.0"><category id="__WORKSPACE"/>
+    <size>
+      316
+    </size>
+    <capability name="bundle">
+      <p n="manifestversion" v="2"/>
+      <p n="presentationname" v="test"/>
+      <p n="symbolicname" v="test"/>
+      <p n="version" t="version" v="0.0.0"/>
+    </capability>
+  </resource>
+  <resource id="teste/0.0.0" presentationname="teste" symbolicname="teste" uri="file:/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/teste/generated/teste.jar" version="0.0.0"><category id="__WORKSPACE"/>
+    <size>
+      316
+    </size>
+    <capability name="bundle">
+      <p n="manifestversion" v="2"/>
+      <p n="presentationname" v="teste"/>
+      <p n="symbolicname" v="teste"/>
+      <p n="version" t="version" v="0.0.0"/>
+    </capability>
+  </resource>
+</repository>

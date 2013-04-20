@@ -1,0 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<jsp:useBean id="user" class="org.example.UserData" scope="session"/>
+<jsp:setProperty name="user" property="*"/> 
+<HTML>
+<BODY>
+<h2>You entered</h2><BR>
+Name: <%= user.getUsername() %><BR>
+Email: <%= user.getEmail() %><BR>
+Age: <%= user.getAge() %><BR>
+<A HREF="index.jsp">Continue</A>
+</BODY>
+</HTML>

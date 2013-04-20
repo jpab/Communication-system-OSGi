@@ -1,0 +1,28 @@
+package org.exemple.impls;
+
+
+import java.util.Hashtable;
+
+import org.example.api.Greeting;
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+
+public class Activator implements BundleActivator{
+
+	BundleContext bc= null;
+	@Override
+	public void start(BundleContext context) throws Exception {
+		bc = context;
+		Hashtable<String,String> prop = new Hashtable<String,String>();
+		prop.put("Name", "DizerOl‡");
+		bc.registerService(Greeting.class.getName(), new ExampleComponent(), prop);
+		
+	}
+
+	@Override
+	public void stop(BundleContext context) throws Exception {
+		bc = null;
+		
+	}
+
+}

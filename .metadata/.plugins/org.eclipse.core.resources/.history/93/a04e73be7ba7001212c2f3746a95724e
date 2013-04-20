@@ -1,0 +1,40 @@
+package org.example;
+
+import java.util.HashMap;
+
+import org.example.api.Greeting;
+import org.osgi.framework.Bundle;
+import org.osgi.framework.ServiceReference;
+import org.osgi.util.tracker.ServiceTracker;
+
+public class Tracker {
+	HashMap<String,Bundle> bnds;
+	ServiceTracker st;
+	
+	public Tracker(){
+		bnds =  new HashMap<String,Bundle>();
+		}
+	public void addBundle(Bundle b, bc){
+		
+		st = new ServiceTracker(bc, Greeting.class.getName(), null) {
+            @Override
+            public Object addingService(ServiceReference reference) {
+                Object svc = super.addingService(reference);
+                if (svc instanceof Greeting) {
+                    invokeService((Greeting) svc);
+                }
+                return svc;
+            }
+        };
+        st.open();
+		
+	}
+	public Bundle getBundle(String s){
+		return bnds.get(s);
+	}
+	
+	public HashMap<String,Bundle> getBundles(){
+		return bnds;
+	}
+	
+}
