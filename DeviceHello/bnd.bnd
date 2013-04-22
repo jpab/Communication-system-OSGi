@@ -1,7 +1,9 @@
 -buildpath: osgi.core,\
 	junit.osgi,\
 	org.mockito.mockito-all,\
-	org.device.api;version=latest
+	org.device.api;version=latest,\
+	osgi.cmpn,\
+	biz.aQute.launcher
 Private-Package: org.exemple.impls
 Bundle-Version: 0.5
 Bundle-Activator: org.exemple.impls.Activator

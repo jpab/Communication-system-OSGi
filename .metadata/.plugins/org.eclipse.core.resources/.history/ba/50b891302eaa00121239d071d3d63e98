@@ -1,0 +1,40 @@
+package org.exemple.impls;
+
+import java.util.Hashtable;
+
+import org.deviceservice.api.DeviceService;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceRegistration;
+
+import com.phidgets.PhidgetException;
+import com.phidgets.TemperatureSensorPhidget;
+import com.phidgets.event.AttachEvent;
+import com.phidgets.event.AttachListener;
+
+
+public class AttachListenerDevice implements AttachListener{
+
+	BundleContext bc;
+	Hashtable<String,String> prop;
+	ServiceRegistration sr;
+	public AttachListenerDevice(BundleContext bndc, Hashtable<String,String> p, ServiceRegistration srv){
+		bc=bndc;
+		prop = p;
+		sr = srv;
+	}
+	@Override
+	public void attached(AttachEvent ae) {
+		try {
+			TemperatureSensorPhidget tempsensor;
+			tempsensor = new TemperatureSensorPhidget();
+			tempsensor.openAny();
+			System.out.println("waiting for TemperatureSensor attachment...");
+			tempsensor.waitForAttachment();
+		} catch (PhidgetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		sr = bc.registerService(DeviceService.class.getName(), new ShowTempratureCelsius(tempsensor), prop);
+	}
+
+}

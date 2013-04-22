@@ -1,0 +1,7 @@
+Export-Package: org.deviceservice.sensing.api
+Bundle-Name: ExempleBundle
+Bundle-Category: Exemple
+Bundle-Vendor: ISLab
+Bundle-Version: 0.5
+-buildpath: junit.osgi,\
+	org.device.api;version=latest

@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<repository increment='1366570578478' name='org.device.sensing.api' xmlns='http://www.osgi.org/xmlns/repository/v1.0.0'>
+  <resource>
+    <capability namespace='osgi.identity'>
+      <attribute name='osgi.identity' value='org.device.sensing.api'/>
+      <attribute name='type' value='osgi.bundle'/>
+      <attribute name='version' type='Version' value='0.5.0'/>
+    </capability>
+    <capability namespace='osgi.content'>
+      <attribute name='osgi.content' value='8038ec9eff4a6131fea1e0550d1e93eb8689e95a497f98ff14ecd0b2ffe04697'/>
+      <attribute name='url' value='generated/org.device.sensing.api.jar'/>
+      <attribute name='size' type='Long' value='3140'/>
+      <attribute name='mime' value='application/vnd.osgi.bundle'/>
+    </capability>
+    <capability namespace='osgi.wiring.bundle'>
+      <attribute name='osgi.wiring.bundle' value='org.device.sensing.api'/>
+      <attribute name='bundle-version' type='Version' value='0.5.0'/>
+    </capability>
+    <capability namespace='osgi.wiring.host'>
+      <attribute name='osgi.wiring.host' value='org.device.sensing.api'/>
+      <attribute name='bundle-version' type='Version' value='0.5.0'/>
+    </capability>
+    <capability namespace='osgi.wiring.package'>
+      <attribute name='osgi.wiring.package' value='org.deviceservice.sensing.api'/>
+      <attribute name='version' type='Version' value='1.0.0'/>
+      <attribute name='bundle-symbolic-name' value='org.device.sensing.api'/>
+      <attribute name='bundle-version' type='Version' value='0.5.0'/>
+      <directive name='uses' value='org.deviceservice.api'/>
+    </capability>
+    <capability namespace='bndtools.workspace'>
+      <attribute name='bndtools.workspace' value='file:/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese'/>
+      <attribute name='project.path' value='/org.device.sensing.api'/>
+    </capability>
+    <requirement namespace='osgi.wiring.package'>
+      <directive name='filter' value='(&amp;(osgi.wiring.package=org.deviceservice.api)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))'/>
+    </requirement>
+  </resource>
+</repository>

@@ -1,0 +1,38 @@
+package org.exemple.impls;
+
+import org.deviceservice.api.DeviceService;
+
+public class ExampleComponent implements DeviceService{
+	@Override
+	public String sayHello(String name) {
+		return "Hello "+name;
+	}
+
+	@Override
+	public String getDescription() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getType() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String DeployService() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+
+	// TODO: class provided by template
+
+}

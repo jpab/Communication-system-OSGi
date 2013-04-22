@@ -1,0 +1,6 @@
+package org.exemple.impls;
+
+
+public class AttachListenerDevice implements AttachListener{
+
+}

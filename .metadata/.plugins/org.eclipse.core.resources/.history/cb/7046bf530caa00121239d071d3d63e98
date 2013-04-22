@@ -1,0 +1,26 @@
+package org.exemple.impls;
+
+import java.util.Hashtable;
+
+import org.deviceservice.api.DeviceService;
+import org.osgi.framework.BundleContext;
+
+import com.phidgets.event.AttachEvent;
+import com.phidgets.event.AttachListener;
+
+
+public class AttachListenerDevice implements AttachListener{
+
+	BundleContext bc;
+	Hashtable<String,String> prop;
+	
+	public AttachListenerDevice(BundleContext bndc, Hashtable<String,String> p){
+		bc=bndc;
+		prop = p;
+	}
+	@Override
+	public void attached(AttachEvent ae) {
+		bc.registerService(DeviceService.class.getName(), new ShowTempratureCelsius(), prop);
+	}
+
+}

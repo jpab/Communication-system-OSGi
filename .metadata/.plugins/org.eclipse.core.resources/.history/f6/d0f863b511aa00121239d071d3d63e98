@@ -1,0 +1,30 @@
+package org.exemple.impls;
+
+import org.deviceservice.api.DeviceService;
+
+public class ShowTempratureCelsius implements DeviceService{
+
+	@Override
+	public String getDescription() {
+		return "This service show the temprature of the sensor phidget";
+	}
+
+	@Override
+	public String getName() {
+		return "Ambient Celsius Temprature";
+	}
+
+	@Override
+	public String getType() {
+		return "Sensing";
+	}
+
+	@Override
+	public String DeployService() {
+		return null;
+	}
+	
+
+	// TODO: class provided by template
+
+}

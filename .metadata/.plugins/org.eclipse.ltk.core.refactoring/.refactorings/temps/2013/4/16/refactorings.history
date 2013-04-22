@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;PhidgetTemperature.java&apos; to &apos;DeviceHello/src/org.exemple.impls&apos;&#x0A;- Original project: &apos;temps&apos;&#x0A;- Destination element: &apos;DeviceHello/src/org.exemple.impls&apos;&#x0A;- Original element: &apos;PhidgetTemperature.java&apos;" description="Copy file" destination="=DeviceHello/src&lt;org.exemple.impls" element1="PhidgetTemperature.java" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1366481239562" units="0" version="1.0"/>
+</session>

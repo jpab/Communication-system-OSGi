@@ -1,0 +1,12 @@
+package org.deviceservice.api;
+
+public interface DeviceService {
+	/*Get a brief description about the service*/
+	String getDescription();
+	/*The name of the service*/
+	String getName();
+	/*It can be action or sensing type*/
+	String getType();
+	/* Deploy the service, return a string with "Success", "Error: (Error Msg)"*/
+	String DeployService();
+}

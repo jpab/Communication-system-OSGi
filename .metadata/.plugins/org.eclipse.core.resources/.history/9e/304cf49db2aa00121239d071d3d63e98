@@ -1,0 +1,8 @@
+package org.deviceservice.sensing.api;
+
+import org.deviceservice.api.DeviceService;
+
+public interface DeviceSensing extends DeviceService{
+
+
+}

@@ -1,0 +1,70 @@
+package org.exemple.impls;
+
+
+import java.util.Hashtable;
+
+import org.deviceservice.api.DeviceService;
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+
+import com.phidgets.TemperatureSensorPhidget;
+import com.phidgets.event.AttachEvent;
+import com.phidgets.event.AttachListener;
+import com.phidgets.event.DetachEvent;
+import com.phidgets.event.DetachListener;
+import com.phidgets.event.ErrorEvent;
+import com.phidgets.event.ErrorListener;
+import com.phidgets.event.TemperatureChangeEvent;
+import com.phidgets.event.TemperatureChangeListener;
+
+public class Activator implements BundleActivator{
+
+	BundleContext bc= null;
+	@Override
+	public void start(BundleContext context) throws Exception {
+		bc = context;
+		TemperatureSensorPhidget tempsensor;
+		tempsensor = new TemperatureSensorPhidget();
+		tempsensor.addAttachListener(new AttachListener() {
+			public void attached(AttachEvent ae) {
+				System.out.println("attachment of " + ae);
+			//	((TemperatureSensorPhidget)ae.getSource())
+			}
+		});
+		tempsensor.addDetachListener(new DetachListener() {
+			public void detached(DetachEvent ae) {
+				System.out.println("detachment of " + ae);
+				//at=false;
+			}
+		});
+		tempsensor.addErrorListener(new ErrorListener() {
+			public void error(ErrorEvent ee) {
+				System.out.println("error event for " + ee);
+			}
+		});
+		tempsensor.addTemperatureChangeListener(new TemperatureChangeListener()
+		{
+			public void temperatureChanged(TemperatureChangeEvent oe)
+			{
+				System.out.println(oe);
+			}
+		});
+		
+		
+		
+		
+		
+		Hashtable<String,String> prop = new Hashtable<String,String>();
+		prop.put("Name", "Temperatura");
+		
+		bc.registerService(DeviceService.class.getName(), new ShowTempratureCelsius(), prop);
+		
+	}
+
+	@Override
+	public void stop(BundleContext context) throws Exception {
+		bc = null;
+		
+	}
+
+}

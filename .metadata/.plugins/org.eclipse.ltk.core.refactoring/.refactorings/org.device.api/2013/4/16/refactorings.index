@@ -1,3 +1,5 @@
 1366382973923	Rename type 'Greeting'
 1366382988176	Rename type 'Device'
 1366383672256	Rename package 'org.example.api'
+1366569143146	Rename package 'org.deviceservice.api'
+1366569169277	Rename package 'org.deviceservice.sensing.api'

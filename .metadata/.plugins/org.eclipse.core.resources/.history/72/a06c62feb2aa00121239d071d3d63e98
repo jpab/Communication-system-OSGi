@@ -1,0 +1,13 @@
+package org.deviceservice.sensing.api;
+
+import java.util.HashMap;
+
+import org.deviceservice.api.DeviceService;
+
+public interface DeviceSensing extends DeviceService{
+
+	HashMap<String,String> getAllPropriaties();
+	
+	
+
+}

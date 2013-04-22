@@ -1,0 +1,21 @@
+package org.exemple.impls;
+
+import org.osgi.framework.ServiceRegistration;
+
+import com.phidgets.event.AttachEvent;
+import com.phidgets.event.AttachListener;
+
+
+public class AttachListenerDevice implements AttachListener{
+
+	ServiceRegistration sr;
+	public AttachListenerDevice(ServiceRegistration srv){
+		
+	}
+	@Override
+	public void attached(AttachEvent ae) {
+		
+		
+	}
+
+}

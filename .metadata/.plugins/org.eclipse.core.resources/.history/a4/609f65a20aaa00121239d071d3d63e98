@@ -1,0 +1,21 @@
+package org.exemple.impls;
+
+import org.osgi.framework.BundleContext;
+
+import com.phidgets.event.AttachEvent;
+import com.phidgets.event.AttachListener;
+
+
+public class AttachListenerDevice implements AttachListener{
+
+	BundleContext bc;
+	public AttachListenerDevice(BundleContext bndc){
+		sr=srv;
+	}
+	@Override
+	public void attached(AttachEvent ae) {
+		
+		
+	}
+
+}

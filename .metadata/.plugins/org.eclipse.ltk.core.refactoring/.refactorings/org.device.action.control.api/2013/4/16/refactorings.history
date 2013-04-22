@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;org.deviceservice.sensing.api&apos; to &apos;org.deviceservice.action.control.api&apos;&#x0A;- Original project: &apos;org.device.action.control.api&apos;&#x0A;- Original element: &apos;org.device.action.control.api/src/org.deviceservice.sensing.api&apos;&#x0A;- Renamed element: &apos;org.device.action.control.api/src/org.deviceservice.action.control.api&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;org.deviceservice.sensing.api&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;org.deviceservice.sensing.api" name="org.deviceservice.action.control.api" qualified="false" references="true" stamp="1366569848181" textual="false" version="1.0"/>
+</session>

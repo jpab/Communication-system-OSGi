@@ -1,0 +1,37 @@
+package org.exemple.impls;
+
+
+import java.util.Hashtable;
+
+import org.deviceservice.api.DeviceService;
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+
+import com.phidgets.TemperatureSensorPhidget;
+
+public class Activator implements BundleActivator{
+
+	BundleContext bc= null;
+	@Override
+	public void start(BundleContext context) throws Exception {
+		bc = context;
+		TemperatureSensorPhidget tempsensor;
+		
+		
+		
+		
+		
+		Hashtable<String,String> prop = new Hashtable<String,String>();
+		prop.put("Name", "Temperatura");
+		
+		bc.registerService(DeviceService.class.getName(), new ShowTempratureCelsius(), prop);
+		
+	}
+
+	@Override
+	public void stop(BundleContext context) throws Exception {
+		bc = null;
+		
+	}
+
+}

@@ -17,9 +17,14 @@
 <fullyQualifiedTypeName name="org.osgi.framework.BundleActivator"/>
 <fullyQualifiedTypeName name="java.util.Dictionary"/>
 <fullyQualifiedTypeName name="java.util.Hashtable"/>
-<fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="org.osgi.framework.Bundle"/>
 <fullyQualifiedTypeName name="org.osgi.util.tracker.ServiceTrackerCustomizer"/>
+<fullyQualifiedTypeName name="com.phidgets.event.AttachListener"/>
+<fullyQualifiedTypeName name="org.osgi.framework.ServiceRegistration"/>
+<fullyQualifiedTypeName name="org.osgi.util.tracker.ServiceTracker"/>
 <fullyQualifiedTypeName name="org.osgi.framework.BundleContext"/>
 <fullyQualifiedTypeName name="org.osgi.framework.ServiceReference"/>
+<fullyQualifiedTypeName name="org.deviceservice.api.DeviceService"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
 </qualifiedTypeNameHistroy>

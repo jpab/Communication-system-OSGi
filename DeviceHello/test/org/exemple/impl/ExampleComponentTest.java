@@ -1,12 +1,12 @@
 package org.exemple.impl;
 
-import org.exemple.impls.ExampleComponent;
+import org.exemple.impls.ShowTempratureCelsius;
 
 import junit.framework.TestCase;
 
 public class ExampleComponentTest extends TestCase {
 	  public void testServiceImpl() {
-		  ExampleComponent impl = new ExampleComponent();
+		  ShowTempratureCelsius impl = new ShowTempratureCelsius();
 		    assertEquals(4L, impl.sayHello("Joao"));
 	  }
 }
