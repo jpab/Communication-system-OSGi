@@ -1,0 +1,61 @@
+/*
+ * Class que tem o registo de todos os bundles que represent‹o dispositivos no sistema
+ * */
+
+package org.web;
+
+import java.util.HashMap;
+import java.util.Hashtable;
+
+import org.deviceservice.sensing.api.DeviceSensing;
+import org.osgi.framework.Bundle;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceReference;
+import org.osgi.util.tracker.ServiceTracker;
+import org.web.bundles.DeviceTracker;
+import org.web.services.DevicesServiceTrackerCustomizer;
+
+
+public class Tracker {
+	Hashtable<String,Bundle> bndstracked;
+	Hashtable<String,ServiceReference> srvstracked;
+	BundleContext bc = null;
+	DeviceTracker dt = null;
+	ServiceTracker st =null;
+	
+	public Tracker(BundleContext b){
+		bc = b;
+		initBundlesTrack();
+		initServicesTrack();
+	}
+	
+	private void initBundlesTrack() {
+		bndstracked =  new Hashtable<String,Bundle>();
+		for(Bundle b :  bc.getBundles()){
+			bndstracked.put("Device-Name", b);
+		}
+		dt = new DeviceTracker(bc);
+		dt.getBundleTracker().open();
+	}
+
+	private void initServicesTrack() {
+		srvstracked =  new Hashtable<String,ServiceReference>();
+		for(String s :  bndstracked.keySet()){
+			for(ServiceReference sr : bndstracked.get(s).getRegisteredServices()){
+				srvstracked.put((String) sr.getProperty("Name"), sr);
+			}
+			 
+		}
+		ServiceTracker st = new ServiceTracker(bc, DeviceSensing.class.getName(), new DevicesServiceTrackerCustomizer(bc));
+		st.open();
+	}
+
+	public Bundle getBundle(String s){
+		return bndstracked.get(s);
+	}
+	
+	public Hashtable<String,Bundle> getBundles(){
+		return bndstracked;
+	}
+	
+}

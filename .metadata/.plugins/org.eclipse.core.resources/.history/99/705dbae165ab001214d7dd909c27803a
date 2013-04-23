@@ -1,0 +1,33 @@
+package org.exemple.impls;
+
+import java.util.Hashtable;
+
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceRegistration;
+
+import com.phidgets.event.DetachEvent;
+import com.phidgets.event.DetachListener;
+
+/*When the device is dettached we unregist the service*/
+public class DetachListenerDevice implements DetachListener{
+
+	private Hashtable<String,Hashtable<String,String>> props;
+	private BundleContext bc;
+	private Hashtable<String, ServiceRegistration> srvs;
+
+	public DetachListenerDevice(BundleContext context, Hashtable<String, Hashtable<String,Hashtable<String,String>> prop, Hashtable<String, ServiceRegistration> services) {
+		bc = context;
+		props= prop;
+		srvs= services;
+	}
+
+	@Override
+	public void detached(DetachEvent de) {
+		for(String s : srvs.keySet()){
+			srvs.get(s).unregister();
+		}
+		srvs.clear();
+	}
+
+	
+}

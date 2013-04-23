@@ -7,7 +7,9 @@
  <%@ page import="org.osgi.framework.BundleContext"%>
 <%@ page import="org.osgi.framework.FrameworkUtil"%>
 <%@ page import="org.osgi.framework.ServiceReference" %>
- <% BundleContext bc = (BundleContext)this.getServletContext().getAttribute("osgi-bundlecontext"); %> 
+<%@ page import="org.web.Tracker" %>
+<% BundleContext bc = (BundleContext)this.getServletContext().getAttribute("osgi-bundlecontext"); %> 
+<% Tracker tr = new Tracker(bc); %> 
 
 <html>
 <head>
@@ -28,10 +30,11 @@
 	if (bc ==  null) 
 		out.println("NULL BC");
 	else{
-		for(Bundle b : bc.getBundles()){
-			if(b.getHeaders().get("Device")!=null){
+		for(String s : tr.getBndstracked().keySet()){
+			if(tr.getBndstracked().get(s).getHeaders().get("Device")!=null){
+				out.println("IKEEEE");
 			%>
-			<option value="SM"><%= b.getSymbolicName()%></option>
+			<option value="SM"><%=tr.getBndstracked().get(s).getSymbolicName()%></option>
 			<%
 			}
 		}
@@ -44,14 +47,10 @@
 if (bc ==  null) 
 	out.println("NULL BC");
 else{
-	for(Bundle b : bc.getBundles()){
-		if(b.getHeaders().get("Device")!=null){
-		for(ServiceReference sr : b.getRegisteredServices()){
+	for(String s : tr.getSrvstracked().keySet()){
 			%>
-			<option value="SM"><%= sr.getProperty("Name")%></option>
+			<option value="SM"><%= tr.getSrvstracked().get(s).getProperty("Name")%></option>
 			<%	
-		}
-		}
 	}
 }
 %>

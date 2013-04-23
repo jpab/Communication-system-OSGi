@@ -1,0 +1,31 @@
+package org.webclasses;
+
+import org.deviceservice.sensing.api.DeviceSensing;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceReference;
+import org.osgi.util.tracker.ServiceTracker;
+
+public class DevicesServiceTracker extends ServiceTracker {
+	
+//	private final MovieListerImpl lister = new MovieListerImpl();
+//	private int finderCount = 0;
+//	private ServiceRegistration registration = null;
+	
+	public DevicesServiceTracker(BundleContext context) {
+		super(context, DeviceSensing.class.getName(), null);
+	}
+	
+	
+	private boolean registering = false; 
+	public Object addingService(ServiceReference reference) { 
+		DeviceSensing finder = (DeviceSensing) context.getService(reference); 
+		
+		ServiceRegistration reg = context.registerService( DeviceSensing.class.getName(), lister, null); 
+ 
+		synchronized(this) { 
+			registering = false; 
+			registration = reg; 
+		} 
+ 
+		return finder; 
+	} 

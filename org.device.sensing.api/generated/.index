@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<repository increment='1366570578478' name='org.device.sensing.api' xmlns='http://www.osgi.org/xmlns/repository/v1.0.0'>
+<repository increment='1366636447882' name='org.device.sensing.api' xmlns='http://www.osgi.org/xmlns/repository/v1.0.0'>
   <resource>
     <capability namespace='osgi.identity'>
       <attribute name='osgi.identity' value='org.device.sensing.api'/>
@@ -7,9 +7,9 @@
       <attribute name='version' type='Version' value='0.5.0'/>
     </capability>
     <capability namespace='osgi.content'>
-      <attribute name='osgi.content' value='8038ec9eff4a6131fea1e0550d1e93eb8689e95a497f98ff14ecd0b2ffe04697'/>
+      <attribute name='osgi.content' value='295ca6d5543f611dc884a5ef9772276b94e987ef2b144208ca9be59517379d16'/>
       <attribute name='url' value='generated/org.device.sensing.api.jar'/>
-      <attribute name='size' type='Long' value='3140'/>
+      <attribute name='size' type='Long' value='3073'/>
       <attribute name='mime' value='application/vnd.osgi.bundle'/>
     </capability>
     <capability namespace='osgi.wiring.bundle'>

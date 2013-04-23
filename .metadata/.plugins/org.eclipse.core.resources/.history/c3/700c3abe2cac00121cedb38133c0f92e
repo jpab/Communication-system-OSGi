@@ -1,0 +1,29 @@
+-runfw: org.apache.felix.framework;version='[4.0.3,4.0.3]'
+-runee: JavaSE-1.6
+
+
+-runrequires: osgi.identity;filter:='(osgi.identity=Consumer-Bundle)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.command)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.runtime)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.shell)',\
+	osgi.identity;filter:='(osgi.identity=org.ops4j.pax.web.pax-web-jetty-bundle)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.webconsole)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.http.whiteboard)',\
+	osgi.identity;filter:='(osgi.identity=org.ops4j.pax.web.pax-web-jsp)',\
+	osgi.identity;filter:='(osgi.identity=org.ops4j.pax.web.pax-web-extender-war)',\
+	osgi.identity;filter:='(osgi.identity=WABND)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.webconsole)',\
+	osgi.identity;filter:='(osgi.identity=com.springsource.org.apache.commons.collections)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.log)',\
+	osgi.identity;filter:='(osgi.identity=com.springsource.org.apache.commons.logging)',\
+	osgi.identity;filter:='(osgi.identity=com.springsource.org.apache.commons.codec)',\
+	osgi.identity;filter:='(osgi.identity=com.springsource.org.apache.commons.digester)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.myfaces.core.api)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.commons.beanutils)',\
+	osgi.identity;filter:='(osgi.identity=com.springsource.org.apache.commons.discovery)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.myfaces.core.impl)',\
+	osgi.identity;filter:='(osgi.identity=org.eclipse.equinox.jsp.jstl)',\
+	osgi.identity;filter:='(osgi.identity=org.device.sensing.api)',\
+	osgi.identity;filter:='(osgi.identity=TemperatureSensor)'
+-resolve.effective: active
+-resolve: auto

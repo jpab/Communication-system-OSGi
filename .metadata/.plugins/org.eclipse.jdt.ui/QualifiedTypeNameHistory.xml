@@ -16,15 +16,23 @@
 <fullyQualifiedTypeName name="org.osgi.service.http.HttpService"/>
 <fullyQualifiedTypeName name="org.osgi.framework.BundleActivator"/>
 <fullyQualifiedTypeName name="java.util.Dictionary"/>
-<fullyQualifiedTypeName name="java.util.Hashtable"/>
-<fullyQualifiedTypeName name="org.osgi.framework.Bundle"/>
 <fullyQualifiedTypeName name="org.osgi.util.tracker.ServiceTrackerCustomizer"/>
 <fullyQualifiedTypeName name="com.phidgets.event.AttachListener"/>
-<fullyQualifiedTypeName name="org.osgi.framework.ServiceRegistration"/>
 <fullyQualifiedTypeName name="org.osgi.util.tracker.ServiceTracker"/>
-<fullyQualifiedTypeName name="org.osgi.framework.BundleContext"/>
 <fullyQualifiedTypeName name="org.osgi.framework.ServiceReference"/>
 <fullyQualifiedTypeName name="org.deviceservice.api.DeviceService"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="com.phidgets.event.DetachListener"/>
+<fullyQualifiedTypeName name="java.util.TreeSet"/>
 <fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="org.osgi.framework.ServiceRegistration"/>
+<fullyQualifiedTypeName name="org.osgi.util.tracker.BundleTracker"/>
+<fullyQualifiedTypeName name="org.osgi.framework.Bundle"/>
+<fullyQualifiedTypeName name="org.osgi.framework.BundleEvent"/>
+<fullyQualifiedTypeName name="org.osgi.framework.BundleContext"/>
+<fullyQualifiedTypeName name="java.util.Hashtable"/>
+<fullyQualifiedTypeName name="org.web.bundles.DeviceTracker"/>
+<fullyQualifiedTypeName name="org.deviceservice.sensing.api.DeviceSensing"/>
+<fullyQualifiedTypeName name="org.web.services.DevicesServiceTrackerCustomizer"/>
 </qualifiedTypeNameHistroy>

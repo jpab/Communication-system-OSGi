@@ -1,0 +1,59 @@
+package org.exemple.impls;
+
+
+import java.util.Hashtable;
+import java.util.Set;
+import java.util.TreeSet;
+
+import org.deviceservice.api.DeviceService;
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceRegistration;
+
+import com.phidgets.TemperatureSensorPhidget;
+
+public class Activator implements BundleActivator{
+
+	BundleContext bc= null;
+	
+	
+	/*When the bundle is started, he put the sensing propriaties in the "prop" variable 
+	 * Create the sensorTemperature instance
+	 * Wait for the attachment of the device and then regist the services and save their ServiceRegistration
+	 * Creat the listeners for Dettach, Attach, Error and TempratureChange 
+	 * 
+	 *  
+	 * */
+	@Override
+	public void start(BundleContext context) throws Exception {
+		bc = context;
+		Hashtable<String,ServiceRegistration> services = new Hashtable<String,ServiceRegistration>();
+		Set<String> prop = new TreeSet<String>();
+		ServiceRegistration sraux;
+		prop.put("Name", "TemperaturaCelsius");
+		
+		TemperatureSensorPhidget tempsensor;
+		tempsensor = new TemperatureSensorPhidget();
+		tempsensor.openAny();
+		System.out.println("waiting for TemperatureSensor attachment...");
+		tempsensor.waitForAttachment();
+		for(String s : prop.keySet())
+		sraux = bc.registerService(DeviceService.class.getName(), new ShowTempratureCelsius(tempsensor), prop);
+		services.put("TemperaturaCelsius", sraux);
+		
+		
+		tempsensor.addAttachListener(new AttachListenerDevice(context, prop, services));
+		tempsensor.addDetachListener(new DetachListenerDevice(context, prop, services));
+		tempsensor.addErrorListener(new ErrorListenerDevice());
+		tempsensor.addTemperatureChangeListener(new TemperatureChangeListenerDevice());
+		
+				
+	}
+
+	@Override
+	public void stop(BundleContext context) throws Exception {
+		bc = null;
+		
+	}
+
+}

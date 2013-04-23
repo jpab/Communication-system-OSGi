@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<repository increment='1366477921921' name='Consumer-Bundle' xmlns='http://www.osgi.org/xmlns/repository/v1.0.0'>
+<repository increment='1366720630247' name='Consumer-Bundle' xmlns='http://www.osgi.org/xmlns/repository/v1.0.0'>
   <resource>
     <capability namespace='osgi.identity'>
       <attribute name='osgi.identity' value='Consumer-Bundle'/>
@@ -7,9 +7,9 @@
       <attribute name='version' type='Version' value='0.5.0'/>
     </capability>
     <capability namespace='osgi.content'>
-      <attribute name='osgi.content' value='f55169d8510f542bcbb06cdc4524f93fc2fdca03c0df07683674c5836dd8da30'/>
+      <attribute name='osgi.content' value='0681376867af3f0c9472edc059cb9d3c8f9dec12c5558bcde878c9ae6b261db0'/>
       <attribute name='url' value='generated/Consumer-Bundle.jar'/>
-      <attribute name='size' type='Long' value='3941'/>
+      <attribute name='size' type='Long' value='3913'/>
       <attribute name='mime' value='application/vnd.osgi.bundle'/>
     </capability>
     <capability namespace='osgi.wiring.bundle'>

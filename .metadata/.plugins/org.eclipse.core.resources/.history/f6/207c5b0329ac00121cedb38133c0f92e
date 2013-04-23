@@ -1,0 +1,13 @@
+-buildpath: osgi.core,\
+	junit.osgi,\
+	osgi.cmpn,\
+	biz.aQute.launcher,\
+	org.device.sensing.api;version=latest,\
+	org.device.api;version=latest
+Private-Package: org.temperature.impls
+Bundle-Version: 0.5
+Bundle-Activator: org.temperature.impls.Activator
+Bundle-SymbolicName: service-bundle
+Bundle-Name: provider
+Device: Yes
+Device-Name: providerTemp

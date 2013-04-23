@@ -1,0 +1,15 @@
+package org.exemple.impls;
+
+import com.phidgets.event.TemperatureChangeEvent;
+import com.phidgets.event.TemperatureChangeListener;
+
+public class TemperatureChangeListenerDevice implements
+		TemperatureChangeListener {
+
+	@Override
+	public void temperatureChanged(TemperatureChangeEvent arg0) {
+		
+
+	}
+
+}

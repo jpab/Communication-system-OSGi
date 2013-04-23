@@ -1,0 +1,5 @@
+package org.exemple.impls;
+
+public class DetachListnerDevice {
+
+}

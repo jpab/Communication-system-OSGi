@@ -1,0 +1,13 @@
+package org.example;
+
+import org.osgi.framework.ServiceRegistration;
+
+public class ChangesHandler {
+
+	public ChangesHandler(){;}
+	
+	public void ServiceChanged(ServiceRegistration sr){
+		
+		
+	}
+}

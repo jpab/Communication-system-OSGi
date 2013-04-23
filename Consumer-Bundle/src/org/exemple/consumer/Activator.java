@@ -34,6 +34,6 @@ public class Activator implements BundleActivator {
     void invokeService(DeviceService svc) {
         String input = "Joao";
         System.out.println("Invoking Service with input: " + input);
-        System.out.println("  Result: " + svc.sayHello(input));
+        System.out.println("  Result: " + svc.getName());
     }
 }

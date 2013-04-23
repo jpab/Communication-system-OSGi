@@ -1,0 +1,61 @@
+/*
+ * Class que tem o registo de todos os bundles que represent‹o dispositivos no sistema
+ * */
+
+package org.webclasses;
+
+import java.util.HashMap;
+import java.util.Hashtable;
+
+import org.osgi.framework.Bundle;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceReference;
+import org.osgi.util.tracker.ServiceTracker;
+
+
+public class Tracker {
+	Hashtable<String,Bundle> bndstracked;
+	Hashtable<String,ServiceReference> srvstracked;
+	BundleContext bc = null;
+	ServiceTracker st;
+	
+	public Tracker(BundleContext b){
+		bc = b;
+		bndstracked =  new Hashtable<String,Bundle>();
+		srvstracked =  new Hashtable<String,ServiceReference>();
+		initServicesTrack();
+		initBundlesTrack();
+	}
+	
+	private void initBundlesTrack() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void initServicesTrack() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void addBundleServices(Bundle b){
+		for(ServiceReference sr :  b.getRegisteredServices()
+				){
+			st = new ServiceTracker(bc, sr, st, bc, sr, null) {
+				@Override
+				public Object addingService(ServiceReference reference) {
+					Object svc = super.addingService(reference);
+					return svc;
+            }
+        };
+        st.open();
+		
+	}
+	public Bundle getBundle(String s){
+		return bndstracked.get(s);
+	}
+	
+	public Hashtable<String,Bundle> getBundles(){
+		return bndstracked;
+	}
+	
+}

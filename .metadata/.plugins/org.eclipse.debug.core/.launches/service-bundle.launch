@@ -4,10 +4,10 @@
 <booleanAttribute key="dynamicBundles" value="true"/>
 <stringAttribute key="launchTarget" value="service-bundle"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/DeviceHello"/>
+<listEntry value="/TemperatureSensor"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="4"/>
 </listAttribute>
-<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="DeviceHello"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="TemperatureSensor"/>
 </launchConfiguration>

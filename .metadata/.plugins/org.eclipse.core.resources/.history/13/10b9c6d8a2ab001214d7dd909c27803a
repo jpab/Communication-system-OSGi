@@ -1,0 +1,7 @@
+package org.webclasses;
+
+import org.osgi.util.tracker.BundleTracker;
+
+public class DeviceBundleTracker extends BundleTracker{
+
+}

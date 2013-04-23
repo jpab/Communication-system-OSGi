@@ -10,7 +10,4 @@ public interface DeviceSensing extends DeviceService{
 	HashMap<String,String> getCollection();
 	Set<String> getProperties();
 	String getValue(String s);
-	int setValue(String prop, String newValue);
-	/*If is a controller action*/
-	String getType();
 }

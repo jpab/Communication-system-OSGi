@@ -1,0 +1,15 @@
+package org.webclasses;
+
+import org.osgi.framework.BundleContext;
+import org.osgi.util.tracker.BundleTracker;
+import org.osgi.util.tracker.BundleTrackerCustomizer;
+
+public class DeviceBundleTracker extends BundleTracker{
+
+	public DeviceBundleTracker(BundleContext context, int stateMask,
+			BundleTrackerCustomizer customizer) {
+		super(context, stateMask, customizer);
+		// TODO Auto-generated constructor stub
+	}
+
+}

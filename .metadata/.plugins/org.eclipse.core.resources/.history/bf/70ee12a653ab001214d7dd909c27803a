@@ -1,0 +1,8 @@
+package org.exemple.impls;
+
+import com.phidgets.event.DetachListener;
+
+public class DetachListenerDevice implements DetachListener{
+
+	
+}
