@@ -6,21 +6,23 @@ package org.web;
 
 import java.util.Hashtable;
 
+import org.deviceservice.api.DeviceService;
 import org.deviceservice.sensing.api.DeviceSensing;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
 import org.osgi.util.tracker.ServiceTracker;
 import org.web.bundles.DeviceTracker;
+import org.web.services.DeviceSensingTrackerCustomizer;
 import org.web.services.DevicesServiceTrackerCustomizer;
 
 
 public class Tracker {
-	Hashtable<String,Bundle> bndstracked;
-	Hashtable<String,ServiceReference> srvstracked;
+	private static Hashtable<String,Bundle> bndstracked;
+	private static Hashtable<String,ServiceReference> srvstracked;
 	BundleContext bc = null;
-	DeviceTracker dt = null;
-	ServiceTracker st =null;
+	private static DeviceTracker dt = null;
+	private static ServiceTracker st =null;
 	
 	public Tracker(BundleContext b){
 		bc = b;
@@ -38,30 +40,44 @@ public class Tracker {
 		}
 		dt = new DeviceTracker(bc);
 		dt.getBundleTracker().open();
+		
 	}
 
 	private void initServicesTrack() {
 		srvstracked =  new Hashtable<String,ServiceReference>();
 		for(String s :  bndstracked.keySet()){
-			System.out.println("SERVICE starting: " + bndstracked.get(s).toString());
-			for(ServiceReference sr : bndstracked.get(s).getRegisteredServices()){
-				srvstracked.put((String) sr.getProperty("Name"), sr);
-			}			 
+			System.out.println("[TRACKER]Getting services of bundle: " + bndstracked.get(s).toString());
+			if(bndstracked.get(s).getRegisteredServices()!=null){
+				for(ServiceReference sr : bndstracked.get(s).getRegisteredServices()){
+					srvstracked.put(((DeviceSensing)bc.getService(sr)).getName(), sr);
+				}
+			}else{
+				System.out.println("[TRACKER]This bundle dont have services registred " + bndstracked.get(s).toString());
+			}
 		}
-		ServiceTracker st = new ServiceTracker(bc, DeviceSensing.class.getName(), new DevicesServiceTrackerCustomizer(bc));
-		st.open();
+		st = new ServiceTracker(bc, DeviceService.class.getName(), new DevicesServiceTrackerCustomizer(bc));
+		st.open(true);
+		System.out.println("[TRACKER] Number of services tracked: "+st.size()+" Tracked operations "+ st.getTrackingCount());
 	}
 
-	public Bundle getBundle(String s){
+	public static Bundle getBundle(String s){
 		return bndstracked.get(s);
 	}
 	
-	public Hashtable<String, Bundle> getBndstracked() {
+	public static Hashtable<String, Bundle> getBndstracked() {
 		return bndstracked;
 	}
 
-	public Hashtable<String, ServiceReference> getSrvstracked() {
+	public static Hashtable<String, ServiceReference> getSrvstracked() {
 		return srvstracked;
+	}
+
+	public static DeviceTracker getDt() {
+		return dt;
+	}
+
+	public static ServiceTracker getSt() {
+		return st;
 	}
 	
 }

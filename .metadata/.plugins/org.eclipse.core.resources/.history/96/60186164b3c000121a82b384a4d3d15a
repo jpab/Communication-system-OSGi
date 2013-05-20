@@ -1,0 +1,36 @@
+package org.web;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.Servlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.deviceservice.sensing.api.DeviceSensing;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceReference;
+
+import aQute.bnd.annotation.component.Component;
+
+
+public class Update extends HttpServlet{
+	BundleContext bc;
+	PrintWriter out;
+	
+	 protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException{
+		bc = (BundleContext)this.getServletContext().getAttribute("osgi-bundlecontext");
+		System.out.print("fui chamado!!!!!!!!!");
+		out = resp.getWriter(); 
+		if(Tracker.getSt()!=null){
+			for(ServiceReference sr : Tracker.getSt().getServiceReferences()){
+				if(((DeviceSensing)bc.getService(sr)).getChanged()==1){
+					out.println("1");
+					return;
+				}
+			}
+		}
+	}
+	
+}

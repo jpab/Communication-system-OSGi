@@ -1,0 +1,14 @@
+package org.interface888.listener;
+
+import com.phidgets.event.DetachEvent;
+import com.phidgets.event.DetachListener;
+
+public class DetachInterface888 implements DetachListener{
+
+	@Override
+	public void detached(DetachEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -25,11 +25,12 @@
 	osgi.identity;filter:='(osgi.identity=org.eclipse.equinox.jsp.jstl)',\
 	osgi.identity;filter:='(osgi.identity=org.device.sensing.api)',\
 	osgi.identity;filter:='(osgi.identity=phidget21bnd)',\
-	osgi.identity;filter:='(osgi.identity=TemperatureSensor)'
+	osgi.identity;filter:='(osgi.identity=wabnd.datahandler.api)',\
+	osgi.identity;filter:='(osgi.identity=PhidgetsInterface)'
 -resolve.effective: active
 -resolve: auto
 -runbundles: Consumer-Bundle;version=latest,\
-	TemperatureSensor;version=latest,\
+	PhidgetsInterface;version=latest,\
 	WABND;version=latest,\
 	com.springsource.org.apache.commons.beanutils;version='[1.8.3,1.8.4)',\
 	com.springsource.org.apache.commons.codec;version='[1.6.0,1.6.1)',\
@@ -54,4 +55,5 @@
 	org.ops4j.pax.web.pax-web-extender-war;version='[0.8.0,0.8.1)',\
 	org.ops4j.pax.web.pax-web-jetty-bundle;version='[1.0.2,1.0.3)',\
 	org.ops4j.pax.web.pax-web-jsp;version='[1.0.2,1.0.3)',\
-	phidget21bnd;version='[1.0.0,1.0.1)'
+	phidget21bnd;version='[1.0.0,1.0.1)',\
+	wabnd.datahandler.api;version=latest

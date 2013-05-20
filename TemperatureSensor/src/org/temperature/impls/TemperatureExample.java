@@ -58,7 +58,7 @@ public class TemperatureExample
 		}
 		
 		/*Working code
-		 * 		InterfaceKitPhidget itk;
+		* 		InterfaceKitPhidget itk;
 		*		System.out.println(Phidget.getLibraryVersion());
 		*
 		*		itk = new InterfaceKitPhidget();

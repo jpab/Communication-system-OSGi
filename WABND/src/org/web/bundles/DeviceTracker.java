@@ -12,7 +12,7 @@ public class DeviceTracker {
 	
 	public DeviceTracker(BundleContext context){
 		bc = context;
-		System.out.println("Starting Bundle Tracker");
+		System.out.println("[DeviceBundleTracker]Starting Bundle Tracker");
 		int trackStates = Bundle.STARTING | Bundle.STOPPING | Bundle.RESOLVED | Bundle.INSTALLED | Bundle.UNINSTALLED;
 		bundleTracker = new DeviceBundleTracker(bc, trackStates, null);
 		bundleTracker.open();

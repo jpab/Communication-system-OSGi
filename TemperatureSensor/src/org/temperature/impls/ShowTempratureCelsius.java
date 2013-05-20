@@ -15,6 +15,7 @@ public class ShowTempratureCelsius implements DeviceSensing{
 	public ShowTempratureCelsius(TemperatureSensorPhidget tempsensor) {
 		sensor = tempsensor;
 		prop = new HashMap<String,String>();
+		prop.put("Temperature","0");
 	}
 
 	@Override
@@ -40,6 +41,12 @@ public class ShowTempratureCelsius implements DeviceSensing{
 	@Override
 	public String getValue(String s) {
 		return prop.get(s);
+	}
+
+	@Override
+	public void setValue(String s, String v) {
+		prop.put(s, v);
+		
 	}
 	
 	/*

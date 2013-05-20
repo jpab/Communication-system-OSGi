@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Encapsulate field &apos;org.interface888.services.ServiceTemperature.changed&apos; in &apos;org.interface888.services.ServiceTemperature&apos;&#x0A;- Original project: &apos;PhidgetsInterface&apos;&#x0A;- Original element: &apos;org.interface888.services.ServiceTemperature.changed&apos;&#x0A;- Getter method name: &apos;getChanged&apos;&#x0A;- Setter method name: &apos;setChanged&apos;&#x0A;- Field visibility: &apos;public&apos;&#x0A;- Use getter and setter methods in declaring type" comments="false" declaring="true" description="Encapsulate field &apos;changed&apos;" flags="589830" getter="getChanged" id="org.eclipse.jdt.ui.self.encapsulate" input="/src&lt;org.interface888.services{ServiceTemperature.java[ServiceTemperature^changed" insertion="8" setter="setChanged" stamp="1368023089500" version="1.0" visibility="1"/>
+</session>

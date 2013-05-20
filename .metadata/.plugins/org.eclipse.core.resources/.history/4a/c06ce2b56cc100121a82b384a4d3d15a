@@ -1,0 +1,21 @@
+package org.interface888.listener;
+
+import org.interface888.impl.Interface888;
+
+import com.phidgets.InterfaceKitPhidget;
+import com.phidgets.event.AttachEvent;
+import com.phidgets.event.AttachListener;
+
+public class AttachInterface888 implements AttachListener{
+	InterfaceKitPhidget itk;
+	
+	public AttachInterface888(InterfaceKitPhidget interfacekit){
+		itk = interfacekit;
+	}
+	@Override
+	public void attached(AttachEvent arg0) {
+		//regista serviços e inicia bundle se estiver parado
+		
+	}
+
+}

@@ -1,0 +1,14 @@
+-buildpath: osgi.cmpn,\
+	org.device.sensing.api;version=latest,\
+	org.device.api;version=latest,\
+	osgi.core,\
+	wabnd.datahandler.api;version=latest
+Private-Package: org.precisionlight.impls,\
+	org.precisionlight.listeners,\
+	org.precisionlight.tracking
+Bundle-Version: 0.5
+Bundle-Activator: org.precisionlight.impls.Activator
+Bundle-SymbolicName: PrecisionLightSensor
+Bundle-Name: providerlight
+Device: Yes
+Device-Name: providerPrecisionLight

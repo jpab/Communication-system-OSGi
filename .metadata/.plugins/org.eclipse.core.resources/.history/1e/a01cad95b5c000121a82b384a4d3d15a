@@ -1,0 +1,11 @@
+Private-Package: org.interface888.impl,\
+	org.interface888.listener,\
+	org.interface888.services
+-buildpath: osgi.core,\
+	org.device.sensing.api;version=latest,\
+	phidget21bnd,\
+	osgi.cmpn
+Bundle-Activator: org.interface888.impl.Activator
+Bundle-Version: 0.5
+Device: PhidgetsInterface888
+Bundle-Name: Interface888

@@ -1,0 +1,7 @@
+Bundle-Name: ExempleBundle
+Bundle-Category: Exemple
+Bundle-Vendor: ISLab
+Bundle-Version: 0.5
+-buildpath: junit.osgi,\
+	osgi.core
+Export-Package: wabnd.datahandler.api

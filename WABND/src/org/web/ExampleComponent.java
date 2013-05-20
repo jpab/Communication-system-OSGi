@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import aQute.bnd.annotation.component.*;
 
-@Component(provide = Servlet.class, properties = {"alias=/"})
+@Component(provide = Servlet.class, properties = {"alias=/begin"})
 public class ExampleComponent extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{

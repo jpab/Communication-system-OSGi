@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<repository increment='1366735309658' name='TemperatureSensor' xmlns='http://www.osgi.org/xmlns/repository/v1.0.0'>
+<repository increment='1367249878181' name='TemperatureSensor' xmlns='http://www.osgi.org/xmlns/repository/v1.0.0'>
   <resource>
     <capability namespace='osgi.identity'>
       <attribute name='osgi.identity' value='TemperatureSensor'/>
@@ -7,9 +7,9 @@
       <attribute name='version' type='Version' value='0.5.0'/>
     </capability>
     <capability namespace='osgi.content'>
-      <attribute name='osgi.content' value='9cb03eeaf6fd12142a0dcbd0aa30caf2241ca362ded411d2569b630a7d39b85a'/>
+      <attribute name='osgi.content' value='2fb89a82b6cc783bdc5bb7093a8042d9cc7c3bf323fa252d88061d570024ed0a'/>
       <attribute name='url' value='generated/TemperatureSensor.jar'/>
-      <attribute name='size' type='Long' value='18467'/>
+      <attribute name='size' type='Long' value='21488'/>
       <attribute name='mime' value='application/vnd.osgi.bundle'/>
     </capability>
     <capability namespace='osgi.wiring.bundle'>
@@ -38,6 +38,12 @@
     </requirement>
     <requirement namespace='osgi.wiring.package'>
       <directive name='filter' value='(&amp;(osgi.wiring.package=org.osgi.framework)(version&gt;=1.3.0)(!(version&gt;=2.0.0)))'/>
+    </requirement>
+    <requirement namespace='osgi.wiring.package'>
+      <directive name='filter' value='(&amp;(osgi.wiring.package=org.osgi.util.tracker)(version&gt;=1.4.0)(!(version&gt;=2.0.0)))'/>
+    </requirement>
+    <requirement namespace='osgi.wiring.package'>
+      <directive name='filter' value='(&amp;(osgi.wiring.package=wabnd.datahandler.api)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))'/>
     </requirement>
   </resource>
 </repository>

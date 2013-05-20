@@ -14,11 +14,12 @@ public class DevicesServiceTrackerCustomizer implements ServiceTrackerCustomizer
 	
 	public DevicesServiceTrackerCustomizer(BundleContext context) {
 		this.context = context;
+		System.out.println("[DeviceServiceTracker]Starting DevicesServiceTracker");
 	}
 
 	@Override
 	public Object addingService(ServiceReference reference) {
-		System.out.println("How good. Service for device registered");
+		System.out.println("[DeviceServiceTracker]How good. Service for device registered");
 		DeviceService service = (DeviceService) context.getService(reference);
 		thread = new DeviceThread(service);
 		thread.start();
@@ -27,7 +28,7 @@ public class DevicesServiceTrackerCustomizer implements ServiceTrackerCustomizer
 
 	@Override
 	public void modifiedService(ServiceReference reference, Object service) {
-		System.out.println("Hey. An service was modified");
+		System.out.println("[DeviceServiceTracker]Hey. An service was modified");
 		 removedService(reference, service);
 		 addingService(reference);
 	}
@@ -35,7 +36,7 @@ public class DevicesServiceTrackerCustomizer implements ServiceTrackerCustomizer
 	@Override
 	public void removedService(ServiceReference reference, Object service) {
 		context.ungetService(reference);
-		System.out.println("How sad. Service for device is gone");
+		System.out.println("[DeviceServiceTracker]How sad. Service for device is gone");
 		thread.stopThread();
 }
 
