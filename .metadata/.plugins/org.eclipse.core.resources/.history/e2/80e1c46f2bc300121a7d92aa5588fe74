@@ -1,0 +1,62 @@
+package org.interface888.impl;
+
+
+import java.util.HashMap;
+
+import org.deviceservice.api.DeviceService;
+import org.deviceservice.controller.api.DeviceController;
+import org.deviceservice.sensing.api.DeviceSensing;
+import org.interface888.services.SensitivityPrecisionLight;
+import org.interface888.services.ServiceTouch;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceRegistration;
+import com.phidgets.InterfaceKitPhidget;
+
+
+public class TouchSensor implements PhidgetDevice{
+	
+	HashMap<String,ServiceRegistration> services; 
+	InterfaceKitPhidget ikp = null;
+	BundleContext bc = null;
+	
+	public TouchSensor(InterfaceKitPhidget phidget, BundleContext b){
+		ikp = phidget;
+		bc =b;
+	}
+		
+	public void regist(){
+
+		System.out.println("Regista Servios");
+		ServiceRegistration sraux;
+		
+		DeviceSensing ds = new ServiceTouch();
+		sraux = bc.registerService(DeviceService.class.getName(), ds , null);
+		services.put("Touch",sraux);
+		System.out.println("Registered: "+ds.getName());
+		
+		DeviceController dsen = new SensitivityPrecisionLight(2,itk);		
+		sraux = bc.registerService(DeviceController.class.getName(), dsen , null);
+		services.put("Sensitivity",sraux);
+	}
+	
+	public void unregist(){
+		System.out.println("Retira Registos de Servios");
+		for (String sr : services.keySet()){
+			services.get(sr).unregister();
+			System.out.println("unregistered "+ sr);
+		}
+		services.clear();	
+	}	
+	
+	public void changed(int value){
+		System.out.println("Mudou para" + value);
+		DeviceSensing ds = (DeviceSensing) bc.getService(services.get(0).getReference());
+		if(value >500 ){
+			ds.setValue("Touch", "Undetected");
+		}else{
+			ds.setValue("Touch","Detected");
+		}
+	}
+
+
+}

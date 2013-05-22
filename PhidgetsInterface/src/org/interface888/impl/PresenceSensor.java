@@ -34,7 +34,7 @@ public class PresenceSensor implements PhidgetDevice{
 		services.put("Presence",sraux);
 		System.out.println("Registered: "+ds.getName());
 		
-		DeviceController dsen = new SensitivityPrecisionLight(2,itk);		
+		DeviceController dsen = new SensitivityPrecisionLight(3,itk);		
 		sraux = bc.registerService(DeviceController.class.getName(), dsen , null);
 		services.put("Sensitivity",sraux);
 	}

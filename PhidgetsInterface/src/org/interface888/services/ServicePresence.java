@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Set;
 
 import org.deviceservice.sensing.api.DeviceSensing;
-import com.phidgets.TemperatureSensorPhidget;
+
 
 public class ServicePresence implements DeviceSensing{
 

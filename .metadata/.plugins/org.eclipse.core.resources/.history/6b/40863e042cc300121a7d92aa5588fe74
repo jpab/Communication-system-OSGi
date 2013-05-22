@@ -1,0 +1,66 @@
+package org.interface888.services;
+
+import java.util.HashMap;
+import java.util.Set;
+
+import org.deviceservice.sensing.api.DeviceSensing;
+import com.phidgets.TemperatureSensorPhidget;
+
+public class ServiceVibration implements DeviceSensing{
+
+	HashMap<String,String> prop;
+	private int changed = 1;
+	
+	
+	public ServiceVibration() {
+		prop = new HashMap<String,String>();
+		prop.put("Vibration","0");
+	}
+
+	@Override
+	public String getDescription() {
+		return "Presence Service detects the value of vibration intensity \n Scale 1 to 1000";
+	}
+
+	@Override
+	public String getName() {
+		return "Vibration Controller";
+	}
+
+	@Override
+	public HashMap<String, String> getCollection() {
+		return prop;
+	}
+
+	@Override
+	public Set<String> getProperties() {
+		return prop.keySet();
+	}
+
+	@Override
+	public String getValue(String s) {
+		return prop.get(s);
+	}
+
+	@Override
+	public void setValue(String s, String v) {
+		changed = 1;
+		prop.put(s, v);
+		
+	}
+
+	@Override
+	public void setChanged(int changed) {
+		this.changed = changed;
+	}
+
+	@Override
+	public int getChanged() {
+		int rt =changed;
+		changed=0;
+		return rt;
+	}
+
+}
+
+}

@@ -7,7 +7,7 @@ import java.util.Set;
 
 
 import org.deviceservice.sensing.api.DeviceSensing;
-import com.phidgets.TemperatureSensorPhidget;
+
 
 public class ServiceTemperature implements DeviceSensing{
 
@@ -20,12 +20,12 @@ public class ServiceTemperature implements DeviceSensing{
 
 	public ServiceTemperature() {
 		prop = new HashMap<String,String>();
-		prop.put("TemperatureC","0");
+		prop.put("TemperatureCelsius","0 ¼C");
 	}
 
 	@Override
 	public String getDescription() {
-		return "This service show the temprature of the sensor phidget";
+		return "This service show the temperature of the sensor phidget";
 	}
 
 	@Override

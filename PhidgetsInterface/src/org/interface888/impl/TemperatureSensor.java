@@ -4,7 +4,9 @@ package org.interface888.impl;
 import java.util.HashMap;
 
 import org.deviceservice.api.DeviceService;
+import org.deviceservice.controller.api.DeviceController;
 import org.deviceservice.sensing.api.DeviceSensing;
+import org.interface888.services.SensitivityPrecisionLight;
 import org.interface888.services.ServiceTemperature;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
@@ -14,11 +16,11 @@ import com.phidgets.InterfaceKitPhidget;
 public class TemperatureSensor implements PhidgetDevice{
 	
 	HashMap<String,ServiceRegistration> services; 
-	InterfaceKitPhidget ikp = null;
+	InterfaceKitPhidget itk = null;
 	BundleContext bc = null;
 	
 	public TemperatureSensor(InterfaceKitPhidget phidget, BundleContext b){
-		ikp = phidget;
+		itk = phidget;
 		bc =b;
 		services = new HashMap<String,ServiceRegistration>();
 	}
@@ -26,10 +28,15 @@ public class TemperatureSensor implements PhidgetDevice{
 	public synchronized void regist(){
 		System.out.println("[Bundle-Interface888]Regista Serviços");
 		ServiceRegistration sraux;
+		
 		DeviceSensing ds = new ServiceTemperature();
 		sraux = bc.registerService(DeviceService.class.getName(), ds , null);
 		services.put("TemperatureC",sraux);
 		System.out.println("[Bundle-Interface888] Registered: "+ds.getName());
+		
+		DeviceController dsen = new SensitivityPrecisionLight(1,itk);		
+		sraux = bc.registerService(DeviceController.class.getName(), dsen , null);
+		services.put("Sensitivity",sraux);
 	}
 	
 	public synchronized void unregist(){
@@ -44,8 +51,8 @@ public class TemperatureSensor implements PhidgetDevice{
 	public synchronized void changed(int value){
 		System.out.println("[Bundle-Interface888] Mudou para" + value);
 		DeviceSensing ds = (DeviceSensing) bc.getService(services.get("TemperatureC").getReference());
-		//System.out.println("DS: " + ds);
-		ds.setValue("TemperatureC", new Integer(value).toString());
+		double val = Double.valueOf((value-200)/4);
+		ds.setValue("TemperatureCelsius", new Double(val).toString()+" ºC");
 		
 	}
 

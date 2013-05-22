@@ -4,7 +4,9 @@ package org.interface888.impl;
 import java.util.HashMap;
 
 import org.deviceservice.api.DeviceService;
+import org.deviceservice.controller.api.DeviceController;
 import org.deviceservice.sensing.api.DeviceSensing;
+import org.interface888.services.SensitivityPrecisionLight;
 import org.interface888.services.ServiceSlider;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
@@ -14,11 +16,11 @@ import com.phidgets.InterfaceKitPhidget;
 public class SliderSensor implements PhidgetDevice{
 	
 	HashMap<String,ServiceRegistration> services; 
-	InterfaceKitPhidget ikp = null;
+	InterfaceKitPhidget itk = null;
 	BundleContext bc = null;
 	
 	public SliderSensor(InterfaceKitPhidget phidget, BundleContext b){
-		ikp = phidget;
+		itk = phidget;
 		bc =b;
 	}
 		
@@ -26,13 +28,18 @@ public class SliderSensor implements PhidgetDevice{
 
 		System.out.println("Regista Serviços");
 		ServiceRegistration sraux;
+		
 		DeviceSensing ds = new ServiceSlider();
 		sraux = bc.registerService(DeviceService.class.getName(), ds , null);
-		services.put("Slider",sraux);
+		services.put("Slider",sraux);	
 		System.out.println("Registered: "+ds.getName());
+		
+		DeviceController dsen = new SensitivityPrecisionLight(4,itk);		
+		sraux = bc.registerService(DeviceController.class.getName(), dsen , null);
+		services.put("Sensitivity",sraux);
 	}
 	
-	public void uregist(){
+	public void unregist(){
 		System.out.println("Retira Registos de Serviços");
 		for (String sr : services.keySet()){
 			services.get(sr).unregister();
@@ -44,7 +51,7 @@ public class SliderSensor implements PhidgetDevice{
 	public void changed(int value){
 		System.out.println("Mudou para" + value);
 		DeviceSensing ds = (DeviceSensing) bc.getService(services.get(0).getReference());
-		ds.setValue("Temperature", new Integer(value).toString());
+		ds.setValue("Slider", new Integer(value).toString());
 	}
 
 

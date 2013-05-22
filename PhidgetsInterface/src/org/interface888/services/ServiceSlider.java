@@ -4,30 +4,26 @@ import java.util.HashMap;
 import java.util.Set;
 
 import org.deviceservice.sensing.api.DeviceSensing;
-import com.phidgets.TemperatureSensorPhidget;
 
 public class ServiceSlider implements DeviceSensing{
 
 	HashMap<String,String> prop;
+	private int changed = 1;
 	
 	
-	public ServiceSlider(TemperatureSensorPhidget tempsensor) {
-		prop = new HashMap<String,String>();
-		prop.put("Level","0");
-	}
-
 	public ServiceSlider() {
-		// TODO Auto-generated constructor stub
+		prop = new HashMap<String,String>();
+		prop.put("Slider","0");
 	}
 
 	@Override
 	public String getDescription() {
-		return "This service show the temprature of the sensor phidget";
+		return "Presence Service detects the value of slider controller \n Scale 1 to 1000";
 	}
 
 	@Override
 	public String getName() {
-		return "Slider Button";
+		return "Slider Controller";
 	}
 
 	@Override
@@ -47,26 +43,21 @@ public class ServiceSlider implements DeviceSensing{
 
 	@Override
 	public void setValue(String s, String v) {
+		changed = 1;
 		prop.put(s, v);
 		
 	}
 
 	@Override
+	public void setChanged(int changed) {
+		this.changed = changed;
+	}
+
+	@Override
 	public int getChanged() {
-		// TODO Auto-generated method stub
-		return 0;
+		int rt =changed;
+		changed=0;
+		return rt;
 	}
-	
-	/*
-	public String DeployService() {
-		String result = null;
-		try {
-			result = (new Double(sensor.getAmbientTemperature())).toString();
-		} catch (PhidgetException e) {
-			e.printStackTrace();
-		}
-		return result;
-	}
-*/
 
 }

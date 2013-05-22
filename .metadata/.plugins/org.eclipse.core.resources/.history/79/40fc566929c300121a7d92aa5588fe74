@@ -1,0 +1,53 @@
+package org.interface888.impl;
+
+
+import java.util.HashMap;
+
+import org.deviceservice.api.DeviceService;
+import org.deviceservice.sensing.api.DeviceSensing;
+import org.interface888.services.ServiceTemperature;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceRegistration;
+import com.phidgets.InterfaceKitPhidget;
+
+
+public class TemperatureSensor implements PhidgetDevice{
+	
+	HashMap<String,ServiceRegistration> services; 
+	InterfaceKitPhidget ikp = null;
+	BundleContext bc = null;
+	
+	public TemperatureSensor(InterfaceKitPhidget phidget, BundleContext b){
+		ikp = phidget;
+		bc =b;
+		services = new HashMap<String,ServiceRegistration>();
+	}
+		
+	public synchronized void regist(){
+		System.out.println("[Bundle-Interface888]Regista Serviços");
+		ServiceRegistration sraux;
+		DeviceSensing ds = new ServiceTemperature();
+		sraux = bc.registerService(DeviceService.class.getName(), ds , null);
+		services.put("TemperatureC",sraux);
+		System.out.println("[Bundle-Interface888] Registered: "+ds.getName());
+	}
+	
+	public synchronized void unregist(){
+		System.out.println("[Bundle-Interface888]Retira Registos de Serviços");
+		for (String sr : services.keySet()){
+			services.get(sr).unregister();
+			System.out.println("[Bundle-Interface888] Unregistered "+ sr);
+		}
+		services.clear();	
+	}	
+	
+	public synchronized void changed(int value){
+		System.out.println("[Bundle-Interface888] Mudou para" + value);
+		DeviceSensing ds = (DeviceSensing) bc.getService(services.get("TemperatureC").getReference());
+		//System.out.println("DS: " + ds);
+		ds.setValue("TemperatureCelsius", new Integer(value).toString());
+		
+	}
+
+
+}

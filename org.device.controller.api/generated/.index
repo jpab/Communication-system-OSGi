@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<repository increment='1369240359989' name='org.device.controller.api' xmlns='http://www.osgi.org/xmlns/repository/v1.0.0'>
+<repository increment='1369264002681' name='org.device.controller.api' xmlns='http://www.osgi.org/xmlns/repository/v1.0.0'>
   <resource>
     <capability namespace='osgi.identity'>
       <attribute name='osgi.identity' value='org.device.controller.api'/>
@@ -7,9 +7,9 @@
       <attribute name='version' type='Version' value='0.5.0'/>
     </capability>
     <capability namespace='osgi.content'>
-      <attribute name='osgi.content' value='347553ad786726e719e96206d8531424db672b0be9eeb816d8429aa504d8d52e'/>
+      <attribute name='osgi.content' value='f813bb81a4141cb17abd886d139beaf77e80e39b415afe68795330c9f0e8630d'/>
       <attribute name='url' value='generated/org.device.controller.api.jar'/>
-      <attribute name='size' type='Long' value='3218'/>
+      <attribute name='size' type='Long' value='3217'/>
       <attribute name='mime' value='application/vnd.osgi.bundle'/>
     </capability>
     <capability namespace='osgi.wiring.bundle'>

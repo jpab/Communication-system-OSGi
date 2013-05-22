@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<repository increment='1369062256381' name='PhidgetsInterface' xmlns='http://www.osgi.org/xmlns/repository/v1.0.0'>
+<repository increment='1369265602624' name='PhidgetsInterface' xmlns='http://www.osgi.org/xmlns/repository/v1.0.0'>
   <resource>
     <capability namespace='osgi.identity'>
       <attribute name='osgi.identity' value='PhidgetsInterface'/>
@@ -7,9 +7,9 @@
       <attribute name='version' type='Version' value='0.5.0'/>
     </capability>
     <capability namespace='osgi.content'>
-      <attribute name='osgi.content' value='a6ca8ec7e8ab5e519494e850448d0d295ec6f512dbf66543abf1f7b2fbfb71ad'/>
+      <attribute name='osgi.content' value='573434115e667c8b1595ad064ee766d2199a61ec7db8f056cb542b916f3d69d0'/>
       <attribute name='url' value='generated/PhidgetsInterface.jar'/>
-      <attribute name='size' type='Long' value='38293'/>
+      <attribute name='size' type='Long' value='59400'/>
       <attribute name='mime' value='application/vnd.osgi.bundle'/>
     </capability>
     <capability namespace='osgi.wiring.bundle'>
@@ -32,6 +32,9 @@
     </requirement>
     <requirement namespace='osgi.wiring.package'>
       <directive name='filter' value='(osgi.wiring.package=org.deviceservice.api)'/>
+    </requirement>
+    <requirement namespace='osgi.wiring.package'>
+      <directive name='filter' value='(&amp;(osgi.wiring.package=org.deviceservice.controller.api)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))'/>
     </requirement>
     <requirement namespace='osgi.wiring.package'>
       <directive name='filter' value='(&amp;(osgi.wiring.package=org.deviceservice.sensing.api)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))'/>

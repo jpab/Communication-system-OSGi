@@ -4,30 +4,26 @@ import java.util.HashMap;
 import java.util.Set;
 
 import org.deviceservice.sensing.api.DeviceSensing;
-import com.phidgets.TemperatureSensorPhidget;
 
 public class ServiceVibration implements DeviceSensing{
 
 	HashMap<String,String> prop;
+	private int changed = 1;
 	
 	
-	public ServiceVibration(TemperatureSensorPhidget tempsensor) {
-		prop = new HashMap<String,String>();
-		prop.put("Intensity","0");
-	}
-
 	public ServiceVibration() {
-		// TODO Auto-generated constructor stub
+		prop = new HashMap<String,String>();
+		prop.put("Vibration","0");
 	}
 
 	@Override
 	public String getDescription() {
-		return "This service show the temprature of the sensor phidget";
+		return "Presence Service detects the value of vibration intensity \n Scale 1 to 1000";
 	}
 
 	@Override
 	public String getName() {
-		return "Vibrate Sensor";
+		return "Vibration";
 	}
 
 	@Override
@@ -47,26 +43,22 @@ public class ServiceVibration implements DeviceSensing{
 
 	@Override
 	public void setValue(String s, String v) {
+		changed = 1;
 		prop.put(s, v);
 		
 	}
 
 	@Override
+	public void setChanged(int changed) {
+		this.changed = changed;
+	}
+
+	@Override
 	public int getChanged() {
-		// TODO Auto-generated method stub
-		return 0;
+		int rt =changed;
+		changed=0;
+		return rt;
 	}
-	
-	/*
-	public String DeployService() {
-		String result = null;
-		try {
-			result = (new Double(sensor.getAmbientTemperature())).toString();
-		} catch (PhidgetException e) {
-			e.printStackTrace();
-		}
-		return result;
-	}
-*/
 
 }
+
