@@ -12,4 +12,5 @@ public interface DeviceSensing extends DeviceService{
 	String getValue(String s);
 	void setValue(String s, String v);
 	int getChanged();
+	void setChanged(int changed);
 }

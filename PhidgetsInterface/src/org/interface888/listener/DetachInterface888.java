@@ -1,5 +1,9 @@
 package org.interface888.listener;
 
+import org.osgi.framework.Bundle;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.BundleException;
+
 import com.phidgets.InterfaceKitPhidget;
 import com.phidgets.event.DetachEvent;
 import com.phidgets.event.DetachListener;
@@ -7,14 +11,28 @@ import com.phidgets.event.DetachListener;
 public class DetachInterface888 implements DetachListener{
 
 	InterfaceKitPhidget itk=null;
+	BundleContext bc = null;
 	
-	public DetachInterface888(InterfaceKitPhidget interfacekit) {
+	public DetachInterface888(InterfaceKitPhidget interfacekit, BundleContext b){
 		itk = interfacekit;
+		bc=b;
 	}
 
 	@Override
 	public void detached(DetachEvent arg0) {
-		// Desregista serviços e para bundle
+		// Desregista serviços
+		System.out.println("[Interface-888]Desregista Serviços");
+		
+		//para bundle
+		try {
+			if(bc.getBundle().getState() ==  Bundle.ACTIVE ){
+				System.out.println("[Interface-888]Para Bundle");
+				bc.getBundle().start();
+			}
+		} catch (BundleException e) {
+			e.printStackTrace();
+		}
+		
 		
 	}
 

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="junit.framework.TestCase"/>
-<fullyQualifiedTypeName name="org.mockito.Mockito"/>
 <fullyQualifiedTypeName name="org.exemple.impls.Activator"/>
 <fullyQualifiedTypeName name="org.exemple.impls.ExampleComponent"/>
 <fullyQualifiedTypeName name="org.example.api.Greeting"/>
@@ -22,7 +20,6 @@
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="org.osgi.framework.ServiceRegistration"/>
 <fullyQualifiedTypeName name="org.osgi.util.tracker.BundleTracker"/>
-<fullyQualifiedTypeName name="org.osgi.framework.Bundle"/>
 <fullyQualifiedTypeName name="org.osgi.framework.BundleEvent"/>
 <fullyQualifiedTypeName name="java.util.Hashtable"/>
 <fullyQualifiedTypeName name="org.web.bundles.DeviceTracker"/>
@@ -60,4 +57,7 @@
 <fullyQualifiedTypeName name="com.phidgets.InterfaceKitPhidget"/>
 <fullyQualifiedTypeName name="org.interface888.listener.AttachInterface888"/>
 <fullyQualifiedTypeName name="org.interface888.listener.DetachInterface888"/>
+<fullyQualifiedTypeName name="org.osgi.framework.Bundle"/>
+<fullyQualifiedTypeName name="org.deviceservice.controller.api.DeviceController"/>
+<fullyQualifiedTypeName name="org.web.services.DevicesControllerTrackerCustomizer"/>
 </qualifiedTypeNameHistroy>

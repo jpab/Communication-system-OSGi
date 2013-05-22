@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<repository increment='1369021405139' name='WABND' xmlns='http://www.osgi.org/xmlns/repository/v1.0.0'>
+<repository increment='1369185355426' name='WABND' xmlns='http://www.osgi.org/xmlns/repository/v1.0.0'>
   <resource>
     <capability namespace='osgi.identity'>
       <attribute name='osgi.identity' value='WABND'/>
@@ -7,9 +7,9 @@
       <attribute name='version' type='Version' value='0.1.2'/>
     </capability>
     <capability namespace='osgi.content'>
-      <attribute name='osgi.content' value='1cdd7b709b548fee5daf99add5e2cbffd034ba43233f80d6173ef1490632ba35'/>
+      <attribute name='osgi.content' value='7984269171d1ce4c4c1ce81eafdbd232762435d89ccad46ace67b71641dd17e7'/>
       <attribute name='url' value='generated/WABND.jar'/>
-      <attribute name='size' type='Long' value='407614'/>
+      <attribute name='size' type='Long' value='417083'/>
       <attribute name='mime' value='application/vnd.osgi.bundle'/>
     </capability>
     <capability namespace='osgi.wiring.bundle'>
@@ -32,6 +32,9 @@
     </requirement>
     <requirement namespace='osgi.wiring.package'>
       <directive name='filter' value='(osgi.wiring.package=org.deviceservice.api)'/>
+    </requirement>
+    <requirement namespace='osgi.wiring.package'>
+      <directive name='filter' value='(&amp;(osgi.wiring.package=org.deviceservice.controller.api)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))'/>
     </requirement>
     <requirement namespace='osgi.wiring.package'>
       <directive name='filter' value='(&amp;(osgi.wiring.package=org.deviceservice.sensing.api)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))'/>

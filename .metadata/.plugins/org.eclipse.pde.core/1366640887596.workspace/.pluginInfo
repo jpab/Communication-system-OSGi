@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map>
-	<bundle bundleID="843" localization="OSGI-INF/l10n/bundle" name="Phidget21bnd" project="phidget21bnd" provider="ISLab">
+	<bundle bundleID="863" localization="OSGI-INF/l10n/bundle" name="Phidget21bnd" project="phidget21bnd" provider="ISLab">
 		<library name="phidget21.jar"/>
 	</bundle>
 </map>

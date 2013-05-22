@@ -1,3 +1,5 @@
 1369066964143	Rename type 'Attach'
 1369066980344	Rename type 'DetachDeviceListener'
 1369067004949	Rename type 'DeviceChangeListener'
+1369239418630	Rename type 'SensitivityService'
+1369243819691	Copy compilation unit

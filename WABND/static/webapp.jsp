@@ -9,19 +9,21 @@
 <%@ page import="org.osgi.framework.ServiceReference" %>
 <%@ page import="org.web.WebDataHandler" %>
 <%@ page import="org.deviceservice.sensing.api.DeviceSensing" %>
+<%@ page import="org.deviceservice.controller.api.DeviceController" %>
 <%@ page import="wabnd.datahandler.api.DataHandlerService" %>
 <%@ page import="org.web.UpdateData" %>
 <%
 	BundleContext bc = (BundleContext)this.getServletContext().getAttribute("osgi-bundlecontext");
 %> 
 <%
-	WebDataHandler dh = new WebDataHandler(bc);
+ 	WebDataHandler dh = new WebDataHandler(bc);
  %> 
 
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="css/slider.css" rel="stylesheet" media="screen">
 <title>ISLabSensing</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -41,6 +43,7 @@
   <style type="text/css"></style><style id="holderjs-style" type="text/css">.holderjs-fluid {font-size:16px;font-weight:bold;text-align:center;font-family:sans-serif;margin:0}</style><style type="text/css">@media print { #feedlyMiniIcon { display: none; } }</style>
 <script src="http://code.jquery.com/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-slider.js"></script>
 </head>
 <body>
 <script>
@@ -95,20 +98,20 @@ $.get("update",  function(data) {
           <table class="table table-hover">
           
 				  <%
-				  	if (bc ==  null) 
-				  		  				out.println("NULL BC");
-				  else{
-				  		  				for(String s : dh.getTr().getBndstracked().keySet()){
-				  		  					if(dh.getTr().getBndstracked().get(s).getHeaders().get("Device")!=null){
-				  %><tr><td>
+          				  	if (bc ==  null) 
+          				  		  		  				out.println("NULL BC");
+          				  		  else{
+          				  		  		  				for(String s : dh.getTr().getBndstracked().keySet()){
+          				  		  		  					if(dh.getTr().getBndstracked().get(s).getHeaders().get("Device")!=null){
+          				  %><tr><td>
 							<%=dh.getTr().getBndstracked().get(s).getSymbolicName()%>
 					</td></tr>
 					
 							<%
-								}
-																}
-															}
-							%>
+													}
+																										}
+																									}
+												%>
 			</td>
 		</table>
          <form class="form-search">
@@ -138,24 +141,24 @@ $.get("update",  function(data) {
           	<tr>
           
 					<%
-						if (bc ==  null) 
-							out.println("NULL BC");
-						else if(dh.getTr().getSt().getServiceReferences()!=null){
-							for(ServiceReference s : dh.getTr().getSt().getServiceReferences()){
-					%>			
+          						if (bc ==  null) 
+          										out.println("NULL BC");
+          									else if(dh.getTr().getSt().getServiceReferences()!=null){
+          										for(ServiceReference s : dh.getTr().getSt().getServiceReferences()){
+          					%>			
 								<td>
 								<%=((DeviceSensing)bc.getService(s)).getName()%>
 								</td>
 								<td></td>
 								<td></td>
 								<%
-								for(String str : ((DeviceSensing)(DeviceSensing)bc.getService(s)).getCollection().keySet()){															
-									out.println("<tr><td></td><td>"+str+"</td>");
-									out.println("<td>"+((DeviceSensing)bc.getService(s)).getValue(str)+"</td></tr>");	
-								}
-							}
-						}
-						%>
+									for(String str : ((DeviceSensing)bc.getService(s)).getCollection().keySet()){															
+															out.println("<tr><td></td><td>"+str+"</td>");
+															out.println("<td>"+((DeviceSensing)bc.getService(s)).getValue(str)+"</td></tr>");	
+														}
+													}
+												}
+								%>
 				
 			</tr>
 		</table>
@@ -167,7 +170,47 @@ $.get("update",  function(data) {
 		</form>
         </div><!-- /.span4 -->
       </div><!-- /.row -->
-
+		<div class="row">
+        	<div class="span6">
+        	<%
+        		if (bc ==  null) 
+          			out.println("NULL BC");
+          		else if(dh.getTr().getSt().getServiceReferences()!=null){
+          			for(ServiceReference s : dh.getTr().getSt().getServiceReferences()){
+          		%>				
+          		<div class="row" id = nameService>
+          			<p><%=((DeviceController)bc.getService(s)).getName() %></p>
+          		</div>
+          		<div class="row">
+          			<% for(String str : ((DeviceController)bc.getService(s)).getCollection().keySet()){	
+          			%>
+          				<div class="row" id=ServiceProp>
+	          				<p><%=str%></p>
+	          			</div> 	
+	          			<div class="row">
+          			<div class="slider-track" id = valueService>
+          				<div class="slider-selection" style="left: 0%; width: <%=((DeviceController)bc.getService(s)).getValue(str) %>%;"></div>
+          				<div class="slider-handle round" style="left: 0%;"></div>
+          				<div class="slider-handle round hide" style="left: 0%;"></div>
+          			</div>
+          			</div>
+          			<%
+						
+					} %>
+          		</div>	
+          		<div class="row">
+          			<div class="slider-track" id = valueService>
+          				<div class="slider-selection" style="left: 0%; width: 0%;"></div>
+          				<div class="slider-handle round" style="left: 0%;"></div>
+          				<div class="slider-handle round hide" style="left: 0%;"></div>
+          			</div>
+          		</div>						
+          		<% 
+          			}
+          		}
+          	%>
+        	</div><!-- /.span6 -->
+      </div><!-- /.row -->
       <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="http://twitter.github.io/bootstrap/examples/carousel.html#">Back to top</a></p>

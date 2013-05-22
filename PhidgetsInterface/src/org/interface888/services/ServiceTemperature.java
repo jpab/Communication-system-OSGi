@@ -17,11 +17,6 @@ public class ServiceTemperature implements DeviceSensing{
 	HashMap<String,String> prop = null;
 	private int changed = 1;
 	
-	
-	public ServiceTemperature(TemperatureSensorPhidget tempsensor) {
-		prop = new HashMap<String,String>();
-		prop.put("TemperatureC","0");
-	}
 
 	public ServiceTemperature() {
 		prop = new HashMap<String,String>();
@@ -70,16 +65,5 @@ public class ServiceTemperature implements DeviceSensing{
 		this.changed = changed;
 	}
 	
-	/*
-	public String DeployService() {
-		String result = null;
-		try {
-			result = (new Double(sensor.getAmbientTemperature())).toString();
-		} catch (PhidgetException e) {
-			e.printStackTrace();
-		}
-		return result;
-	}
-*/
 
 }

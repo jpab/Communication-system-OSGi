@@ -15,7 +15,8 @@ Service-Component: *
 	org.ops4j.pax.web.pax-web-extender-war,\
 	org.apache.felix.http.whiteboard,\
 	org.device.sensing.api;version=latest,\
-	wabnd.datahandler.api;version=latest
+	wabnd.datahandler.api;version=latest,\
+	org.device.controller.api;version=latest
 -runrequires: osgi.identity;filter:='(osgi.identity=org.apache.felix.scr)',\
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.shell)',\
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.command)'

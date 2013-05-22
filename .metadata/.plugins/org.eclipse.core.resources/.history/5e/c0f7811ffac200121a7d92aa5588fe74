@@ -1,0 +1,5 @@
+package org.interface888.services;
+
+public class SensitivityService implements DeviceController{
+
+}

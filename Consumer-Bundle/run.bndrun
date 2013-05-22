@@ -26,7 +26,8 @@
 	osgi.identity;filter:='(osgi.identity=org.device.sensing.api)',\
 	osgi.identity;filter:='(osgi.identity=phidget21bnd)',\
 	osgi.identity;filter:='(osgi.identity=wabnd.datahandler.api)',\
-	osgi.identity;filter:='(osgi.identity=PhidgetsInterface)'
+	osgi.identity;filter:='(osgi.identity=PhidgetsInterface)',\
+	osgi.identity;filter:='(osgi.identity=org.device.controller.api)'
 -resolve.effective: active
 -resolve: auto
 -runbundles: Consumer-Bundle;version=latest,\
@@ -50,6 +51,7 @@
 	org.apache.myfaces.core.api;version='[1.2.12,1.2.13)',\
 	org.apache.myfaces.core.impl;version='[1.2.12,1.2.13)',\
 	org.device.api;version=latest,\
+	org.device.controller.api;version=latest,\
 	org.device.sensing.api;version=latest,\
 	org.eclipse.equinox.jsp.jstl;version='[1.0.0,1.0.1)',\
 	org.ops4j.pax.web.pax-web-extender-war;version='[0.8.0,0.8.1)',\

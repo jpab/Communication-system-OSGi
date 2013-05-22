@@ -34,8 +34,8 @@ public class Interface888 extends Thread{
 			}
 			initSensors(itk);
 			itk.addSensorChangeListener(new Interface888Change(bc));
-			itk.addAttachListener(new AttachInterface888(itk));
-			itk.addAttachListener(new DetachInterface888(itk));
+			itk.addAttachListener(new AttachInterface888(itk, bc));
+			itk.addDetachListener(new DetachInterface888(itk, bc));
 			System.out.println( Double.valueOf((itk.getSensorValue(1)-200)/4) );
 			//Phidget p = new Phidget();
 		} catch (PhidgetException e) {

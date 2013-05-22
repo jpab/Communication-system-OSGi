@@ -1,0 +1,51 @@
+package org.interface888.impl;
+
+
+import java.util.HashMap;
+
+import org.deviceservice.api.DeviceService;
+import org.deviceservice.sensing.api.DeviceSensing;
+import org.interface888.services.ServicePrecisionLight;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceRegistration;
+import com.phidgets.InterfaceKitPhidget;
+
+
+public class PrecisionLightSensor implements PhidgetDevice{
+	
+	HashMap<String,ServiceRegistration> services; 
+	InterfaceKitPhidget ikp = null;
+	BundleContext bc = null;
+	
+	public PrecisionLightSensor(InterfaceKitPhidget phidget, BundleContext b){
+		ikp = phidget;
+		bc =b;
+	}
+		
+	public void regist(){
+
+		System.out.println("[Precision-Light]Regista Serviços");
+		ServiceRegistration sraux;
+		DeviceSensing ds = new ServicePrecisionLight();
+		sraux = bc.registerService(DeviceService.class.getName(), ds , null);
+		services.put("PrecisionLight",sraux);
+		System.out.println("[Precision-Light]Registered: "+ds.getName());
+	}
+	
+	public void unregist(){
+		System.out.println("[Precision-Light]Retira Registos de Serviços");
+		for (String sr : services.keySet()){
+			services.get(sr).unregister();
+			System.out.println("[Precision-Light]unregisted "+ sr);
+		}
+		services.clear();	
+	}	
+	
+	public void changed(int value){
+		System.out.println("Mudou para" + value);
+		DeviceSensing ds = (DeviceSensing) bc.getService(services.get(0).getReference());
+		ds.setValue("PrecisionLight", new Integer(value).toString());
+	}
+
+
+}

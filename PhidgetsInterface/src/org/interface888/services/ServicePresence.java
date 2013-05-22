@@ -9,25 +9,22 @@ import com.phidgets.TemperatureSensorPhidget;
 public class ServicePresence implements DeviceSensing{
 
 	HashMap<String,String> prop;
+	private int changed = 1;
 	
 	
-	public ServicePresence(TemperatureSensorPhidget tempsensor) {
-		prop = new HashMap<String,String>();
-		prop.put("Temperature","0");
-	}
-
 	public ServicePresence() {
-		// TODO Auto-generated constructor stub
+		prop = new HashMap<String,String>();
+		prop.put("Presence","Detected");
 	}
 
 	@Override
 	public String getDescription() {
-		return "This service show the presence of the sensor phidget";
+		return "Presence Service detects if is present";
 	}
 
 	@Override
 	public String getName() {
-		return "Presence Sensor";
+		return "Presence";
 	}
 
 	@Override
@@ -47,26 +44,20 @@ public class ServicePresence implements DeviceSensing{
 
 	@Override
 	public void setValue(String s, String v) {
+		changed = 1;
 		prop.put(s, v);
 		
 	}
 
 	@Override
-	public int getChanged() {
-		// TODO Auto-generated method stub
-		return 0;
+	public void setChanged(int changed) {
+		this.changed = changed;
 	}
-	
-	/*
-	public String DeployService() {
-		String result = null;
-		try {
-			result = (new Double(sensor.getAmbientTemperature())).toString();
-		} catch (PhidgetException e) {
-			e.printStackTrace();
-		}
-		return result;
-	}
-*/
 
+	@Override
+	public int getChanged() {
+		int rt =changed;
+		changed=0;
+		return rt;
+	}
 }

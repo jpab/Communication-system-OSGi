@@ -1,6 +1,6 @@
 package org.interface888.listener;
 
-import org.interface888.impl.Interface888;
+import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.BundleException;
 
@@ -20,7 +20,9 @@ public class AttachInterface888 implements AttachListener{
 	public void attached(AttachEvent arg0) {
 		//inicia bundle se estiver parado
 		try {
-			if(bc.getBundle().STOPPING ==  16 ){
+			if(bc.getBundle().getState() ==  Bundle.STOPPING ){
+
+				System.out.println("[Interface-888]Inicia Bundle");
 				bc.getBundle().start();
 			}
 		} catch (BundleException e) {
@@ -28,7 +30,7 @@ public class AttachInterface888 implements AttachListener{
 		}
 		
 		//regista serviços
-			//ra
+		System.out.println("[Interface-888]Regista Serviços");
 		
 	}
 

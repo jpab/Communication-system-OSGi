@@ -1,0 +1,28 @@
+-runbundles: osgi.cmpn, \
+	org.apache.felix.scr,\
+	org.apache.felix.gogo.shell,\
+	org.apache.felix.gogo.command,\
+	org.apache.felix.gogo.runtime
+-runee: JavaSE-1.6
+Service-Component: *
+-runfw: org.apache.felix.framework
+-buildpath: osgi.core,\
+	osgi.cmpn,\
+	biz.aQute.bnd.annotation,\
+	junit.osgi,\
+	org.ops4j.pax.web.pax-web-jetty-bundle,\
+	org.ops4j.pax.web.pax-web-jsp,\
+	org.ops4j.pax.web.pax-web-extender-war,\
+	org.apache.felix.http.whiteboard,\
+	org.device.sensing.api;version=latest,\
+	wabnd.datahandler.api;version=latest
+-runrequires: osgi.identity;filter:='(osgi.identity=org.apache.felix.scr)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.shell)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.command)'
+ Include-Resource:  WEB-INF/
+  -wab:	static/
+Private-Package: org.web,\
+	org.web.bundles,\
+	org.web.services
+Bundle-Version: 0.1.2
+

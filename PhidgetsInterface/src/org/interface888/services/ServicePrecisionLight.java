@@ -4,20 +4,16 @@ import java.util.HashMap;
 import java.util.Set;
 
 import org.deviceservice.sensing.api.DeviceSensing;
-import com.phidgets.TemperatureSensorPhidget;
 
 public class ServicePrecisionLight implements DeviceSensing{
 
 	HashMap<String,String> prop;
+	private int changed = 1;
 	
 	
-	public ServicePrecisionLight(TemperatureSensorPhidget tempsensor) {
+	public ServicePrecisionLight() {
 		prop = new HashMap<String,String>();
 		prop.put("PrecisionLight","0");
-	}
-
-	public ServicePrecisionLight() {
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -47,26 +43,24 @@ public class ServicePrecisionLight implements DeviceSensing{
 
 	@Override
 	public void setValue(String s, String v) {
+		changed = 1;
 		prop.put(s, v);
 		
 	}
 
 	@Override
+	public void setChanged(int changed) {
+		this.changed = changed;
+	}
+
+	@Override
 	public int getChanged() {
-		// TODO Auto-generated method stub
-		return 0;
+		int rt =changed;
+		changed=0;
+		return rt;
 	}
 	
-	/*
-	public String DeployService() {
-		String result = null;
-		try {
-			result = (new Double(sensor.getAmbientTemperature())).toString();
-		} catch (PhidgetException e) {
-			e.printStackTrace();
-		}
-		return result;
-	}
-*/
+	
+
 
 }

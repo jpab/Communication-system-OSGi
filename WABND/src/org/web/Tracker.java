@@ -7,13 +7,14 @@ package org.web;
 import java.util.Hashtable;
 
 import org.deviceservice.api.DeviceService;
+import org.deviceservice.controller.api.DeviceController;
 import org.deviceservice.sensing.api.DeviceSensing;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
 import org.osgi.util.tracker.ServiceTracker;
 import org.web.bundles.DeviceTracker;
-import org.web.services.DeviceSensingTrackerCustomizer;
+import org.web.services.DevicesControllerTrackerCustomizer;
 import org.web.services.DevicesServiceTrackerCustomizer;
 
 
@@ -23,13 +24,22 @@ public class Tracker {
 	BundleContext bc = null;
 	private static DeviceTracker dt = null;
 	private static ServiceTracker st =null;
+	private static ServiceTracker sct =null;
 	
 	public Tracker(BundleContext b){
 		bc = b;
 		initBundlesTrack();
 		initServicesTrack();
+		initControllerServicesTrack();
 	}
 	
+	private void initControllerServicesTrack() {
+		sct = new ServiceTracker(bc, DeviceController.class.getName(), new DevicesControllerTrackerCustomizer(bc));
+		sct.open(true);
+		System.out.println("[TRACKER] Number of controllers tracked: "+sct.size()+" Tracked operations "+ sct.getTrackingCount());
+		
+	}
+
 	private void initBundlesTrack() {
 		bndstracked =  new Hashtable<String,Bundle>();
 		for(Bundle b :  bc.getBundles()){

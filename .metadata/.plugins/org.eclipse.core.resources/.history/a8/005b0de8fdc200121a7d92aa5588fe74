@@ -1,0 +1,66 @@
+package org.interface888.services;
+
+import java.util.HashMap;
+import java.util.Set;
+
+import org.deviceservice.controller.api.DeviceController;
+
+
+public class SensitivityPrecisionLight implements DeviceController{
+	int index = -1;
+	HashMap<String, String> values= null;
+	int changed = 1;
+	
+	public SensitivityPrecisionLight(int i) {
+		values = new HashMap<String, String>();
+		index = i;
+		values.put("Data Rate ", "0");//actualizado quando iniciado
+		values.put("Sensitivity", "10");
+	}
+
+	@Override
+	public String getDescription() {
+		return "Change de Senstivity of the device";
+	}
+
+	@Override
+	public String getName() {
+		return "Senstivity Service";
+	}
+
+	@Override
+	public HashMap<String, String> getCollection() {
+		return values;
+	}
+
+	@Override
+	public Set<String> getProperties() {
+		return values.keySet();
+	}
+
+	@Override
+	public String getValue(String s) {
+		return values.get(s);
+	}
+
+	@Override
+	public void setValue(String s, String v) {
+		changed = 1;
+		values.put(s, v);
+		
+	}
+
+	@Override
+	public int getChanged() {
+		int rt =changed;
+		changed=0;
+		return rt;
+	}
+	
+	@Override
+	public void setChanged(int changed) {
+		this.changed = changed;
+	}
+	
+
+}

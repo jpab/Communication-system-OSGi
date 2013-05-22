@@ -4,7 +4,8 @@ Private-Package: org.interface888.impl,\
 -buildpath: osgi.core,\
 	org.device.sensing.api;version=latest,\
 	phidget21bnd,\
-	osgi.cmpn
+	osgi.cmpn,\
+	org.device.controller.api;version=latest
 Bundle-Activator: org.interface888.impl.Activator
 Bundle-Version: 0.5
 Device: PhidgetsInterface888

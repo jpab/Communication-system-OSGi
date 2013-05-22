@@ -4,13 +4,22 @@
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
   </welcome-file-list>
-	<servlet>
+<servlet>
     <servlet-name>Update Data</servlet-name>
     <servlet-class>org.web.UpdateData</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>Update Set Data</servlet-name>
+    <servlet-class>org.web.UpdateSetData</servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
     <servlet-name>Update Data</servlet-name>
     <url-pattern>/update</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>Update Set Data</servlet-name>
+    <url-pattern>/updateset</url-pattern>
   </servlet-mapping>
 </web-app>
