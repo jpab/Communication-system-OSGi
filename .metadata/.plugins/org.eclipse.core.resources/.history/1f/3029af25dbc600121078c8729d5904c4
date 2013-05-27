@@ -1,0 +1,74 @@
+package org.RFIDPh.services;
+
+import java.util.HashMap;
+import java.util.Set;
+
+import org.device.switchbtn.api.SwitchService;
+
+import com.phidgets.InterfaceKitPhidget;
+import com.phidgets.PhidgetException;
+import com.phidgets.RFIDPhidget;
+
+public class RFIDSwitchService implements SwitchService{
+
+	RFIDPhidget rph =null;
+	HashMap<String, Boolean> values= null;
+	int changed = 1;
+	
+	public RFIDSwitchService(RFIDPhidget rph) {
+		this.rph =rph;
+		try {
+			values.put("Led", (new Boolean(this.rph.getLEDOn())));
+		} catch (PhidgetException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public String getDescription() {
+		
+		return "Switch Service Design to do an action when ";
+	}
+
+	@Override
+	public String getName() {
+		return "Switchs";
+	}
+
+	@Override
+	public HashMap<String, Boolean> getCollection() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Set<String> getProperties() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Boolean getState(String s) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setState(String s, Boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int getChanged() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void setChanged(int changed) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

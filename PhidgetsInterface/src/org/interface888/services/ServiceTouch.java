@@ -12,9 +12,12 @@ public class ServiceTouch implements DeviceSensing{
 	private int changed = 1;
 	
 	
-	public ServiceTouch() {
+	public ServiceTouch(int i) {
 		prop = new HashMap<String,String>();
-		prop.put("Touch","Detected");
+		if(i<500)
+			prop.put("Touch","Detected");
+		else	
+			prop.put("Touch","Undetected");
 	}
 
 	@Override

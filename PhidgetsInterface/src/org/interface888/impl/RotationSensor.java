@@ -11,6 +11,7 @@ import org.interface888.services.ServiceRotation;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
 import com.phidgets.InterfaceKitPhidget;
+import com.phidgets.PhidgetException;
 
 
 public class RotationSensor implements PhidgetDevice{
@@ -22,15 +23,16 @@ public class RotationSensor implements PhidgetDevice{
 	public RotationSensor(InterfaceKitPhidget phidget, BundleContext b){
 		itk = phidget;
 		bc =b;
+		services = new HashMap<String,ServiceRegistration>();
 	}
 	
 	@Override	
-	public void regist(){
+	public void regist() throws PhidgetException{
 
 		System.out.println("Regista Serviços");
 		ServiceRegistration sraux;
 		
-		DeviceSensing ds = new ServiceRotation();
+		DeviceSensing ds = new ServiceRotation(itk.getSensorValue(6));
 		sraux = bc.registerService(DeviceService.class.getName(), ds , null);
 		services.put("Rotation",sraux);
 		System.out.println("Registered: "+ds.getName());

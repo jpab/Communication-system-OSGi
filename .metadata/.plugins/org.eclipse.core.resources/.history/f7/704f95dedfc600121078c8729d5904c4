@@ -1,0 +1,25 @@
+package org.device.action.api;
+
+
+import java.util.HashMap;
+
+import org.deviceservice.api.DeviceService;
+
+import aQute.bnd.annotation.ProviderType;
+
+/**
+ * <p>
+ * This is an example of an interface that is expected to be implemented by Providers of the API. Adding methods to this
+ * interface is a minor change, because only Providers will be affected.
+ * </p>
+ * This service its a switch type. Provide one offers the possibility to a consumer change it. Can have more than one.
+ * @see ProviderType
+ * @since 1.0
+ */
+@ProviderType
+public interface RFIDActionService{
+	public void DeployService();
+	public HashMap<String,DeviceService> getActuators();
+	public void setActuator(DeviceService dc);
+	public DeviceService getActuator();
+}

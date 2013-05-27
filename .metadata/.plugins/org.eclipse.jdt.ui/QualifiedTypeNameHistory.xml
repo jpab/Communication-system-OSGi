@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.exemple.impls.Activator"/>
-<fullyQualifiedTypeName name="org.exemple.impls.ExampleComponent"/>
-<fullyQualifiedTypeName name="org.example.api.Greeting"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
-<fullyQualifiedTypeName name="javax.servlet.Servlet"/>
-<fullyQualifiedTypeName name="javax.servlet.ServletException"/>
-<fullyQualifiedTypeName name="org.phidgets.temperature.api.ShowTemperature"/>
-<fullyQualifiedTypeName name="org.osgi.service.http.HttpService"/>
-<fullyQualifiedTypeName name="org.osgi.framework.BundleActivator"/>
-<fullyQualifiedTypeName name="java.util.Dictionary"/>
 <fullyQualifiedTypeName name="org.osgi.util.tracker.ServiceTrackerCustomizer"/>
-<fullyQualifiedTypeName name="org.osgi.framework.ServiceReference"/>
-<fullyQualifiedTypeName name="org.deviceservice.api.DeviceService"/>
 <fullyQualifiedTypeName name="java.util.TreeSet"/>
 <fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
@@ -41,7 +27,6 @@
 <fullyQualifiedTypeName name="java.util.concurrent.ConcurrentHashMap"/>
 <fullyQualifiedTypeName name="org.deviceservice.sensing.api.DeviceSensing"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="org.interface888.services.ServicePrecisionLight"/>
 <fullyQualifiedTypeName name="org.interface888.services.ServicePresence"/>
 <fullyQualifiedTypeName name="org.interface888.services.ServiceRotation"/>
@@ -53,11 +38,26 @@
 <fullyQualifiedTypeName name="org.interface888.impl.RotationSensor"/>
 <fullyQualifiedTypeName name="com.phidgets.event.DetachListener"/>
 <fullyQualifiedTypeName name="com.phidgets.event.AttachListener"/>
-<fullyQualifiedTypeName name="org.interface888.impl.Interface888"/>
-<fullyQualifiedTypeName name="com.phidgets.InterfaceKitPhidget"/>
 <fullyQualifiedTypeName name="org.interface888.listener.AttachInterface888"/>
 <fullyQualifiedTypeName name="org.interface888.listener.DetachInterface888"/>
 <fullyQualifiedTypeName name="org.osgi.framework.Bundle"/>
 <fullyQualifiedTypeName name="org.deviceservice.controller.api.DeviceController"/>
 <fullyQualifiedTypeName name="org.web.services.DevicesControllerTrackerCustomizer"/>
+<fullyQualifiedTypeName name="org.interface888.impl.VibrationSensor"/>
+<fullyQualifiedTypeName name="org.interface888.impl.SliderSensor"/>
+<fullyQualifiedTypeName name="org.interface888.impl.PresenceSensor"/>
+<fullyQualifiedTypeName name="org.interface888.impl.TouchSensor"/>
+<fullyQualifiedTypeName name="org.interface888.impl.Interface888"/>
+<fullyQualifiedTypeName name="org.interface888.impl.PhidgetDevice"/>
+<fullyQualifiedTypeName name="com.phidgets.RFIDPhidget"/>
+<fullyQualifiedTypeName name="org.device.switchbtn.api.SwitchService"/>
+<fullyQualifiedTypeName name="com.phidgets.event.TagGainListener"/>
+<fullyQualifiedTypeName name="org.RFIDPh.services.RFIDSwitchService"/>
+<fullyQualifiedTypeName name="org.RFIDPh.impl.RFIDPh"/>
+<fullyQualifiedTypeName name="org.osgi.framework.ServiceReference"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="org.deviceservice.api.DeviceService"/>
+<fullyQualifiedTypeName name="org.device.action.api.ActionService"/>
+<fullyQualifiedTypeName name="org.interface888.impl.PrecisionLightSensor"/>
+<fullyQualifiedTypeName name="com.phidgets.InterfaceKitPhidget"/>
 </qualifiedTypeNameHistroy>

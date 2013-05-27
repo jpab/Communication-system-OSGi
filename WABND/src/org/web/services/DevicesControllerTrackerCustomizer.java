@@ -9,7 +9,6 @@ import org.osgi.util.tracker.ServiceTrackerCustomizer;
 public class DevicesControllerTrackerCustomizer implements ServiceTrackerCustomizer {
 
 	private final BundleContext context;
-	private DeviceThread thread;
 	
 	
 	public DevicesControllerTrackerCustomizer(BundleContext context) {
@@ -21,8 +20,8 @@ public class DevicesControllerTrackerCustomizer implements ServiceTrackerCustomi
 	public Object addingService(ServiceReference reference) {
 		System.out.println("[DeviceControllerTracker]How good. Service for device registered");
 		DeviceController service = (DeviceController) context.getService(reference);
-		thread = new DeviceThread(service);
-		thread.start();
+		//thread = new DeviceThread(service);
+		//thread.start();
 		return service;
 	}
 
@@ -37,7 +36,7 @@ public class DevicesControllerTrackerCustomizer implements ServiceTrackerCustomi
 	public void removedService(ServiceReference reference, Object service) {
 		context.ungetService(reference);
 		System.out.println("[DeviceControllerTracker]How sad. Service for device is gone");
-		thread.stopThread();
+		//thread.stopThread();
 }
 
 }

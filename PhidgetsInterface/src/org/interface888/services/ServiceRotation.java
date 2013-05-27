@@ -12,9 +12,9 @@ public class ServiceRotation implements DeviceSensing{
 	private int changed = 1;
 	
 	
-	public ServiceRotation() {
+	public ServiceRotation(int i) {
 		prop = new HashMap<String,String>();
-		prop.put("Rotation","0");
+		prop.put("Rotation",(new Integer(i).toString()));
 	}
 
 	@Override

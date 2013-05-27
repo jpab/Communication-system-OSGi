@@ -1,0 +1,61 @@
+package org.RFIDPh.impl;
+
+
+import java.util.HashMap;
+
+import org.RFIDPh.services.RFIDSwitchService;
+import org.device.switchbtn.api.SwitchService;
+import org.deviceservice.api.DeviceService;
+import org.deviceservice.controller.api.DeviceController;
+import org.deviceservice.sensing.api.DeviceSensing;
+import org.interface888.services.SensitivityPrecisionLight;
+import org.interface888.services.ServiceTouch;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceRegistration;
+import com.phidgets.InterfaceKitPhidget;
+
+
+public class RFIDPh {
+	
+	HashMap<String,ServiceRegistration> services; 
+	InterfaceKitPhidget itk = null;
+	BundleContext bc = null;
+	
+	public RFIDPh(InterfaceKitPhidget phidget, BundleContext b){
+		itk = phidget;
+		bc =b;
+	}
+		
+	public void regist(){
+
+		System.out.println("Regista Serviços");
+		ServiceRegistration sraux;
+		
+		SwitchService ds = new RFIDSwitchService();
+		sraux = bc.registerService(SwitchService.class.getName(), ds , null);
+		services.put("Switches",sraux);
+		System.out.println("Registered: "+ds.getName());		
+		
+	}
+	
+	public void unregist(){
+		System.out.println("Retira Registos de Serviços");
+		for (String sr : services.keySet()){
+			services.get(sr).unregister();
+			System.out.println("unregistered "+ sr);
+		}
+		services.clear();	
+	}	
+	
+	public void changed(boolean value){
+		System.out.println("Mudou para" + value);
+		SwitchService ss = (SwitchService) bc.getService(services.get("Switches").getReference());
+		if(value){
+			ss.setValue("Touch", "Undetected");
+		}else{
+			ss.setValue("Touch","Detected");
+		}
+	}
+
+
+}

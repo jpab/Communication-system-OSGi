@@ -11,6 +11,7 @@ import org.interface888.services.ServicePrecisionLight;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
 import com.phidgets.InterfaceKitPhidget;
+import com.phidgets.PhidgetException;
 
 /*It just regist one service sensing that is able to sense intisity of the light
  * */
@@ -23,14 +24,15 @@ public class PrecisionLightSensor implements PhidgetDevice{
 	public PrecisionLightSensor(InterfaceKitPhidget phidget, BundleContext b){
 		itk = phidget;
 		bc =b;
+		services = new HashMap<String,ServiceRegistration>();
 	}
 		
-	public void regist(){
+	public void regist() throws PhidgetException{
 
 		System.out.println("[Precision-Light]Regista Serviços");
 		ServiceRegistration sraux;
 		//regist Service Sense
-		DeviceSensing ds = new ServicePrecisionLight();		
+		DeviceSensing ds = new ServicePrecisionLight(itk.getSensorValue(2));		
 		sraux = bc.registerService(DeviceService.class.getName(), ds , null);
 		services.put("PrecisionLight",sraux);
 		//regist service sensibility
@@ -53,7 +55,7 @@ public class PrecisionLightSensor implements PhidgetDevice{
 	
 	public void changed(int value){
 		System.out.println("Mudou para" + value);
-		DeviceSensing ds = (DeviceSensing) bc.getService(services.get(0).getReference());
+		DeviceSensing ds = (DeviceSensing) bc.getService(services.get("PrecisionLight").getReference());
 		ds.setValue("PrecisionLight", new Integer(value).toString());
 	}
 

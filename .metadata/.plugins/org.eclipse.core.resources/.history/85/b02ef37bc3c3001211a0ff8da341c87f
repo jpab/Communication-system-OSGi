@@ -1,0 +1,4 @@
+-buildpath: osgi.core,\
+	phidget21bnd,\
+	org.device.switch.api;version=latest
+Bundle-Activator: org.RFIDPh.impl.Activator

@@ -1,0 +1,4 @@
+-buildpath: biz.aQute.bnd.annotation,\
+	org.device.api;version=latest
+Export-Package: org.device.switchbtn.api
+Bundle-Version: 1.0.0

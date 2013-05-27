@@ -1,0 +1,11 @@
+package org.RFIDPh.impl;
+
+import org.deviceservice.controller.api.DeviceController;
+import org.osgi.util.tracker.ServiceTracker;
+import org.web.services.DevicesControllerTrackerCustomizer;
+
+/*This uses a OpenDoorService, when the RFID's ids are indentificaded they open the door like a key */
+
+public class ControllObject {
+	ServiceTracker obj = new ServiceTracker(bc, DeviceController.class.getName(), new DevicesControllerTrackerCustomizer(bc));
+}

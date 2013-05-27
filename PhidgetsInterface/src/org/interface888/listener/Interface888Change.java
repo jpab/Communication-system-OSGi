@@ -1,6 +1,7 @@
 package org.interface888.listener;
 
 import org.interface888.impl.Interface888;
+import org.interface888.impl.PrecisionLightSensor;
 import org.interface888.impl.PresenceSensor;
 import org.interface888.impl.RotationSensor;
 import org.interface888.impl.SliderSensor;
@@ -45,9 +46,9 @@ public class Interface888Change implements SensorChangeListener{
 			case 4 :
 				sliderSensor(index,sce);
 				break;
-			case 5 : 
-				precisionLightSensor(index,sce);
-				break;
+			//case 5 : 
+		//		precisionLightSensor(index,sce);
+	//			break;
 			case 6 : 
 				rotationSensor(index,sce);
 				break;
@@ -64,7 +65,7 @@ public class Interface888Change implements SensorChangeListener{
 	/*Number 7
 	 * This dont turn off
 	 * */
-	private void vibrationSensor(Integer index, SensorChangeEvent sce) {
+	private void vibrationSensor(Integer index, SensorChangeEvent sce) throws PhidgetException {
 		if (Interface888.phidgets.containsKey(index)){  
 			Interface888.phidgets.get(index).changed(sce.getValue());
 		}
@@ -78,21 +79,17 @@ public class Interface888Change implements SensorChangeListener{
 	/*Number 6
 	 * Turned off when is 0
 	 * */
-	private synchronized void rotationSensor(Integer index, SensorChangeEvent sce) {
+	private synchronized void rotationSensor(Integer index, SensorChangeEvent sce) throws PhidgetException {
 		if (Interface888.phidgets.containsKey(index)){ // if it was attached
 			if(sce.getValue() == 0){ //if is desattached
-				//System.out.println("it was attached but now has been desattached");
 				Interface888.phidgets.get(index).unregist();
 				Interface888.phidgets.remove(index);
 			}
 			else{ //if temperature change
-				//System.out.println("it was attached now just change");
 				Interface888.phidgets.get(index).changed(sce.getValue());
-				//System.out.println("Contains1:"+Interface888.phidgets.containsKey(index));
 				}
 		}
 		else{ //if it was desatached
-			//System.out.println("it was desatached");
 			RotationSensor rt = new RotationSensor((InterfaceKitPhidget)sce.getSource(), bc);
 			Interface888.phidgets.put(new Integer(index.intValue()), rt);
 			rt.regist();
@@ -103,7 +100,7 @@ public class Interface888Change implements SensorChangeListener{
 	/*Number 4
 	 * Turned off when is 0
 	 * */
-	private synchronized void sliderSensor(Integer index, SensorChangeEvent sce) {
+	private synchronized void sliderSensor(Integer index, SensorChangeEvent sce) throws PhidgetException {
 		if (Interface888.phidgets.containsKey(index)){ 
 			if(sce.getValue() == 0){ 
 				Interface888.phidgets.get(index).unregist();
@@ -123,7 +120,7 @@ public class Interface888Change implements SensorChangeListener{
 	/*Number 3
 	 * Not turned off
 	 * */
-	private synchronized void presenceSensor(Integer index, SensorChangeEvent sce) {
+	private synchronized void presenceSensor(Integer index, SensorChangeEvent sce) throws PhidgetException {
 		if (Interface888.phidgets.containsKey(index)){ 
 			Interface888.phidgets.get(index).changed(sce.getValue());
 		}
@@ -137,20 +134,22 @@ public class Interface888Change implements SensorChangeListener{
 	/*Number 2
 	 * Turned off when value is under ten 
 	 * */
-	private synchronized void precisionLightSensor(Integer index, SensorChangeEvent sce) {
+	private synchronized void precisionLightSensor(Integer index, SensorChangeEvent sce) throws PhidgetException {
 		if (Interface888.phidgets.containsKey(index)){ 
 			if(sce.getValue() < 10){ 
 				Interface888.phidgets.get(index).unregist();
 				Interface888.phidgets.remove(index);
 			}
 			else{ 
+				System.out.println("INDEX "+index.toString()+"Sensor "+Interface888.phidgets.get(index).getClass());
 				Interface888.phidgets.get(index).changed(sce.getValue());
 				}
 		}
 		else{ 
-			PresenceSensor rt = new PresenceSensor((InterfaceKitPhidget)sce.getSource(), bc);
-			Interface888.phidgets.put(new Integer(index.intValue()), rt);
+			PrecisionLightSensor rt = new PrecisionLightSensor((InterfaceKitPhidget)sce.getSource(), bc);
 			rt.regist();
+			Interface888.phidgets.put(new Integer(index.intValue()), rt);
+			
 		}
 		
 	}
@@ -158,7 +157,7 @@ public class Interface888Change implements SensorChangeListener{
 	/*Number 1
 	 * Turned off when value is under ten 
 	 * */
-	private synchronized void temperatureSensor(Integer index, SensorChangeEvent sce) {
+	private synchronized void temperatureSensor(Integer index, SensorChangeEvent sce) throws PhidgetException {
 		//System.out.println("Contains2:"+Interface888.phidgets.containsKey(index));
 		if (Interface888.phidgets.containsKey(index)){ // if it was attached
 			if(sce.getValue() < 10){ //if is desattached
@@ -184,7 +183,7 @@ public class Interface888Change implements SensorChangeListener{
 	/*Number 0
 	 * Turned off when value is under ten 
 	 * */
-	private synchronized void touchSensor(Integer index, SensorChangeEvent sce) {
+	private synchronized void touchSensor(Integer index, SensorChangeEvent sce) throws PhidgetException {
 		if (Interface888.phidgets.containsKey(index)){ 
 			Interface888.phidgets.get(index).changed(sce.getValue());
 		}

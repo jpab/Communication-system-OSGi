@@ -11,6 +11,7 @@ import org.interface888.services.ServiceVibration;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
 import com.phidgets.InterfaceKitPhidget;
+import com.phidgets.PhidgetException;
 
 
 public class VibrationSensor implements PhidgetDevice{
@@ -22,14 +23,15 @@ public class VibrationSensor implements PhidgetDevice{
 	public VibrationSensor(InterfaceKitPhidget phidget, BundleContext b){
 		itk = phidget;
 		bc =b;
+		services = new HashMap<String,ServiceRegistration>();
 	}
 		
-	public void regist(){
+	public void regist() throws PhidgetException{
 
 		System.out.println("Regista Serviços");
 		ServiceRegistration sraux;
 		
-		DeviceSensing ds = new ServiceVibration();
+		DeviceSensing ds = new ServiceVibration(itk.getSensorValue(7));
 		sraux = bc.registerService(DeviceService.class.getName(), ds , null);
 		services.put("Vibration",sraux);
 		System.out.println("Registered: "+ds.getName());

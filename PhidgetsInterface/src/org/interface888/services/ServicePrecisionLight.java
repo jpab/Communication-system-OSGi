@@ -11,9 +11,9 @@ public class ServicePrecisionLight implements DeviceSensing{
 	private int changed = 1;
 	
 	
-	public ServicePrecisionLight() {
+	public ServicePrecisionLight(int i) {
 		prop = new HashMap<String,String>();
-		prop.put("PrecisionLight","0");
+		prop.put("PrecisionLight",(new Integer(2)).toString());
 	}
 
 	@Override

@@ -12,9 +12,12 @@ public class ServicePresence implements DeviceSensing{
 	private int changed = 1;
 	
 	
-	public ServicePresence() {
+	public ServicePresence(int i) {
 		prop = new HashMap<String,String>();
-		prop.put("Presence","Detected");
+		if(i<500)
+			prop.put("Presence","Detected");
+		else
+			prop.put("Presence","Undetected");
 	}
 
 	@Override

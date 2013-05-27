@@ -1,0 +1,89 @@
+package org.interface888.impl;
+
+
+import java.util.concurrent.ConcurrentHashMap;
+
+import org.interface888.listener.AttachInterface888;
+import org.interface888.listener.DetachInterface888;
+import org.interface888.listener.Interface888Change;
+import org.osgi.framework.BundleContext;
+
+import com.phidgets.InterfaceKitPhidget;
+import com.phidgets.Phidget;
+import com.phidgets.PhidgetException;
+
+public class Interface888 extends Thread{
+	public static ConcurrentHashMap<Integer, PhidgetDevice> phidgets;
+	private BundleContext bc = null; 
+	
+	public Interface888(BundleContext b) {
+		bc = b;
+	}
+
+	public void start(){
+		phidgets = new ConcurrentHashMap<Integer,PhidgetDevice>();
+		try {
+			InterfaceKitPhidget itk;
+			System.out.println(Phidget.getLibraryVersion());
+			itk = new InterfaceKitPhidget();
+			itk.openAny();
+			if(itk.isAttached()==false){
+				System.out.println("[Bundle-Interface888] Wait for attach");
+				itk.waitForAttachment(1000);
+				System.out.println("[Bundle-Interface888] Attached");
+			}
+			initSensors(itk);
+			itk.addSensorChangeListener(new Interface888Change(bc));
+			itk.addAttachListener(new AttachInterface888(itk, bc));
+			itk.addDetachListener(new DetachInterface888(itk, bc));
+			System.out.println( Double.valueOf((itk.getSensorValue(1)-200)/4) );
+			//Phidget p = new Phidget();
+		} catch (PhidgetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	private void initSensors(InterfaceKitPhidget itk) throws PhidgetException {
+		if(itk.getSensorValue(0) > 10){
+			TemperatureSensor tmp = new TemperatureSensor(itk, bc);
+			phidgets.put(new Integer(0), tmp);
+			tmp.regist();
+		}
+		if(itk.getSensorValue(1) > 10){
+			TemperatureSensor tmp = new TemperatureSensor(itk, bc);
+			phidgets.put(new Integer(1), tmp);
+			tmp.regist();
+		}
+		if(itk.getSensorValue(2) > 10){
+			TemperatureSensor tmp = new TemperatureSensor(itk, bc);
+			phidgets.put(new Integer(2), tmp);
+			tmp.regist();
+		}
+		if(itk.getSensorValue(3) > 10){
+			TemperatureSensor tmp = new TemperatureSensor(itk, bc);
+			phidgets.put(new Integer(3), tmp);
+			tmp.regist();
+		}
+		if(itk.getSensorValue(4) > 10){
+			TemperatureSensor tmp = new TemperatureSensor(itk, bc);
+			phidgets.put(new Integer(4), tmp);
+			tmp.regist();
+		}
+		if(itk.getSensorValue(5) > 10){
+			TemperatureSensor tmp = new TemperatureSensor(itk, bc);
+			phidgets.put(new Integer(5), tmp);
+			tmp.regist();
+		}
+		if(itk.getSensorValue(6) > 10){
+			TemperatureSensor tmp = new TemperatureSensor(itk, bc);
+			phidgets.put(new Integer(6), tmp);
+			tmp.regist();
+		}
+		//7
+		tmp = new VibrationSensor(itk, bc);
+		phidgets.put(new Integer(7), tmp);
+		tmp.regist();
+	}
+
+}

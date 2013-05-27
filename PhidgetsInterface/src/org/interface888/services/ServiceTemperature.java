@@ -18,9 +18,9 @@ public class ServiceTemperature implements DeviceSensing{
 	private int changed = 1;
 	
 
-	public ServiceTemperature() {
+	public ServiceTemperature(int i) {
 		prop = new HashMap<String,String>();
-		prop.put("TemperatureCelsius","0 ¼C");
+		prop.put("TemperatureCelsius",(new Integer(i).toString())+" ¼C");
 	}
 
 	@Override

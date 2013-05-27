@@ -1,0 +1,4 @@
+-buildpath: biz.aQute.bnd.annotation,\
+	org.device.switch.api;version=latest
+Export-Package: org.device.action.r.api
+Bundle-Version: 1.0.0

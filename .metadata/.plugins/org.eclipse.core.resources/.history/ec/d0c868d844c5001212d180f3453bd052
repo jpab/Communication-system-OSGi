@@ -1,0 +1,7 @@
+package org.RFIDPh.impl;
+
+/*This uses a OpenDoorService, when the RFID's ids are indentificaded they open the door like a key */
+
+public class ControllObject {
+
+}

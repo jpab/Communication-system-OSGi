@@ -11,6 +11,7 @@ import org.interface888.services.ServiceTouch;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
 import com.phidgets.InterfaceKitPhidget;
+import com.phidgets.PhidgetException;
 
 
 public class TouchSensor implements PhidgetDevice{
@@ -22,14 +23,15 @@ public class TouchSensor implements PhidgetDevice{
 	public TouchSensor(InterfaceKitPhidget phidget, BundleContext b){
 		itk = phidget;
 		bc =b;
+		services = new HashMap<String,ServiceRegistration>();
 	}
 		
-	public void regist(){
+	public void regist() throws PhidgetException{
 
 		System.out.println("Regista Servios");
 		ServiceRegistration sraux;
 		
-		DeviceSensing ds = new ServiceTouch();
+		DeviceSensing ds = new ServiceTouch(itk.getSensorValue(0));
 		sraux = bc.registerService(DeviceService.class.getName(), ds , null);
 		services.put("Touch",sraux);
 		System.out.println("Registered: "+ds.getName());
@@ -50,7 +52,7 @@ public class TouchSensor implements PhidgetDevice{
 	
 	public void changed(int value){
 		System.out.println("Mudou para" + value);
-		DeviceSensing ds = (DeviceSensing) bc.getService(services.get(0).getReference());
+		DeviceSensing ds = (DeviceSensing) bc.getService(services.get("Touch").getReference());
 		if(value >500 ){
 			ds.setValue("Touch", "Undetected");
 		}else{

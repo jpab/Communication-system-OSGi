@@ -27,7 +27,6 @@ public class UpdateData extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-		System.out.println("fui chamado!!!!!!!!!");
 		PrintWriter out;
 		BundleContext bc = (BundleContext)this.getServletContext().getAttribute("osgi-bundlecontext");
 		out = resp.getWriter();
@@ -35,9 +34,12 @@ public class UpdateData extends HttpServlet{
 			for(ServiceReference sr : Tracker.getSt().getServiceReferences()){
 				if(((DeviceSensing)bc.getService(sr)).getChanged()==1){
 					out.println("1");
+					System.out.println("fui chamado111111111111");
+					//try request here
 					return;
 				}
 			}
+			System.out.println("fui chamado00000000000");
 			out.println("0");
 		}
 	}

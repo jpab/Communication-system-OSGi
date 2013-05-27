@@ -11,9 +11,9 @@ public class ServiceVibration implements DeviceSensing{
 	private int changed = 1;
 	
 	
-	public ServiceVibration() {
+	public ServiceVibration(int i) {
 		prop = new HashMap<String,String>();
-		prop.put("Vibration","0");
+		prop.put("Vibration",(new Integer(i)).toString());
 	}
 
 	@Override

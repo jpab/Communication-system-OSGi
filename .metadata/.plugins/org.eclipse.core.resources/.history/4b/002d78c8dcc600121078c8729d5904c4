@@ -1,0 +1,13 @@
+package org.RFIDPh.listeners;
+
+import com.phidgets.event.TagGainEvent;
+import com.phidgets.event.TagGainListener;
+
+public class RFIDTagGainListener implements TagGainListener {
+
+	@Override
+	public void tagGained(TagGainEvent arg0) {
+		
+	}
+
+}

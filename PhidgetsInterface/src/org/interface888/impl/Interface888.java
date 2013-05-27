@@ -45,11 +45,49 @@ public class Interface888 extends Thread{
 	}
 
 	private void initSensors(InterfaceKitPhidget itk) throws PhidgetException {
+		//0
+		TouchSensor tmpT = new TouchSensor(itk, bc);
+		phidgets.put(new Integer(0), tmpT);
+		tmpT.regist();
+		
+		//1
 		if(itk.getSensorValue(1) > 10){
 			TemperatureSensor tmp = new TemperatureSensor(itk, bc);
 			phidgets.put(new Integer(1), tmp);
 			tmp.regist();
 		}
+		//2
+		if(itk.getSensorValue(2) > 10){
+			PrecisionLightSensor tmpPL = new PrecisionLightSensor(itk, bc);
+			phidgets.put(new Integer(2), tmpPL);
+			tmpPL.regist();
+		}
+		//3
+		PresenceSensor tmpP = new PresenceSensor(itk, bc);
+		phidgets.put(new Integer(3), tmpP);
+		tmpP.regist();
+		
+		//4
+		if(itk.getSensorValue(4) !=0){
+			SliderSensor tmpS = new SliderSensor(itk, bc);
+			phidgets.put(new Integer(4), tmpS);
+			tmpS.regist();
+		}
+	/*	if(itk.getSensorValue(5) > 10){
+			TemperatureSensor tmp = new TemperatureSensor(itk, bc);
+			phidgets.put(new Integer(5), tmp);
+			tmp.regist();
+		}*/
+		//6
+		if(itk.getSensorValue(6) != 0){
+			RotationSensor tmpR = new RotationSensor(itk, bc);
+			phidgets.put(new Integer(6), tmpR);
+			tmpR.regist();
+		}
+		//7
+		VibrationSensor tmpVB = new VibrationSensor(itk, bc);
+		phidgets.put(new Integer(7), tmpVB);
+		tmpVB.regist();
 	}
 
 }

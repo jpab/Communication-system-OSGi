@@ -12,6 +12,7 @@
 <%@ page import="org.deviceservice.controller.api.DeviceController" %>
 <%@ page import="wabnd.datahandler.api.DataHandlerService" %>
 <%@ page import="org.web.UpdateData" %>
+<%@ page import="org.web.Tracker" %>
 <%
 	BundleContext bc = (BundleContext)this.getServletContext().getAttribute("osgi-bundlecontext");
 %> 
@@ -92,39 +93,42 @@ $.get("update",  function(data) {
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="span6">
-          <img class="img-rounded" data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;" src="img/devices.png">
-          <h2>Devices</h2>
-          <p>Devices Installed</p>
-          <table class="table table-hover">
-          
-				  <%
-          				  	if (bc ==  null) 
-          				  		  		  				out.println("NULL BC");
-          				  		  else{
-          				  		  		  				for(String s : dh.getTr().getBndstracked().keySet()){
-          				  		  		  					if(dh.getTr().getBndstracked().get(s).getHeaders().get("Device")!=null){
-          				  %><tr><td>
-							<%=dh.getTr().getBndstracked().get(s).getSymbolicName()%>
-					</td></tr>
-					
-							<%
-													}
-																										}
-																									}
-												%>
-			</td>
-		</table>
-         <form class="form-search">
-		  <div class="input-append">
-		    <input type="text" class="span2 search-query">
-		    <button type="submit" class="btn">Search</button>
-		  </div>
-		</form>
-        </div><!-- /.span4 -->
+     		<img class="img-rounded" data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;" src="img/services.png">
+        	<h2>Controller Services </h2>
+        	<%
+        		if (bc ==  null) 
+          			out.println("NULL BC");
+          		else if(Tracker.getSt().getServiceReferences()!=null){
+          			for(ServiceReference s : Tracker.getSct().getServiceReferences()){
+          		%>				
+          		<div class="row" id = nameService>
+          			<p><%=((DeviceController)bc.getService(s)).getName() %></p>
+          		</div>
+          		<div class="row">
+          			<% for(String str : ((DeviceController)bc.getService(s)).getCollection().keySet()){	
+          			%>
+          				<div class="row" id=ServiceProp>
+	          				<p><%=str%></p>
+	          			</div> 	
+	          		<div class="row">
+          				<div class="slider-track" id = valueService>
+          					<div class="slider-selection" style="left: 0%; width: <%=((DeviceController)bc.getService(s)).getValue(str) %>%;"></div>
+          					<div class="slider-handle round" style="left: 0%;"></div>
+          					<div class="slider-handle round hide" style="left: 0%;"></div>
+          				</div>
+          			</div>
+          			<%
+					} %>
+          		</div>					
+          		<% 
+          			} //end for services
+          		}
+          	%>
+        </div><!-- /.span6 -->
         <div class="span6">
-          <img class="img-rounded" data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;" src="img/services.png">
+          <img class="img-rounded" data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;" src="img/servicessensing.png">
           <h2>Services</h2>
-          <p>Avaiable Services</p>
+          <p>Sensing Services</p>
            <table class="table table-hover">
           	<tr>
           		<td>
@@ -139,76 +143,52 @@ $.get("update",  function(data) {
           		
           	</tr>
           	<tr>
-          
-					<%
-          						if (bc ==  null) 
-          										out.println("NULL BC");
-          									else if(dh.getTr().getSt().getServiceReferences()!=null){
-          										for(ServiceReference s : dh.getTr().getSt().getServiceReferences()){
-          					%>			
-								<td>
-								<%=((DeviceSensing)bc.getService(s)).getName()%>
-								</td>
-								<td></td>
-								<td></td>
-								<%
-									for(String str : ((DeviceSensing)bc.getService(s)).getCollection().keySet()){															
-															out.println("<tr><td></td><td>"+str+"</td>");
-															out.println("<td>"+((DeviceSensing)bc.getService(s)).getValue(str)+"</td></tr>");	
-														}
-													}
-												}
-								%>
+          	<%
+          		if (bc ==  null) 
+          				out.println("NULL BC");
+          		else if(Tracker.getSt().getServiceReferences()!=null){
+          			for(ServiceReference s : Tracker.getSt().getServiceReferences()){
+          	%>			
+				<td>
+					<%=((DeviceSensing)bc.getService(s)).getName()%>
+				</td>
+				<td></td>
+				<td></td>
+				<%
+						for(String str : ((DeviceSensing)bc.getService(s)).getCollection().keySet()){															
+							out.println("<tr><td></td><td>"+str+"</td>");
+							out.println("<td>"+((DeviceSensing)bc.getService(s)).getValue(str)+"</td></tr>");	
+						}
+					}
+				}
+				%>
 				
 			</tr>
 		</table>
-		<form class="form-search">
-		  <div class="input-append">
-		    <input type="text" class="span2 search-query">
-		    <button type="submit" class="btn">Search</button>
-		  </div>
-		</form>
         </div><!-- /.span4 -->
       </div><!-- /.row -->
 		<div class="row">
         	<div class="span6">
-        	<%
-        		if (bc ==  null) 
+        	 <img class="img-rounded" data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;" src="img/devices.png">
+          <h2>Devices</h2>
+          <p>Devices Installed</p>
+          <table class="table table-hover">
+			<%
+          		if (bc ==  null) 
           			out.println("NULL BC");
-          		else if(dh.getTr().getSt().getServiceReferences()!=null){
-          			for(ServiceReference s : dh.getTr().getSt().getServiceReferences()){
-          		%>				
-          		<div class="row" id = nameService>
-          			<p><%=((DeviceController)bc.getService(s)).getName() %></p>
-          		</div>
-          		<div class="row">
-          			<% for(String str : ((DeviceController)bc.getService(s)).getCollection().keySet()){	
-          			%>
-          				<div class="row" id=ServiceProp>
-	          				<p><%=str%></p>
-	          			</div> 	
-	          			<div class="row">
-          			<div class="slider-track" id = valueService>
-          				<div class="slider-selection" style="left: 0%; width: <%=((DeviceController)bc.getService(s)).getValue(str) %>%;"></div>
-          				<div class="slider-handle round" style="left: 0%;"></div>
-          				<div class="slider-handle round hide" style="left: 0%;"></div>
-          			</div>
-          			</div>
-          			<%
-						
-					} %>
-          		</div>	
-          		<div class="row">
-          			<div class="slider-track" id = valueService>
-          				<div class="slider-selection" style="left: 0%; width: 0%;"></div>
-          				<div class="slider-handle round" style="left: 0%;"></div>
-          				<div class="slider-handle round hide" style="left: 0%;"></div>
-          			</div>
-          		</div>						
-          		<% 
-          			}
-          		}
-          	%>
+          		else{
+          			for(String s : Tracker.getBndstracked().keySet()){
+          				if(Tracker.getBndstracked().get(s).getHeaders().get("Device")!=null){
+          	%><tr><td>
+				<%=Tracker.getBndstracked().get(s).getSymbolicName()%>
+			</td></tr>				
+			<%
+						}
+					}
+				}
+			%>
+			</td>
+		</table>
         	</div><!-- /.span6 -->
       </div><!-- /.row -->
       <!-- FOOTER -->

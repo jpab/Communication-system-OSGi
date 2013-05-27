@@ -11,6 +11,7 @@ import org.interface888.services.ServiceTemperature;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
 import com.phidgets.InterfaceKitPhidget;
+import com.phidgets.PhidgetException;
 
 
 public class TemperatureSensor implements PhidgetDevice{
@@ -25,11 +26,11 @@ public class TemperatureSensor implements PhidgetDevice{
 		services = new HashMap<String,ServiceRegistration>();
 	}
 		
-	public synchronized void regist(){
+	public synchronized void regist() throws PhidgetException{
 		System.out.println("[Bundle-Interface888]Regista Serviços");
 		ServiceRegistration sraux;
 		
-		DeviceSensing ds = new ServiceTemperature();
+		DeviceSensing ds = new ServiceTemperature(itk.getSensorValue(1));
 		sraux = bc.registerService(DeviceService.class.getName(), ds , null);
 		services.put("TemperatureC",sraux);
 		System.out.println("[Bundle-Interface888] Registered: "+ds.getName());

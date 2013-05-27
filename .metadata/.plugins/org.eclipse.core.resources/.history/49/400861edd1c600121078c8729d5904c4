@@ -1,0 +1,37 @@
+package org.RFIDPh.impl;
+
+
+
+
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+
+
+
+import com.phidgets.TemperatureSensorPhidget;
+
+public class Activator implements BundleActivator{
+
+	BundleContext bc= null;
+	TemperatureSensorPhidget tempsensor = null;
+
+	
+	@Override
+	public void start(BundleContext context) throws Exception {
+		bc = context;
+		//RFIDPhidget intr = new RFIDPhidget(bc);
+		//intr.start();
+		
+		
+		
+		
+	}
+
+	
+	@Override
+	public void stop(BundleContext context) throws Exception {
+		bc = null;
+	//	st.close();
+	}
+
+}

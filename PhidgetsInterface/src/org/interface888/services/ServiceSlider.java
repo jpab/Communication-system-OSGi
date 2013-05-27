@@ -11,9 +11,9 @@ public class ServiceSlider implements DeviceSensing{
 	private int changed = 1;
 	
 	
-	public ServiceSlider() {
+	public ServiceSlider(int i) {
 		prop = new HashMap<String,String>();
-		prop.put("Slider","0");
+		prop.put("Slider",(new Integer(i).toString()));
 	}
 
 	@Override

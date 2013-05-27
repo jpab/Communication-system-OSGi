@@ -1,4 +1,4 @@
-½Export-Package: org.deviceservice.controller.api
+Export-Package: org.deviceservice.controller.api
 Bundle-Name: ExempleBundle
 Bundle-Category: Exemple
 Bundle-Vendor: ISLab

@@ -1,0 +1,6 @@
+1369667075815	Rename package 'org.device.switchbtn.opendoor.api'
+1369667216315	Rename type 'OpenDoorService'
+1369667224766	Rename type 'RFIDAction'
+1369667338467	Rename package 'org.device.action.rfid.api'
+1369667360189	Rename package 'org.device.action.r.api'
+1369667558905	Rename type 'RFIDActionService'

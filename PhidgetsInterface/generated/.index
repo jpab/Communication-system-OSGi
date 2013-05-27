@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<repository increment='1369265602624' name='PhidgetsInterface' xmlns='http://www.osgi.org/xmlns/repository/v1.0.0'>
+<repository increment='1369687302575' name='PhidgetsInterface' xmlns='http://www.osgi.org/xmlns/repository/v1.0.0'>
   <resource>
     <capability namespace='osgi.identity'>
       <attribute name='osgi.identity' value='PhidgetsInterface'/>
@@ -7,9 +7,9 @@
       <attribute name='version' type='Version' value='0.5.0'/>
     </capability>
     <capability namespace='osgi.content'>
-      <attribute name='osgi.content' value='573434115e667c8b1595ad064ee766d2199a61ec7db8f056cb542b916f3d69d0'/>
+      <attribute name='osgi.content' value='facb859211672b8d695758e033b27b7217cff659af75af047fcd114966fc4c96'/>
       <attribute name='url' value='generated/PhidgetsInterface.jar'/>
-      <attribute name='size' type='Long' value='59400'/>
+      <attribute name='size' type='Long' value='62249'/>
       <attribute name='mime' value='application/vnd.osgi.bundle'/>
     </capability>
     <capability namespace='osgi.wiring.bundle'>

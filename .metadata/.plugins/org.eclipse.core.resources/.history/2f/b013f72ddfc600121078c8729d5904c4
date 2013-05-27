@@ -1,0 +1,19 @@
+package org.device.action.rfid.api;
+
+
+import org.device.switchbtn.api.SwitchService;
+import aQute.bnd.annotation.ProviderType;
+
+/**
+ * <p>
+ * This is an example of an interface that is expected to be implemented by Providers of the API. Adding methods to this
+ * interface is a minor change, because only Providers will be affected.
+ * </p>
+ * This service its a switch type. Provide one offers the possibility to a consumer change it. Can have more than one.
+ * @see ProviderType
+ * @since 1.0
+ */
+@ProviderType
+public interface RFIDActionService extends SwitchService{
+
+}

@@ -1,0 +1,18 @@
+package org.RFIDPh.listeners;
+
+import org.RFIDPh.services.RFIDSwitchService;
+
+import com.phidgets.event.TagGainEvent;
+import com.phidgets.event.TagGainListener;
+
+public class RFIDTagGainListener implements TagGainListener {	
+	RFIDSwitchService rfid = null;
+	public RFIDTagGainListener(RFIDSwitchService rfid){
+		this.rfid = rifid;
+	}
+	@Override
+	public void tagGained(TagGainEvent arg0) {
+		
+	}
+
+}

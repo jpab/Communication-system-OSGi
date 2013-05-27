@@ -11,6 +11,7 @@ import org.interface888.services.ServicePresence;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
 import com.phidgets.InterfaceKitPhidget;
+import com.phidgets.PhidgetException;
 
 
 public class PresenceSensor implements PhidgetDevice{
@@ -22,15 +23,17 @@ public class PresenceSensor implements PhidgetDevice{
 	public PresenceSensor(InterfaceKitPhidget phidget, BundleContext b){
 		itk = phidget;
 		bc =b;
+		services = new HashMap<String,ServiceRegistration>();
 	}
 		
-	public void regist(){
+	public void regist() throws PhidgetException{
 
 		System.out.println("Regista Serviços");
 		ServiceRegistration sraux;
 		
-		DeviceSensing ds = new ServicePresence();
+		DeviceSensing ds = new ServicePresence(itk.getSensorValue(3));
 		sraux = bc.registerService(DeviceService.class.getName(), ds , null);
+		System.out.println("SRAUX: "+sraux);
 		services.put("Presence",sraux);
 		System.out.println("Registered: "+ds.getName());
 		

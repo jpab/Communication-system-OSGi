@@ -1,0 +1,17 @@
+package org.RFIDPh.impl;
+
+import org.osgi.framework.BundleContext;
+import org.osgi.util.tracker.ServiceTracker;
+
+/*This uses a OpenDoorService, when the RFID's ids are indentificaded they open the door like a key */
+
+public class ControllObject {
+	ServiceTracker obj =null;
+	BundleContext bc=null;
+	
+	public ControllObject(BundleContext b){
+		bc = b; 
+		obj = new ServiceTracker(bc, DeviceController.class.getName(), new DevicesControllerTrackerCustomizer(bc));
+	}
+
+}

@@ -31,6 +31,7 @@ public class AttachInterface888 implements AttachListener{
 		
 		//regista serviços
 		System.out.println("[Interface-888]Regista Serviços");
+		//regista outputs e inputs
 		
 	}
 

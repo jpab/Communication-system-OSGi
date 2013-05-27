@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<repository increment='1369264016420' name='WABND' xmlns='http://www.osgi.org/xmlns/repository/v1.0.0'>
+<repository increment='1369694282003' name='WABND' xmlns='http://www.osgi.org/xmlns/repository/v1.0.0'>
   <resource>
     <capability namespace='osgi.identity'>
       <attribute name='osgi.identity' value='WABND'/>
@@ -7,9 +7,9 @@
       <attribute name='version' type='Version' value='0.1.2'/>
     </capability>
     <capability namespace='osgi.content'>
-      <attribute name='osgi.content' value='a2242619fb2ec66a7a51f0b670935eb21530f340f041daf494d6a5e26a380a0a'/>
+      <attribute name='osgi.content' value='5ce4f35e9d246a4a4d19e28a001d478af19c337439e800fafefad83fed0c59a9'/>
       <attribute name='url' value='generated/WABND.jar'/>
-      <attribute name='size' type='Long' value='417080'/>
+      <attribute name='size' type='Long' value='710212'/>
       <attribute name='mime' value='application/vnd.osgi.bundle'/>
     </capability>
     <capability namespace='osgi.wiring.bundle'>

@@ -1,0 +1,5 @@
+-buildpath: biz.aQute.bnd.annotation,\
+	osgi.core,\
+	org.device.api;version=latest
+Export-Package: org.device.action.api
+Bundle-Version: 1.0.0

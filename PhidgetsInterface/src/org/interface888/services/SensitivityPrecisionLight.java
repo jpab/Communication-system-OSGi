@@ -74,6 +74,7 @@ public class SensitivityPrecisionLight implements DeviceController{
 
 	@Override
 	public int getChanged() {
+		System.out.println("GETChangedChamado(Light) "+changed);
 		int rt =changed;
 		changed=0;
 		return rt;
@@ -81,6 +82,7 @@ public class SensitivityPrecisionLight implements DeviceController{
 	
 	@Override
 	public void setChanged(int changed) {
+		System.out.println("SETChangedChamado(Light) "+changed);
 		this.changed = changed;
 	}
 	

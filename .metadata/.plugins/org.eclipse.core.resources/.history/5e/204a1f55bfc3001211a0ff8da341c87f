@@ -1,0 +1,5 @@
+package org.RFIDPh.services;
+
+public class RFIDSwitchService implements SwitchService{
+
+}

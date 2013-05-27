@@ -55,16 +55,19 @@ public class Tracker {
 
 	private void initServicesTrack() {
 		srvstracked =  new Hashtable<String,ServiceReference>();
-		for(String s :  bndstracked.keySet()){
+		/*for(String s :  bndstracked.keySet()){
 			System.out.println("[TRACKER]Getting services of bundle: " + bndstracked.get(s).toString());
 			if(bndstracked.get(s).getRegisteredServices()!=null){
 				for(ServiceReference sr : bndstracked.get(s).getRegisteredServices()){
-					srvstracked.put(((DeviceSensing)bc.getService(sr)).getName(), sr);
+					if(DeviceSensing.class.isInstance(bc.getService(sr))){
+						srvstracked.put(((DeviceSensing)bc.getService(sr)).getName(), sr);
+						System.out.println("SSSSSSSSRRVVVVVVV");
+					}
 				}
 			}else{
 				System.out.println("[TRACKER]This bundle dont have services registred " + bndstracked.get(s).toString());
 			}
-		}
+		}*/
 		st = new ServiceTracker(bc, DeviceService.class.getName(), new DevicesServiceTrackerCustomizer(bc));
 		st.open(true);
 		System.out.println("[TRACKER] Number of services tracked: "+st.size()+" Tracked operations "+ st.getTrackingCount());
@@ -88,6 +91,14 @@ public class Tracker {
 
 	public static ServiceTracker getSt() {
 		return st;
+	}
+
+	public static ServiceTracker getSct() {
+		return sct;
+	}
+
+	public static void setSct(ServiceTracker sct) {
+		Tracker.sct = sct;
 	}
 	
 }
