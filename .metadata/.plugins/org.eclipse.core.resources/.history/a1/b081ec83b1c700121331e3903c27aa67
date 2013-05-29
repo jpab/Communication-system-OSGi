@@ -1,0 +1,62 @@
+package org.advancedServo.services;
+
+import java.util.HashMap;
+import java.util.Set;
+
+import org.device.switchbtn.api.SwitchService;
+
+import com.phidgets.AdvancedServoPhidget;
+
+public class OpenDoorService implements SwitchService {
+
+	AdvancedServoPhidget asp = null;
+	HashMap<String, Boolean> values= null;
+	
+	public OpenDoorService(AdvancedServoPhidget asp) {
+		this.asp = asp;
+	}
+
+	@Override
+	public String getDescription() {
+		return "Service capable of open one door";
+	}
+
+	@Override
+	public String getName() {
+		return "OpenDoor";
+	}
+
+	@Override
+	public HashMap<String, Boolean> getCollection() {
+		
+		return values;
+	}
+
+	@Override
+	public Set<String> getProperties() {
+		return values.keySet();
+	}
+
+	@Override
+	public Boolean getState(String s) {
+		return values.get(s);
+	}
+
+	@Override
+	public void setState(String s, Boolean b) {
+		values.put(s, b);
+	}
+
+	@Override
+	public int getChanged() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void setChanged(int changed) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

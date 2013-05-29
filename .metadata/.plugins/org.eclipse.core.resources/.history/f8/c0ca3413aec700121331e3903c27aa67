@@ -1,0 +1,5 @@
+package org.advancedServo.impl;
+
+public class Activator extends BundleContext{
+
+}

@@ -1,20 +1,2 @@
-2013-05-27 13:25:44.805 [Worker-2] INFO    com.objectaid.uml.model.manage.DiagramManager getFactories: com.objectaid.uml.diagramFactories[ucls]: com.objectaid.uml.cls.model.ClassDiagramFactory@1e6b1c
-2013-05-27 13:25:44.956 [Worker-2] INFO    com.objectaid.uml.model.manage.DiagramManager getFactories: com.objectaid.uml.diagramFactories[useq]: com.objectaid.uml.seq.model.SequenceDiagramFactory@47efe7
-2013-05-27 14:25:57.276 [ModalContext] INFO    com.objectaid.uml.model.manage.LanguageElementManager getLanguageElementFactories: com.objectaid.uml.languageElementFactories: com.objectaid.uml.java.JavaElementFactory
-2013-05-27 16:08:39.671 [ModalContext] SEVERE  com.objectaid.uml.UMLException log: TypeIdentifier {qualifiedName=org.device.action.rfid.api.OpenDoorService projectName=org.action.api path=/org.action.api/src/org/device/action/rfid/api/OpenDoorService.java}.findJavaElement() == null
-com.objectaid.uml.UMLException: TypeIdentifier {qualifiedName=org.device.action.rfid.api.OpenDoorService projectName=org.action.api path=/org.action.api/src/org/device/action/rfid/api/OpenDoorService.java}.findJavaElement() == null
-	at com.objectaid.uml.model.impl.LanguageElementHandle.refreshLanguageElement(LanguageElementHandle.java:172)
-	at com.objectaid.uml.model.refactor.LanguageElementIdentifierChange.perform(LanguageElementIdentifierChange.java:110)
-	at com.objectaid.uml.model.refactor.CommandChange.perform(CommandChange.java:123)
-	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
-	at com.objectaid.uml.model.refactor.CompositeDiagramChange.perform(CompositeDiagramChange.java:43)
-	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
-	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:258)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
-	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
-	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
-	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
-	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
-	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
-
+2013-05-29 01:55:21.643 [Worker-1] INFO    com.objectaid.uml.model.manage.DiagramManager getFactories: com.objectaid.uml.diagramFactories[ucls]: com.objectaid.uml.cls.model.ClassDiagramFactory@eea80c
+2013-05-29 01:55:21.791 [Worker-1] INFO    com.objectaid.uml.model.manage.DiagramManager getFactories: com.objectaid.uml.diagramFactories[useq]: com.objectaid.uml.seq.model.SequenceDiagramFactory@82c94f

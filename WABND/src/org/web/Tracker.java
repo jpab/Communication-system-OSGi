@@ -6,6 +6,8 @@ package org.web;
 
 import java.util.Hashtable;
 
+import org.device.action.api.ActionService;
+import org.device.switchbtn.api.SwitchService;
 import org.deviceservice.api.DeviceService;
 import org.deviceservice.controller.api.DeviceController;
 import org.deviceservice.sensing.api.DeviceSensing;
@@ -14,8 +16,10 @@ import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
 import org.osgi.util.tracker.ServiceTracker;
 import org.web.bundles.DeviceTracker;
+import org.web.services.ActionServicesTrackerCustomizer;
 import org.web.services.DevicesControllerTrackerCustomizer;
 import org.web.services.DevicesServiceTrackerCustomizer;
+import org.web.services.SwitchServicesTrackerCustomizer;
 
 
 public class Tracker {
@@ -25,14 +29,32 @@ public class Tracker {
 	private static DeviceTracker dt = null;
 	private static ServiceTracker st =null;
 	private static ServiceTracker sct =null;
+	private static ServiceTracker at =null;
+	private static ServiceTracker ss =null;
 	
 	public Tracker(BundleContext b){
 		bc = b;
 		initBundlesTrack();
 		initServicesTrack();
 		initControllerServicesTrack();
+		initSwitchServicesTrack();
+		initActionServicesTrack();
 	}
 	
+	private void initActionServicesTrack() {
+		at = new ServiceTracker(bc, ActionService.class.getName(), new ActionServicesTrackerCustomizer(bc));
+		at.open(true);
+		System.out.println("[TRACKER] Number of actions tracked: "+sct.size()+" Tracked operations "+ sct.getTrackingCount());
+		
+	}
+
+	private void initSwitchServicesTrack() {
+		ss = new ServiceTracker(bc, SwitchService.class.getName(), new SwitchServicesTrackerCustomizer(bc));
+		ss.open(true);
+		System.out.println("[TRACKER] Number of switch tracked: "+sct.size()+" Tracked operations "+ sct.getTrackingCount());
+		
+	}
+
 	private void initControllerServicesTrack() {
 		sct = new ServiceTracker(bc, DeviceController.class.getName(), new DevicesControllerTrackerCustomizer(bc));
 		sct.open(true);
@@ -99,6 +121,22 @@ public class Tracker {
 
 	public static void setSct(ServiceTracker sct) {
 		Tracker.sct = sct;
+	}
+
+	public static ServiceTracker getAt() {
+		return at;
+	}
+
+	public static void setAt(ServiceTracker at) {
+		Tracker.at = at;
+	}
+
+	public static ServiceTracker getSs() {
+		return ss;
+	}
+
+	public static void setSs(ServiceTracker ss) {
+		Tracker.ss = ss;
 	}
 	
 }

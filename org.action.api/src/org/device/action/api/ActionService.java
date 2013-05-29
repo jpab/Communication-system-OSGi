@@ -17,8 +17,9 @@ import aQute.bnd.annotation.ProviderType;
  */
 @ProviderType
 public interface ActionService extends DeviceService{
-	public void DeployService();
+	public void deployService();
 	public ServiceReference[] getActuators();
 	public void setActuator(ServiceReference dc);
 	public ServiceReference getActuator();
+	public Class<?> getC();
 }

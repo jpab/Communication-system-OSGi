@@ -1,0 +1,44 @@
+package org.advancedServo.impl;
+
+import java.util.HashMap;
+
+
+import org.advancedServo.services.OpenDoorService;
+import org.device.switchbtn.api.SwitchService;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceRegistration;
+
+import com.phidgets.AdvancedServoPhidget;
+
+public class AdvancedServoPh{
+
+	static HashMap<String,ServiceRegistration> services; 
+	static AdvancedServoPhidget asp = null;
+	static BundleContext bc = null;
+	
+	public AdvancedServoPh(BundleContext bc) {
+		
+	}
+	
+	public static void regist(){
+
+		System.out.println("Regista Serviços");
+		ServiceRegistration sraux;
+		
+		SwitchService ds = new OpenDoorService(asp);
+		sraux = bc.registerService(SwitchService.class.getName(), ds , null);
+		services.put("OpenDoor",sraux);
+		
+		System.out.println("Registered: "+ds.getName());	
+		
+	}
+	
+	public static void unregist(){
+		System.out.println("Retira Registos de Serviços");
+		for (String sr : services.keySet()){
+			services.get(sr).unregister();
+			System.out.println("unregistered "+ sr);
+		}
+	}
+
+}

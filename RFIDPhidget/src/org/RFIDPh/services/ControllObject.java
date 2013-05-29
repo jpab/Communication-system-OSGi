@@ -1,35 +1,29 @@
 package org.RFIDPh.services;
 
-import java.util.HashMap;
-
 import org.RFIDPh.impl.OpenDoorTrackerCustomizer;
 import org.device.action.api.ActionService;
 import org.device.switchbtn.api.SwitchService;
-import org.deviceservice.api.DeviceService;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
 import org.osgi.util.tracker.ServiceTracker;
 
-/*This uses a OpenDoorService, when the RFID's ids are indentificaded they open the door like a key */
+/*when the RFID's ids are indentificaded they deploy actuator */
 
 public class ControllObject implements ActionService{
 	ServiceTracker tracker =null;
 	BundleContext bc=null;
-	ServiceReference obj = null;
+	ServiceReference actuator = null;
+	Class<SwitchService> c = SwitchService.class;
 	
 	public ControllObject(BundleContext b){
 		bc = b; 
 		tracker = new ServiceTracker(bc, SwitchService.class.getName(), new OpenDoorTrackerCustomizer(bc));
-		obj = tracker.getServiceReference();
-		
-	}
-
-	public void deployObject() {
+		actuator = tracker.getServiceReference();
 		
 	}
 
 	@Override
-	public void DeployService() {
+	public void deployService() {
 		System.out.println("Deploy Object");
 		
 	}
@@ -52,13 +46,17 @@ public class ControllObject implements ActionService{
 
 	@Override
 	public void setActuator(ServiceReference dc) {
-		obj =dc;
+		actuator =dc;
 		
+	}
+
+	public Class<SwitchService> getC() {
+		return c;
 	}
 
 	@Override
 	public ServiceReference getActuator() {
-		return obj;
+		return actuator;
 	}
 
 

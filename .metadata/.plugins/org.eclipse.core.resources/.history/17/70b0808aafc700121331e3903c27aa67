@@ -1,0 +1,58 @@
+package org.advancedServo.impl;
+
+import java.util.HashMap;
+import java.util.Set;
+
+import org.device.switchbtn.api.SwitchService;
+
+public class OpenDoorService implements SwitchService {
+
+	@Override
+	public String getDescription() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public HashMap<String, Boolean> getCollection() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Set<String> getProperties() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Boolean getState(String s) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setState(String s, Boolean b) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public int getChanged() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void setChanged(int changed) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

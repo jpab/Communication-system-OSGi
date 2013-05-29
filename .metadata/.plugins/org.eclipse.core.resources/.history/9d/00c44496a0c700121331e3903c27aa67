@@ -1,0 +1,35 @@
+package org.RFIDPh.listeners;
+
+import org.RFIDPh.impl.RFIDPh;
+import org.osgi.framework.Bundle;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.BundleException;
+
+import com.phidgets.InterfaceKitPhidget;
+import com.phidgets.event.DetachEvent;
+import com.phidgets.event.DetachListener;
+
+public class DetachRFID implements DetachListener{
+
+	InterfaceKitPhidget itk=null;
+	BundleContext bc = null;
+	
+	public DetachRFID(InterfaceKitPhidget interfacekit, BundleContext b){
+		itk = interfacekit;
+		bc=b;
+	}
+
+	@Override
+	public void detached(DetachEvent arg0) {
+		// Desregista serviços
+		System.out.println("[Interface-888]Desregista Serviços");
+		if(RFIDPh.services!=null){
+			for(String pd : RFIDPh.services.keySet()){
+				RFIDPh.services.get(pd).unregist();
+			}
+			Interface888.phidgets.clear();
+		}
+
+	}
+
+}

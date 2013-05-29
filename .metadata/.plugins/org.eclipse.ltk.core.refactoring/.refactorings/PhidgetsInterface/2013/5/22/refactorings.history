@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;RFIDPhidget/src/org.RFIDPh.listeners&apos;&#x0A;- Original project: &apos;PhidgetsInterface&apos;&#x0A;- Destination element: &apos;RFIDPhidget/src/org.RFIDPh.listeners&apos;&#x0A;- Original elements:&#x0A;     org.interface888.listener.AttachInterface888.java&#x0A;     org.interface888.listener.DetachInterface888.java" description="Copy compilation units" destination="=RFIDPhidget/src&lt;org.RFIDPh.listeners" element1="/src&lt;org.interface888.listener{AttachInterface888.java" element2="/src&lt;org.interface888.listener{DetachInterface888.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1369749903926" units="2" version="1.0"/>
+</session>

@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.osgi.util.tracker.ServiceTrackerCustomizer"/>
-<fullyQualifiedTypeName name="java.util.TreeSet"/>
-<fullyQualifiedTypeName name="java.util.Set"/>
-<fullyQualifiedTypeName name="java.util.HashSet"/>
-<fullyQualifiedTypeName name="org.osgi.framework.ServiceRegistration"/>
-<fullyQualifiedTypeName name="org.osgi.util.tracker.BundleTracker"/>
-<fullyQualifiedTypeName name="org.osgi.framework.BundleEvent"/>
-<fullyQualifiedTypeName name="java.util.Hashtable"/>
 <fullyQualifiedTypeName name="org.web.bundles.DeviceTracker"/>
 <fullyQualifiedTypeName name="org.web.services.DevicesServiceTrackerCustomizer"/>
 <fullyQualifiedTypeName name="org.osgi.framework.BundleContext"/>
@@ -50,14 +42,22 @@
 <fullyQualifiedTypeName name="org.interface888.impl.Interface888"/>
 <fullyQualifiedTypeName name="org.interface888.impl.PhidgetDevice"/>
 <fullyQualifiedTypeName name="com.phidgets.RFIDPhidget"/>
-<fullyQualifiedTypeName name="org.device.switchbtn.api.SwitchService"/>
 <fullyQualifiedTypeName name="com.phidgets.event.TagGainListener"/>
 <fullyQualifiedTypeName name="org.RFIDPh.services.RFIDSwitchService"/>
-<fullyQualifiedTypeName name="org.RFIDPh.impl.RFIDPh"/>
 <fullyQualifiedTypeName name="org.osgi.framework.ServiceReference"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="org.deviceservice.api.DeviceService"/>
-<fullyQualifiedTypeName name="org.device.action.api.ActionService"/>
 <fullyQualifiedTypeName name="org.interface888.impl.PrecisionLightSensor"/>
 <fullyQualifiedTypeName name="com.phidgets.InterfaceKitPhidget"/>
+<fullyQualifiedTypeName name="org.RFIDPh.impl.RFIDPh"/>
+<fullyQualifiedTypeName name="com.phidgets.AdvancedServoPhidget"/>
+<fullyQualifiedTypeName name="org.advancedServo.listners.AttachAdvancedServo"/>
+<fullyQualifiedTypeName name="org.advancedServo.listners.DetachAdvancedServo"/>
+<fullyQualifiedTypeName name="org.advancedServo.listners.DoorMovedListner"/>
+<fullyQualifiedTypeName name="com.phidgets.event.ServoPositionChangeListener"/>
+<fullyQualifiedTypeName name="org.advancedServo.services.OpenDoorService"/>
+<fullyQualifiedTypeName name="org.advancedServo.impl.AdvancedServoPh"/>
+<fullyQualifiedTypeName name="org.device.switchbtn.api.SwitchService"/>
+<fullyQualifiedTypeName name="org.device.action.api.ActionService"/>
+<fullyQualifiedTypeName name="org.web.services.ActionServicesTrackerCustomizer"/>
 </qualifiedTypeNameHistroy>

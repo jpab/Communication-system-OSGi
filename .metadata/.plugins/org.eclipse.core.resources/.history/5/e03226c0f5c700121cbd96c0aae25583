@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<%@page import="org.osgi.framework.Bundle"%>
+<%@page import="java.lang.reflect.Array"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+ <%@ page import="org.osgi.framework.BundleContext"%>
+<%@ page import="org.osgi.framework.FrameworkUtil"%>
+<%@ page import="org.osgi.framework.ServiceReference" %>
+<%@ page import="org.web.WebDataHandler" %>
+<%@ page import="org.deviceservice.sensing.api.DeviceSensing" %>
+<%@ page import="org.deviceservice.controller.api.DeviceController" %>
+<%@ page import="org.device.action.api.ActionService" %>
+<%@ page import="org.device.switchbtn.api.SwitchService" %>
+<%@ page import="wabnd.datahandler.api.DataHandlerService" %>
+<%@ page import="org.web.UpdateData" %>
+<%@ page import="org.web.Tracker" %>
+<%
+	BundleContext bc = (BundleContext)this.getServletContext().getAttribute("osgi-bundlecontext");
+%> 
+<%
+WebDataHandler dh = (WebDataHandler)session.getAttribute("WebDataHandler");
+ %> 
+
+<html>
+
+</html>

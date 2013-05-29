@@ -1,0 +1,29 @@
+package org.RFIDPh.listeners;
+
+import org.RFIDPh.impl.RFIDPh;
+import org.osgi.framework.Bundle;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.BundleException;
+
+import com.phidgets.InterfaceKitPhidget;
+import com.phidgets.event.AttachEvent;
+import com.phidgets.event.AttachListener;
+
+public class AttachRFID implements AttachListener{
+	InterfaceKitPhidget itk=null;
+	BundleContext bc = null;
+	
+	public AttachRFID(InterfaceKitPhidget interfacekit, BundleContext b){
+		itk = interfacekit;
+		bc=b;
+	}
+	@Override
+	public void attached(AttachEvent arg0) {
+		
+		//regista serviços
+		System.out.println("[Interface-888]Regista Serviços");
+		RFIDPh.regist();
+		
+	}
+
+}

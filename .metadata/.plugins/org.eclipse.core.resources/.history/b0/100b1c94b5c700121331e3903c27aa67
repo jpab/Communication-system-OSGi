@@ -1,0 +1,19 @@
+package org.advancedServo.listners;
+
+import org.advancedServo.impl.AdvancedServoPh;
+
+import com.phidgets.event.TagGainEvent;
+import com.phidgets.event.TagGainListener;
+
+public class DoorMovedListner implements TagGainListener {	
+	AdvancedServoPh asp = null;
+	public DoorMovedListner(AdvancedServoPh asp){
+		this.asp = asp;
+	}
+	
+	@Override
+	public void tagGained(TagGainEvent tge) {
+		rfid.deployObject();
+	}
+
+}

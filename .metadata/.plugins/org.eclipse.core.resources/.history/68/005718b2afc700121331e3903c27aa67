@@ -1,0 +1,4 @@
+-buildpath: org.device.switch.api;version=latest,\
+	osgi.core,\
+	osgi.cmpn,\
+	phidget21bnd

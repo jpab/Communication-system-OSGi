@@ -1,0 +1,38 @@
+package org.RFIDPh.impl;
+
+import org.device.switchbtn.api.SwitchService;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceReference;
+import org.osgi.util.tracker.ServiceTrackerCustomizer;
+
+public class OpenDoorTrackerCustomizer implements ServiceTrackerCustomizer {
+
+	BundleContext bc =null;
+	
+	public OpenDoorTrackerCustomizer(BundleContext bc) {
+		this.bc=bc;
+	}
+
+	@Override
+	public Object addingService(ServiceReference ref) {
+		boolean b = bc.getService(ref).getClass().isAssignableFrom(OpenDoorService.class);
+		System.out.println("value"+b+"for"+bc.getService(ref).getClass());
+		if(b){
+			return ref;
+		}
+		return null;
+	}
+
+	@Override
+	public void modifiedService(ServiceReference reference, Object service) {
+		removedService(reference, service);
+		 addingService(reference);
+
+	}
+	
+	@Override
+	public void removedService(ServiceReference reference, Object service) {
+		bc.ungetService(reference);
+	}
+
+}

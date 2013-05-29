@@ -14,11 +14,11 @@ import com.phidgets.PhidgetException;
 import com.phidgets.RFIDPhidget;
 
 //Regist services
-public class RFIDPh extends Thread{
+public class RFIDPh{
 	
-	HashMap<String,ServiceRegistration> services; 
-	RFIDPhidget rph = null;
-	BundleContext bc = null;
+	static HashMap<String,ServiceRegistration> services; 
+	static RFIDPhidget rph = null;
+	static BundleContext bc = null;
 	ControllObject co =null;
 	
 	public RFIDPh(BundleContext b) {
@@ -31,7 +31,7 @@ public class RFIDPh extends Thread{
 		bc =b;
 	}
 		
-	public void regist(){
+	public static void regist(){
 
 		System.out.println("Regista Serviços");
 		ServiceRegistration sraux;
@@ -50,7 +50,7 @@ public class RFIDPh extends Thread{
 		
 	}
 	
-	public void unregist(){
+	public static void unregist(){
 		System.out.println("Retira Registos de Serviços");
 		for (String sr : services.keySet()){
 			services.get(sr).unregister();
@@ -60,13 +60,6 @@ public class RFIDPh extends Thread{
 	}	
 	
 	public void deployObject(){
-		co.deployObject();
+		co.deployService();
 	}
-	/*
-	public void changed(boolean value){
-		System.out.println("Mudou para" + value);
-		SwitchService ss = (SwitchService) bc.getService(services.get("Switches").getReference());
-		ss.setState("Touch", new Boolean(value));
-	}
-	*/
 }

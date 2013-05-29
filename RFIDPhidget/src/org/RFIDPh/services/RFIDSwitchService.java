@@ -18,7 +18,7 @@ public class RFIDSwitchService implements SwitchService{
 		this.rph =rph;
 		try {
 			values.put("Led", (new Boolean(this.rph.getLEDOn())));
-			values.put("Led", (new Boolean(this.rph.getAntennaOn())));
+			values.put("Antenna", (new Boolean(this.rph.getAntennaOn())));
 		} catch (PhidgetException e) {
 			e.printStackTrace();
 		}

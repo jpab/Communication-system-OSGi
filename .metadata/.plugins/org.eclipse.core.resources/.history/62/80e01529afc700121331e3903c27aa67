@@ -1,0 +1,20 @@
+package org.advancedServo.impl;
+
+import java.util.HashMap;
+
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceRegistration;
+
+import com.phidgets.RFIDPhidget;
+
+public class AdvancedServoPh{
+
+	static HashMap<String,ServiceRegistration> services; 
+	static RFIDPhidget rph = null;
+	static BundleContext bc = null;
+	
+	public AdvancedServoPh(BundleContext bc) {
+		
+	}
+
+}

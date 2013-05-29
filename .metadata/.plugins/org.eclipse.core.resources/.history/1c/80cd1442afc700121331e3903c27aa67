@@ -1,0 +1,20 @@
+package org.advancedServo.impl;
+
+import java.util.HashMap;
+
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceRegistration;
+
+import com.phidgets.AdvancedServoPhidget;
+
+public class AdvancedServoPh{
+
+	static HashMap<String,ServiceRegistration> services; 
+	static AdvancedServoPhidget asp = null;
+	static BundleContext bc = null;
+	
+	public AdvancedServoPh(BundleContext bc) {
+		
+	}
+
+}
