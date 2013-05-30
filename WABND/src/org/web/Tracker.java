@@ -16,10 +16,10 @@ import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
 import org.osgi.util.tracker.ServiceTracker;
 import org.web.bundles.DeviceTracker;
-import org.web.services.ActionServicesTrackerCustomizer;
+import org.web.services.SwitchServicesTrackerCustomizer;
 import org.web.services.DevicesControllerTrackerCustomizer;
 import org.web.services.DevicesServiceTrackerCustomizer;
-import org.web.services.SwitchServicesTrackerCustomizer;
+import org.web.services.ActionServicesTrackerCustomizer;
 
 
 public class Tracker {
@@ -44,14 +44,14 @@ public class Tracker {
 	private void initActionServicesTrack() {
 		at = new ServiceTracker(bc, ActionService.class.getName(), new ActionServicesTrackerCustomizer(bc));
 		at.open(true);
-		System.out.println("[TRACKER] Number of actions tracked: "+sct.size()+" Tracked operations "+ sct.getTrackingCount());
+		System.out.println("[TRACKER] Number of actions tracked: "+at.size()+" Tracked operations "+ sct.getTrackingCount());
 		
 	}
 
 	private void initSwitchServicesTrack() {
 		ss = new ServiceTracker(bc, SwitchService.class.getName(), new SwitchServicesTrackerCustomizer(bc));
 		ss.open(true);
-		System.out.println("[TRACKER] Number of switch tracked: "+sct.size()+" Tracked operations "+ sct.getTrackingCount());
+		System.out.println("[TRACKER] Number of switch tracked: "+ss.size()+" Tracked operations "+ sct.getTrackingCount());
 		
 	}
 

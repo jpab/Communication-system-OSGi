@@ -10,13 +10,13 @@ public class Activator implements BundleActivator{
 	public void start(BundleContext context) throws Exception {
 		bc = context;
 		intr = new AdvancedServoPh(bc);
-		//RFIDPh.regist();
+		//AdvancedServoPh.regist();
 	}
 
 	@Override
 	public void stop(BundleContext context) throws Exception {
 		
-		
+		AdvancedServoPh.unregist();
 	}
 
 }

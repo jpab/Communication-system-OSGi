@@ -92,21 +92,23 @@ $.get("update",  function(data) {
 <div class="spacer30"></div>
     <div class="container marketing">
 		<div class="row">
-        	<div class="span12">
+        	<div class="span9">
         	 <img class="img-rounded" data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;" src="img/devices.png">
           <h2>Actions</h2>
           <p>Actions Installed</p>
           <table class="table table-hover">
 			<%
           		if(Tracker.getAt()!=null){
+          			System.out.println(Tracker.getAt().getServiceReferences());
+          			if(Tracker.getAt().getServiceReferences()!=null){
           			for(ServiceReference sr : Tracker.getAt().getServiceReferences()){
           				out.println("<tr><td>");
-          				((ActionService)bc.getService(sr)).getName();
+          				//out.println(((ActionService)bc.getService(sr)).getName());
           				out.println("</td><td>");
-          				((ActionService)bc.getService(sr)).getActuator();
+          			//	out.println(((ActionService)bc.getService(sr)).getActuator());
           				out.println("</td><td>");
           				%>
-          				<div class="btn-group">
+          			 <div class="btn-group">
           			  		<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">Actuators
           			    	<span class="caret"></span>
           			  		</a>
@@ -132,10 +134,15 @@ $.get("update",  function(data) {
           				//put in a combo box
           				out.println("</td></tr>");
           			}
+          			}
           		}
 			%>
 		</table>
-        	</div><!-- /.span6 -->
+        	</div><!-- /.span9 -->
+        	<div class="span3">
+        	
+        	
+        	</div><!-- /.span3 -->
       </div><!-- /.row -->
       <!-- FOOTER -->
       <footer>

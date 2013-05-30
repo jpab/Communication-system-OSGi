@@ -46,7 +46,7 @@ public class RotationSensor implements PhidgetDevice{
 	@Override
 	public void changed(int value){
 		System.out.println("Mudou para" + value);
-		DeviceSensing ds = (DeviceSensing) bc.getService(services.get(0).getReference());
+		DeviceSensing ds = (DeviceSensing) bc.getService(services.get("Rotation").getReference());
 		ds.setValue("Rotation", new Integer(value).toString());
 	}
 

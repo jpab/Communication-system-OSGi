@@ -52,7 +52,7 @@ public class VibrationSensor implements PhidgetDevice{
 	
 	public void changed(int value){
 		System.out.println("Mudou para" + value);
-		DeviceSensing ds = (DeviceSensing) bc.getService(services.get(0).getReference());
+		DeviceSensing ds = (DeviceSensing) bc.getService(services.get("Vibration").getReference());
 		ds.setValue("Vibration", new Integer(value).toString());
 	}
 

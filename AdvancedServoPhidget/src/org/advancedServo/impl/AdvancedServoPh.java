@@ -21,12 +21,18 @@ public class AdvancedServoPh{
 	static BundleContext bc = null;
 	
 	public AdvancedServoPh(BundleContext b) {
+
+		bc=b;
 		try {
 			asp = new AdvancedServoPhidget();
 			asp.openAny();
+			asp.waitForAttachment();
+			
 			asp.addAttachListener(new AttachAdvancedServo(bc));
 			asp.addDetachListener(new DetachAdvancedServo(bc));
 			asp.addServoPositionChangeListener(new DoorMovedListner(this));
+			services = new HashMap<String,ServiceRegistration>();
+			regist();
 			initPosition();
 		} catch (PhidgetException e) {
 			e.printStackTrace();
@@ -34,15 +40,17 @@ public class AdvancedServoPh{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		bc=b;
 	}
 	
 	private void initPosition() throws PhidgetException, InterruptedException {
+		
 		asp.setEngaged(0, false);
-		asp.setPositionMin(0, 0);
-		asp.setPositionMax(0, 100);
+		asp.setPositionMin(0, 30);
+		asp.setPositionMax(0, 152);
 		asp.setEngaged(0, true);
-		this.wait(1000);
+		System.out.println("SERVO 2: ");
+		Thread.sleep(1000);
+		System.out.println("SERVO 1: ");
 		asp.setEngaged(0, false);
 	}
 
@@ -52,7 +60,9 @@ public class AdvancedServoPh{
 		ServiceRegistration sraux;
 		
 		SwitchService ds = new OpenDoorService(asp);
+		
 		sraux = bc.registerService(SwitchService.class.getName(), ds , null);
+		
 		services.put("OpenDoor",sraux);
 		
 		System.out.println("Registered: "+ds.getName());	

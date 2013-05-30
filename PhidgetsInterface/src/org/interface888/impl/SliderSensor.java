@@ -52,7 +52,7 @@ public class SliderSensor implements PhidgetDevice{
 	
 	public void changed(int value){
 		System.out.println("Mudou para" + value);
-		DeviceSensing ds = (DeviceSensing) bc.getService(services.get(0).getReference());
+		DeviceSensing ds = (DeviceSensing) bc.getService(services.get("Slider").getReference());
 		ds.setValue("Slider", new Integer(value).toString());
 	}
 

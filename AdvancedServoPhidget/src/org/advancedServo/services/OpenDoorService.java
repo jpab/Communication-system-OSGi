@@ -64,14 +64,14 @@ public class OpenDoorService implements SwitchService {
 		if(changed == 1){
 			try {
 				asp.setEngaged(0, false);
-				asp.setPosition(0, 100);
+				asp.setPosition(0, 152);
 				asp.setEngaged(0, true);
 				this.changed=1;
-				this.wait(15000);	
+				Thread.sleep(15000);	
 				asp.setEngaged(0, false);
-				asp.setPosition(0, 0);
+				asp.setPosition(0, 30);
 				asp.setEngaged(0, true);
-				this.wait(1000);
+				Thread.sleep(1000);
 				this.changed=1;
 				asp.setEngaged(0, false);
 			} catch (PhidgetException e) {

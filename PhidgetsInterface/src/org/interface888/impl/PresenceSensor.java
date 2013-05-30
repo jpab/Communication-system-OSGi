@@ -46,7 +46,7 @@ public class PresenceSensor implements PhidgetDevice{
 	
 	public void changed(int value){
 		System.out.println("Mudou para" + value);
-		DeviceSensing ds = (DeviceSensing) bc.getService(services.get(0).getReference());
+		DeviceSensing ds = (DeviceSensing) bc.getService(services.get("Presence").getReference());
 		if(value >500 ){
 			ds.setValue("Presence", "Undetected");
 		}else{

@@ -1,6 +1,6 @@
 package org.web.services;
 
-import org.device.action.api.ActionService;
+import org.device.switchbtn.api.SwitchService;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
 import org.osgi.util.tracker.ServiceTrackerCustomizer;
@@ -14,7 +14,7 @@ public class SwitchServicesTrackerCustomizer implements ServiceTrackerCustomizer
 	@Override
 	public Object addingService(ServiceReference reference) {
 		System.out.println("[SwitchServiceTracker]How good. Service for device registered");
-		ActionService service = (ActionService) context.getService(reference);
+		SwitchService service = (SwitchService) context.getService(reference);
 		return service;
 	}
 
