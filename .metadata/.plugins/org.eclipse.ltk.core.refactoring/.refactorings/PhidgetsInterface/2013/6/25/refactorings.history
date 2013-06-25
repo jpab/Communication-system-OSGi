@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ServicePresence.java&apos; to &apos;PhidgetsInterface/src/org.interface888.services&apos;&#x0A;- Original project: &apos;PhidgetsInterface&apos;&#x0A;- Destination element: &apos;PhidgetsInterface/src/org.interface888.services&apos;&#x0A;- Original element: &apos;org.interface888.services.ServicePresence.java&apos;" description="Copy compilation unit" destination="/src&lt;org.interface888.services" element1="/src&lt;org.interface888.services{ServicePresence.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1371681563988" units="1" version="1.0"/>
+</session>

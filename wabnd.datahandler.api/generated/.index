@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<repository increment='1367246674969' name='wabnd.datahandler.api' xmlns='http://www.osgi.org/xmlns/repository/v1.0.0'>
+<repository increment='1371587121833' name='wabnd.datahandler.api' xmlns='http://www.osgi.org/xmlns/repository/v1.0.0'>
   <resource>
     <capability namespace='osgi.identity'>
       <attribute name='osgi.identity' value='wabnd.datahandler.api'/>
@@ -7,7 +7,7 @@
       <attribute name='version' type='Version' value='0.5.0'/>
     </capability>
     <capability namespace='osgi.content'>
-      <attribute name='osgi.content' value='ee121b3dc37186d4c27e4f38c67b17a4e18638a70bfd8952ccadce35527a72c3'/>
+      <attribute name='osgi.content' value='327ca3d3d4494996ec599437fd672b7f77ce6bb36de93e0ac3647ee6c8dada46'/>
       <attribute name='url' value='generated/wabnd.datahandler.api.jar'/>
       <attribute name='size' type='Long' value='2581'/>
       <attribute name='mime' value='application/vnd.osgi.bundle'/>

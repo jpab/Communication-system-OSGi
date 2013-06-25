@@ -1,29 +1,52 @@
 package org.interface888.impl;
 
 
-import java.util.concurrent.ConcurrentHashMap;
-
+import org.deviceservice.api.DeviceService;
+import org.deviceservice.controller.api.DeviceController;
 import org.interface888.listener.AttachInterface888;
 import org.interface888.listener.DetachInterface888;
 import org.interface888.listener.Interface888Change;
+import org.interface888.services.AmbientSense;
+import org.interface888.services.Sensitivity;
 import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceRegistration;
 
 import com.phidgets.InterfaceKitPhidget;
 import com.phidgets.Phidget;
 import com.phidgets.PhidgetException;
 
 public class Interface888 extends Thread{
-	public static ConcurrentHashMap<Integer, PhidgetDevice> phidgets;
+	public static final int TOUCH = 0;
+	public static final int TEMPERATURE = 1;
+	public static final int PRECISIONLIGHT = 2;
+	public static final int PRESENCE = 3;
+	public static final int SLIDER = 4;
+	public static final int ROTATION = 6;
+	public static final int VIBRATION = 7;
+	public static final String TOUCHNAME = "Touch";
+	public static final String TEMPERATURENAME = "Temperature";
+	public static final String PRECISIONLIGHTNAME = "PrecisionLight";
+	public static final String PRESENCENAME = "Presence";
+	public static final String SLIDERNAME = "Slider";
+	public static final String ROTATIONNAME = "Rotation";
+	public static final String VIBRATIONNAME = "Vibration";
+	public static final String DATARATE = "DataRate";
+	public static final String SENSITIVITY = "Sensitivity";
+	
 	private BundleContext bc = null; 
+	private AmbientSense as;
+	private Sensitivity ss = null;
+	private ServiceRegistration ambientSenseReg =null;
+	private ServiceRegistration sensitivityReg =null;
+	private InterfaceKitPhidget itk = null;
 	
 	public Interface888(BundleContext b) {
 		bc = b;
 	}
 
 	public void start(){
-		phidgets = new ConcurrentHashMap<Integer,PhidgetDevice>();
+		//phidgets = new ConcurrentHashMap<Integer,PhidgetDevice>();
 		try {
-			InterfaceKitPhidget itk;
 			System.out.println(Phidget.getLibraryVersion());
 			itk = new InterfaceKitPhidget();
 			itk.openAny();
@@ -32,10 +55,13 @@ public class Interface888 extends Thread{
 				itk.waitForAttachment(1000);
 				System.out.println("[Bundle-Interface888] Attached");
 			}
-			initSensors(itk);
-			itk.addSensorChangeListener(new Interface888Change(bc));
-			itk.addAttachListener(new AttachInterface888(itk, bc));
-			itk.addDetachListener(new DetachInterface888(itk, bc));
+			if(itk.isAttached()==true){
+				System.out.println("[Interface-888]Regista Servios");
+				registServices();
+			}
+			itk.addSensorChangeListener(new Interface888Change(this));
+			itk.addAttachListener(new AttachInterface888(this));
+			itk.addDetachListener(new DetachInterface888(this));
 			System.out.println( Double.valueOf((itk.getSensorValue(1)-200)/4) );
 			//Phidget p = new Phidget();
 		} catch (PhidgetException e) {
@@ -44,50 +70,28 @@ public class Interface888 extends Thread{
 		}
 	}
 
-	private void initSensors(InterfaceKitPhidget itk) throws PhidgetException {
-		//0
-		TouchSensor tmpT = new TouchSensor(itk, bc);
-		phidgets.put(new Integer(0), tmpT);
-		tmpT.regist();
+	public void registServices() throws PhidgetException {
+		as = new AmbientSense(itk);
 		
-		//1
-		if(itk.getSensorValue(1) > 10){
-			TemperatureSensor tmp = new TemperatureSensor(itk, bc);
-			phidgets.put(new Integer(1), tmp);
-			tmp.regist();
-		}
-		//2
-		if(itk.getSensorValue(2) > 10){
-			PrecisionLightSensor tmpPL = new PrecisionLightSensor(itk, bc);
-			phidgets.put(new Integer(2), tmpPL);
-			tmpPL.regist();
-		}
-		//3
-		PresenceSensor tmpP = new PresenceSensor(itk, bc);
-		phidgets.put(new Integer(3), tmpP);
-		tmpP.regist();
+		ambientSenseReg = bc.registerService(DeviceService.class.getName(), as , null);
+		System.out.println("Registered: "+as.getName());
 		
-		//4
-		if(itk.getSensorValue(4) !=0){
-			SliderSensor tmpS = new SliderSensor(itk, bc);
-			phidgets.put(new Integer(4), tmpS);
-			tmpS.regist();
+		ss = new Sensitivity(itk);		
+		sensitivityReg = bc.registerService(DeviceController.class.getName(), ss , null);
+		System.out.println("Registered: "+ss.getName());
+		
+	}
+
+	public void changeAmbient(int index, int value) {
+		if(as!=null){
+			as.updateAmbient(index, value);
 		}
-	/*	if(itk.getSensorValue(5) > 10){
-			TemperatureSensor tmp = new TemperatureSensor(itk, bc);
-			phidgets.put(new Integer(5), tmp);
-			tmp.regist();
-		}*/
-		//6
-		if(itk.getSensorValue(6) != 0){
-			RotationSensor tmpR = new RotationSensor(itk, bc);
-			phidgets.put(new Integer(6), tmpR);
-			tmpR.regist();
-		}
-		//7
-		VibrationSensor tmpVB = new VibrationSensor(itk, bc);
-		phidgets.put(new Integer(7), tmpVB);
-		tmpVB.regist();
+		
+	}
+
+	public void unregistServices() {
+		ambientSenseReg.unregister();
+		sensitivityReg.unregister();
 	}
 
 }

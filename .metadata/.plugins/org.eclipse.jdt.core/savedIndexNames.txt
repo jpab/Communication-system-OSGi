@@ -11,6 +11,7 @@ INDEX VERSION 1.126+/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/.m
 3901704420.index
 156905802.index
 3891118883.index
+4117636615.index
 3321539481.index
 1955477491.index
 441897610.index
@@ -32,16 +33,17 @@ INDEX VERSION 1.126+/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/.m
 2545238116.index
 84777399.index
 2281890670.index
-3425408841.index
 3024367560.index
+3425408841.index
 136445763.index
 3076861474.index
 1250646631.index
 1422277686.index
 810962271.index
 713016367.index
-3571987579.index
 2691166607.index
+3571987579.index
+1576332307.index
 669197106.index
 2211306730.index
 3712507179.index
@@ -56,6 +58,7 @@ INDEX VERSION 1.126+/Users/joaopedroalmeidabrandao/Desktop/Tese/workspacetese/.m
 4249315662.index
 2326659272.index
 1819685514.index
+3829186501.index
 2913127886.index
 1393762658.index
 2286151582.index

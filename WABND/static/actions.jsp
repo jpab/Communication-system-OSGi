@@ -114,7 +114,7 @@ $.get("update",  function(data) {
           			  		</a>
           			  		<ul class="dropdown-menu">
 	          			<%
-	          				for(ServiceReference sr2 : ((ActionService)bc.getService(sr)).getActuators()){
+	          			/*	for(ServiceReference sr2 : ((ActionService)bc.getService(sr)).getActuators()){
 	          					out.print("<li>");
 	          					Class<?> aux = ((ActionService)bc.getService(sr)).getC();
 	          					if(aux.equals(SwitchService.class)){
@@ -124,8 +124,8 @@ $.get("update",  function(data) {
 	          					}else if(aux.equals(DeviceController.class)){
 	          						out.println(((DeviceController)bc.getService(sr2)).getName());
 	          					}
-	          					out.print("</li>");
-	          				}
+	          					out.print("</li>"); 
+	          				} */
 	          			%>
           			   		 	<!-- dropdown menu links -->
           			  		</ul>

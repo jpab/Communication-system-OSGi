@@ -31,13 +31,15 @@
 	osgi.identity;filter:='(osgi.identity=org.device.switch.api)',\
 	osgi.identity;filter:='(osgi.identity=org.action.api)',\
 	osgi.identity;filter:='(osgi.identity=RFIDPhidget)',\
-	osgi.identity;filter:='(osgi.identity=AdvancedServoPhidget)'
+	osgi.identity;filter:='(osgi.identity=AdvancedServoPhidget)',\
+	osgi.identity;filter:='(osgi.identity=TestPlataformBundle)'
 -resolve.effective: active
 -resolve: auto
 -runbundles: AdvancedServoPhidget;version=latest,\
 	Consumer-Bundle;version=latest,\
 	PhidgetsInterface;version=latest,\
 	RFIDPhidget;version=latest,\
+	TestPlataformBundle;version=latest,\
 	WABND;version=latest,\
 	com.springsource.org.apache.commons.beanutils;version='[1.8.3,1.8.4)',\
 	com.springsource.org.apache.commons.codec;version='[1.6.0,1.6.1)',\

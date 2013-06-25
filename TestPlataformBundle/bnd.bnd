@@ -1,0 +1,11 @@
+Private-Package: org.test.plataform.impl,\
+	org.test.plataform.services
+Service-Component: *
+-buildpath: osgi.core,\
+	osgi.cmpn,\
+	biz.aQute.bnd.annotation,\
+	junit.osgi,\
+	org.device.controller.api;version=latest,\
+	org.device.switch.api;version=latest,\
+	org.action.api;version=latest
+Bundle-Activator: org.test.plataform.impl.Activator

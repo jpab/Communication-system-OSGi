@@ -1,0 +1,66 @@
+ package org.interface888.listener;
+
+import org.interface888.impl.Interface888;
+import org.interface888.impl.PrecisionLightSensor;
+import org.interface888.impl.PresenceSensor;
+import org.interface888.impl.RotationSensor;
+import org.interface888.impl.SliderSensor;
+import org.interface888.impl.TemperatureSensor;
+import org.interface888.impl.TouchSensor;
+import org.interface888.impl.VibrationSensor;
+import org.osgi.framework.BundleContext;
+import com.phidgets.InterfaceKitPhidget;
+import com.phidgets.PhidgetException;
+import com.phidgets.event.SensorChangeEvent;
+import com.phidgets.event.SensorChangeListener;
+
+public class Interface888Change implements SensorChangeListener{
+	Interface888 i888 =null;
+	
+	public Interface888Change(Interface888 i888aux) {
+		i888 = i888aux;
+	}
+
+	@Override
+	public void sensorChanged(SensorChangeEvent sce) {
+		i888.registSensors();
+		try {
+			
+			
+			//System.out.println("Phidget: "+sce.getSource().toString()+"Value"+sce.getValue()+" \n Serial"+sce.getSource().getSerialNumber()+"Index "+sce.getIndex());
+			//Phidget p = sce.getSource();
+			Integer index = new Integer(sce.getIndex());
+			//System.out.println("OUT"+((InterfaceKitPhidget)sce.getSource()).getOutputState(index.intValue()) + " IN "+ ((InterfaceKitPhidget)sce.getSource()).getInputState(index.intValue()));
+			switch(index.intValue()){
+				
+			case 0 : 
+				touchSensor(index,sce);
+				break;
+			case 1 :
+				temperatureSensor(index,sce);
+				break;
+			case 2 : 
+				precisionLightSensor(index,sce);
+				break;
+			case 3 : 
+				presenceSensor(index,sce);
+				break;
+			case 4 :
+				sliderSensor(index,sce);
+				break;
+			//case 5 : 
+		//		precisionLightSensor(index,sce);
+	//			break;
+			case 6 : 
+				rotationSensor(index,sce);
+				break;
+			case 7 : 
+				vibrationSensor(index,sce);
+				break;
+			default :  throw new PhidgetException(index, "Index not found in the swich options");
+			}
+		} catch (PhidgetException e) {
+			e.printStackTrace();
+		}
+	}
+}

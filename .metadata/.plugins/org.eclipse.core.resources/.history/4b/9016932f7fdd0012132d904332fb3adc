@@ -1,0 +1,115 @@
+package org.interface888.impl;
+
+
+import java.util.concurrent.ConcurrentHashMap;
+
+import org.interface888.listener.AttachInterface888;
+import org.interface888.listener.DetachInterface888;
+import org.interface888.listener.Interface888Change;
+import org.interface888.services.AmbientSense;
+import org.osgi.framework.BundleContext;
+
+import com.phidgets.InterfaceKitPhidget;
+import com.phidgets.Phidget;
+import com.phidgets.PhidgetException;
+
+public class Interface888 extends Thread{
+	public static final int TOUCH = 0;
+	public static final int TEMPERATURE = 1;
+	public static final int PRECISIONLIGHT = 2;
+	public static final int PRESENCE = 3;
+	public static final int SLIDER = 4;
+	public static final int ROTATION = 6;
+	public static final int VIBRATION = 7;
+	public static final String TOUCHNAME = "Touch";
+	public static final String TEMPERATURENAME = "Temperature";
+	public static final String PRECISIONLIGHTNAME = "PrecisionLight";
+	public static final String PRESENCENAME = "Presence";
+	public static final String SLIDERNAME = "Slider";
+	public static final String ROTATIONNAME = "Rotation";
+	public static final String VIBRATIONNAME = "Vibration";
+	
+	public static ConcurrentHashMap<Integer, PhidgetDevice> phidgets;
+	private BundleContext bc = null; 
+	private AmbientSense as = null;
+	
+	public Interface888(BundleContext b) {
+		bc = b;
+	}
+
+	public void start(){
+		//phidgets = new ConcurrentHashMap<Integer,PhidgetDevice>();
+		try {
+			InterfaceKitPhidget itk;
+			System.out.println(Phidget.getLibraryVersion());
+			itk = new InterfaceKitPhidget();
+			itk.openAny();
+			if(itk.isAttached()==false){
+				System.out.println("[Bundle-Interface888] Wait for attach");
+				itk.waitForAttachment(1000);
+				System.out.println("[Bundle-Interface888] Attached");
+			}
+			if(itk.isAttached()==true){
+				registServices(itk);
+			}
+			itk.addSensorChangeListener(new Interface888Change(this));
+			itk.addAttachListener(new AttachInterface888(this));
+			itk.addDetachListener(new DetachInterface888(this));
+			System.out.println( Double.valueOf((itk.getSensorValue(1)-200)/4) );
+			//Phidget p = new Phidget();
+		} catch (PhidgetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public void registServices() throws PhidgetException {
+		as = new AmbientSense(itk);
+		
+		
+		//0
+		TouchSensor tmpT = new TouchSensor(itk, bc);
+		phidgets.put(new Integer(0), tmpT);
+		tmpT.regist();
+		
+		//1
+		if(itk.getSensorValue(1) > 10){
+			TemperatureSensor tmp = new TemperatureSensor(itk, bc);
+			phidgets.put(new Integer(1), tmp);
+			tmp.regist();
+		}
+		//2
+		if(itk.getSensorValue(2) > 10){
+			PrecisionLightSensor tmpPL = new PrecisionLightSensor(itk, bc);
+			phidgets.put(new Integer(2), tmpPL);
+			tmpPL.regist();
+		}
+		//3
+		PresenceSensor tmpP = new PresenceSensor(itk, bc);
+		phidgets.put(new Integer(3), tmpP);
+		tmpP.regist();
+		
+		//4
+		if(itk.getSensorValue(4) !=0){
+			SliderSensor tmpS = new SliderSensor(itk, bc);
+			phidgets.put(new Integer(4), tmpS);
+			tmpS.regist();
+		}
+	/*	if(itk.getSensorValue(5) > 10){
+			TemperatureSensor tmp = new TemperatureSensor(itk, bc);
+			phidgets.put(new Integer(5), tmp);
+			tmp.regist();
+		}*/
+		//6
+		if(itk.getSensorValue(6) != 0){
+			RotationSensor tmpR = new RotationSensor(itk, bc);
+			phidgets.put(new Integer(6), tmpR);
+			tmpR.regist();
+		}
+		//7
+		VibrationSensor tmpVB = new VibrationSensor(itk, bc);
+		phidgets.put(new Integer(7), tmpVB);
+		tmpVB.regist();
+	}
+
+}

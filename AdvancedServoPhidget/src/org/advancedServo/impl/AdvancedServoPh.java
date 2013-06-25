@@ -26,7 +26,7 @@ public class AdvancedServoPh{
 		try {
 			asp = new AdvancedServoPhidget();
 			asp.openAny();
-			asp.waitForAttachment();
+			asp.waitForAttachment(2000);
 			
 			asp.addAttachListener(new AttachAdvancedServo(bc));
 			asp.addDetachListener(new DetachAdvancedServo(bc));

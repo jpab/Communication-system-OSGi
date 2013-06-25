@@ -9,6 +9,7 @@
 <%@ page import="org.osgi.framework.ServiceReference" %>
 <%@ page import="org.web.WebDataHandler" %>
 <%@ page import="org.deviceservice.sensing.api.DeviceSensing" %>
+<%@ page import="org.device.switchbtn.api.SwitchService" %>
 <%@ page import="org.deviceservice.controller.api.DeviceController" %>
 <%@ page import="wabnd.datahandler.api.DataHandlerService" %>
 <%@ page import="org.web.UpdateData" %>
@@ -28,7 +29,10 @@
 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 <link href="css/slider.css" rel="stylesheet" media="screen">
 <link href="css/switch.css" rel="stylesheet" media="screen">
-<title>ISLabSensing</title>
+ <link href="css/ui-lightness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+
+
+<title>BSense</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -36,7 +40,8 @@
     <!-- Le styles -->
     <link href="http://twitter.github.io/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
     <link href="http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">
-
+	<style type="text/css"></style><style id="holderjs-style" type="text/css">.holderjs-fluid {font-size:16px;font-weight:bold;text-align:center;font-family:sans-serif;margin:0}</style><style type="text/css">@media print { #feedlyMiniIcon { display: none; } }</style>
+ 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="../assets/js/html5shiv.js"></script>
@@ -44,14 +49,15 @@
 
     <!-- Fav and touch icons -->
     <link rel="shortcut icon" href="img/faviconislab.png">
-  <style type="text/css"></style><style id="holderjs-style" type="text/css">.holderjs-fluid {font-size:16px;font-weight:bold;text-align:center;font-family:sans-serif;margin:0}</style><style type="text/css">@media print { #feedlyMiniIcon { display: none; } }</style>
-  <link href="css/ui-lightness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+  
+
 <!-- <script src="http://code.jquery.com/jquery.js"></script>-->
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery-1.9.1.js"></script>
 	<script src="js/jquery-ui-1.10.3.custom.js"></script>
 <!--  <script src="js/bootstrap-slider.js"></script> -->
-<script src="js/slider.js"></script>
+<script src="js/slider-ss.js"></script>
+<script src="js/switch.js"></script>
 </head>
 <body>
 
@@ -65,10 +71,12 @@ $.get("update",  function(data) {
     //}
    // alert(2);
  });
-},7000)
+},10000)
 
 </script>
+
 <script>
+
 //$('#valueService').slider()
 //.on('slide', function(ev){
 //	var v = $(this).getValue();
@@ -90,15 +98,14 @@ $.get("update",  function(data) {
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="brand" href="webapp.jsp">ISLab Sensing</a>
+            <a class="brand" href="webapp.jsp">BSense</a>
             <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
             <div class="nav-collapse collapse">
               <ul class="nav">
                 <li class="active"><a href="webapp.jsp">Home</a></li>
                 <li><a href="actions.jsp">Actions</a></li>
-                <li><a href="/system/console/bundles">Admin</a></li>
+                <li><a href="/system/console/bundles">Config</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
               </ul>
             </div><!--/.nav-collapse -->
           </div><!-- /.navbar-inner -->
@@ -108,34 +115,29 @@ $.get("update",  function(data) {
     </div><!-- /.navbar-wrapper -->
 <div class="spacer30"></div>
     <div class="container marketing">
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-      <div class="span12" align="center">
-      <!--	<h2>Services</h2> -->
-      	</div>
-      </div>
        <div class="row">
         <div class="span6">
         <h3>Controllers</h3>
      		<img class="img-rounded" data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;" src="img/services.png">
         	<%
         		if (bc ==  null) 
-          			out.println("NULL BC");
-          		else if(Tracker.getSt().getServiceReferences()!=null){
+        			System.out.println("NULL BC");
+          		else if(Tracker.getSct().getServiceReferences()!=null){
+          			//System.out.println("NOT NULL BC2");
           			for(ServiceReference s : Tracker.getSct().getServiceReferences()){
+          				//System.out.println("NOT NULL BC");
           		%>				
-          		<div class="row">
+          		<div class="row serviceNameC">
           			<p><b><%=((DeviceController)bc.getService(s)).getName() %></b></p>
           		</div>
-          		<div class="row">
+          		<div class="row serviceAttC">
           			<% for(String str : ((DeviceController)bc.getService(s)).getCollection().keySet()){	
           			%>
           			<div class="row">
 		          		<div class="span2">
 	          				<p><%=str%></p>
 	          			</div>
-	          			 <div class="span3">
-          					<div class="slider">
+	          			 	<div class="slider span3" >          					
           					</div>
           				</div>
           			</div>
@@ -145,8 +147,7 @@ $.get("update",  function(data) {
           		<% 
           			} //end for services
           		}
-          	%>
-        </div><!-- /.span6 -->
+          	%><!-- /.row -->
         <div class="span6">
         <h3>Sensing</h3>
           <img class="img-rounded" data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;" src="img/servicessensing.png">
@@ -187,18 +188,68 @@ $.get("update",  function(data) {
 			</tr>
 		</table>
         </div><!-- /.span4 -->
-      </div><!-- /.row -->
+        
+        </div>
+      <!--</div> /.row -->
       </div><!-- /.container markting -->
       <div class="container marketing">
 		<div class="row">
 		<div class="span6">
         	 <img class="img-rounded" data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;" src="img/devices.png">
-          <h2>Switch Services</h2>
-          	
-          
-          
-          
-        	</div><!-- /.span6 -->
+  			<h2>Switch Services</h2>   
+  			
+          	<div class="row">
+          	<%
+          		if (bc ==  null) 
+          				out.println("NULL BC");
+          		else if(Tracker.getSs().getServiceReferences()!=null){
+          			for(ServiceReference s : Tracker.getSs().getServiceReferences()){
+          	%>			
+				<div class="row">
+				<div class="span6">
+					<b><%=((SwitchService)bc.getService(s)).getName()%></b>
+				</div>
+				</div>
+				<%
+						for(String str : ((SwitchService)bc.getService(s)).getCollection().keySet()){															
+							out.println("<div class=\"span3\">"+str+"</div>");
+							out.println("<div class=\"span3\">");
+							%>
+							<form action="" method="get">
+							 
+							
+							<% if (((SwitchService)bc.getService(s)).getState(str).booleanValue()){
+								System.out.println("ONNNNNN");
+							%>
+								<fieldset class="switch">
+								<label class="off">Off<input type="radio" class="on_off" name="on_off" value="off"/></label>
+							    <label class="on">On<input type="radio" class="on_off" name="on_off" value="on"/></label>
+							    </fieldset>
+							<%
+							}
+							else{
+								System.out.println("OFFF");
+								%>
+								<fieldset class="switch">
+								<label class="off">Off<input type="radio" class="on_off" name="on_off" value="off"/></label>
+							    <label class="on">On<input type="radio" class="on_off" name="on_off" value="on"/></label>
+								 </fieldset>
+								<%
+							}
+							%>
+							
+							 
+							<input type="submit" value="Submit"/>
+							 
+							</form>
+							<% 
+							out.println("</div>");
+						}
+					}
+				}
+				%>
+        		</div><!-- /.span6 -->
+        	</div><!-- /.row -->
         	<div class="span6">
         	 <img class="img-rounded" data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;" src="img/devices.png">
           <h2>Devices</h2>
@@ -229,5 +280,10 @@ $.get("update",  function(data) {
 
     
       </div><!-- /.container markting -->
+      <script type="text/javascript">
+	    jQuery(document).ready(function ($) {
+	        $('#tabsservices').tab();
+	    });
+	</script> 
 </body>
 </html>

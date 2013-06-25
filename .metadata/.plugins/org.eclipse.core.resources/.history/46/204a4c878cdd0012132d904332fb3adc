@@ -1,0 +1,92 @@
+package org.interface888.services;
+
+import java.util.HashMap;
+import java.util.Observable;
+import java.util.Set;
+
+import org.deviceservice.controller.api.DeviceController;
+
+import com.phidgets.InterfaceKitPhidget;
+import com.phidgets.PhidgetException;
+
+
+public class Sensitivity extends Observable implements DeviceController{
+	int index = -1;
+	HashMap<String, String> values= null;
+	int changed = 1;
+	InterfaceKitPhidget itk = null;
+	
+	public Sensitivity(int i, InterfaceKitPhidget interfaceph) {
+		
+		itk = interfaceph;
+		values = new HashMap<String, String>();
+		index = i;
+		values.put("Data Rate", "0");//actualizado quando iniciado
+		values.put("Sensitivity", "10");
+	}
+
+	@Override
+	public String getDescription() {
+		return "Change de Senstivity of the analog sensorsr";
+	}
+
+	@Override
+	public String getName() {
+		return "Senstivity Analog Sensors";
+	}
+
+	@Override
+	public HashMap<String, String> getCollection() {
+		return values;
+	}
+
+	@Override
+	public Set<String> getProperties() {
+		return values.keySet();
+	}
+
+	@Override
+	public String getValue(String s) {
+		return values.get(s);
+	}
+
+	@Override
+	public void setValue(String s, String v) {
+		changed = 1;
+		if(s.equals("Data Rate")){
+			try {
+				itk.setDataRate(index, (new Integer(v).intValue()));
+			} catch (NumberFormatException e) {
+				e.printStackTrace();
+			} catch (PhidgetException e) {
+				e.printStackTrace();
+			}
+		}
+		else if(s.equals("Sensitivity")){
+			try {
+				itk.setSensorChangeTrigger(index, (new Integer(v).intValue()));
+			} catch (NumberFormatException e) {
+				e.printStackTrace();
+			} catch (PhidgetException e) {
+				e.printStackTrace();
+			}
+		}
+		values.put(s, v);
+	}
+
+	@Override
+	public int getChanged() {
+		System.out.println("GETChangedChamado(Light) "+changed);
+		int rt =changed;
+		changed=0;
+		return rt;
+	}
+	
+	@Override
+	public void setChanged(int changed) {
+		System.out.println("SETChangedChamado(Light) "+changed);
+		this.changed = changed;
+	}
+	
+
+}

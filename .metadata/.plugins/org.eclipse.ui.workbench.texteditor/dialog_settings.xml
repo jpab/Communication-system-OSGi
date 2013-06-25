@@ -2,27 +2,27 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="263" key="DIALOG_WIDTH"/>
-		<item value="149" key="DIALOG_Y_ORIGIN"/>
-		<item value="965" key="DIALOG_X_ORIGIN"/>
+		<item value="406" key="DIALOG_Y_ORIGIN"/>
 		<item value="399" key="DIALOG_HEIGHT"/>
+		<item value="1024" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="false" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
+		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="style" key="selection"/>
+		<item value="" key="selection"/>
 		<list key="findhistory">
-			<item value="style"/>
-			<item value="out"/>
-			<item value="session"/>
-			<item value="marke"/>
-			<item value="back"/>
-			<item value="market"/>
-			<item value="contain"/>
-			<item value="marketing"/>
+			<item value="351"/>
+			<item value="slider"/>
+			<item value="db"/>
+			<item value="ldb"/>
+			<item value="png"/>
+			<item value="resp"/>
+			<item value="switch"/>
+			<item value="css"/>
 		</list>
 		<list key="replacehistory">
 		</list>

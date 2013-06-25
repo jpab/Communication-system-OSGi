@@ -1,4 +1,4 @@
-package org.advancedServo.services;
+8package org.advancedServo.services;
 
 import java.util.HashMap;
 import java.util.Set;
@@ -15,7 +15,9 @@ public class OpenDoorService implements SwitchService {
 	private int changed = 1;
 	
 	public OpenDoorService(AdvancedServoPhidget asp) {
+		values = new HashMap<String, Boolean>();
 		this.asp = asp;
+		values.put("Open Front Door", new Boolean(false));
 	}
 
 	@Override
@@ -52,11 +54,16 @@ public class OpenDoorService implements SwitchService {
 
 	@Override
 	public int getChanged() {
-		if(changed==0){
+	/*	if(changed==0){
 			changed =1;
 			return 0;
 		}
-		return 1;
+		return 1; */
+		if(changed==1){
+			changed =0;
+			return 1;
+		}
+		return 0;
 	}
 
 	@Override

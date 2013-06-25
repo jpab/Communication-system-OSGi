@@ -14,6 +14,24 @@
     <servlet-class>org.web.UpdateSetData</servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
+   <servlet>
+    <servlet-name>Change Controller</servlet-name>
+    <servlet-class>org.web.ChangeControllerService</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>  
+   <servlet>
+    <servlet-name>Change Switch</servlet-name>
+    <servlet-class>org.web.ChangeSwitchService</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Change Switch</servlet-name>
+    <url-pattern>/changeswitchservice</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Change Controller</servlet-name>
+    <url-pattern>/changecontrollerservice</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>Update Data</servlet-name>
     <url-pattern>/update</url-pattern>

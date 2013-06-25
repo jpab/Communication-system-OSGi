@@ -1,19 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.web.bundles.DeviceTracker"/>
-<fullyQualifiedTypeName name="org.web.services.DevicesServiceTrackerCustomizer"/>
-<fullyQualifiedTypeName name="org.osgi.framework.BundleContext"/>
-<fullyQualifiedTypeName name="wabnd.datahandler.api.DataHandlerInterface"/>
-<fullyQualifiedTypeName name="wabnd.datahandler.api.DataHandler"/>
-<fullyQualifiedTypeName name="org.temperature.tracking.DataHandlerTracker"/>
-<fullyQualifiedTypeName name="org.temperature.tracking.DataHandlerTrackerCustomizer"/>
-<fullyQualifiedTypeName name="org.osgi.util.tracker.ServiceTracker"/>
-<fullyQualifiedTypeName name="wabnd.datahandler.api.DataHandlerService"/>
-<fullyQualifiedTypeName name="com.phidgets.TemperatureSensorPhidget"/>
-<fullyQualifiedTypeName name="com.phidgets.event.SensorChangeListener"/>
-<fullyQualifiedTypeName name="org.interface888.impls.Activator"/>
-<fullyQualifiedTypeName name="org.interface888.impls.TemperatureSensor"/>
-<fullyQualifiedTypeName name="org.interface888.listeners.DeviceChangeListener"/>
 <fullyQualifiedTypeName name="org.interface888.impl.TemperatureSensor"/>
 <fullyQualifiedTypeName name="org.interface888.listener.DeviceChangeListener"/>
 <fullyQualifiedTypeName name="java.util.concurrent.ConcurrentHashMap"/>
@@ -28,18 +14,15 @@
 <fullyQualifiedTypeName name="org.web.Tracker"/>
 <fullyQualifiedTypeName name="com.phidgets.Phidget"/>
 <fullyQualifiedTypeName name="org.interface888.impl.RotationSensor"/>
-<fullyQualifiedTypeName name="com.phidgets.event.DetachListener"/>
 <fullyQualifiedTypeName name="com.phidgets.event.AttachListener"/>
 <fullyQualifiedTypeName name="org.interface888.listener.AttachInterface888"/>
 <fullyQualifiedTypeName name="org.interface888.listener.DetachInterface888"/>
 <fullyQualifiedTypeName name="org.osgi.framework.Bundle"/>
-<fullyQualifiedTypeName name="org.deviceservice.controller.api.DeviceController"/>
 <fullyQualifiedTypeName name="org.web.services.DevicesControllerTrackerCustomizer"/>
 <fullyQualifiedTypeName name="org.interface888.impl.VibrationSensor"/>
 <fullyQualifiedTypeName name="org.interface888.impl.SliderSensor"/>
 <fullyQualifiedTypeName name="org.interface888.impl.PresenceSensor"/>
 <fullyQualifiedTypeName name="org.interface888.impl.TouchSensor"/>
-<fullyQualifiedTypeName name="org.interface888.impl.Interface888"/>
 <fullyQualifiedTypeName name="org.interface888.impl.PhidgetDevice"/>
 <fullyQualifiedTypeName name="com.phidgets.RFIDPhidget"/>
 <fullyQualifiedTypeName name="com.phidgets.event.TagGainListener"/>
@@ -57,7 +40,24 @@
 <fullyQualifiedTypeName name="com.phidgets.event.ServoPositionChangeListener"/>
 <fullyQualifiedTypeName name="org.advancedServo.services.OpenDoorService"/>
 <fullyQualifiedTypeName name="org.advancedServo.impl.AdvancedServoPh"/>
-<fullyQualifiedTypeName name="org.device.switchbtn.api.SwitchService"/>
 <fullyQualifiedTypeName name="org.device.action.api.ActionService"/>
 <fullyQualifiedTypeName name="org.web.services.ActionServicesTrackerCustomizer"/>
+<fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+<fullyQualifiedTypeName name="org.RFIDPh.listeners.AttachRFID"/>
+<fullyQualifiedTypeName name="com.phidgets.event.DetachListener"/>
+<fullyQualifiedTypeName name="org.RFIDPh.listeners.DetachRFID"/>
+<fullyQualifiedTypeName name="org.osgi.framework.BundleActivator"/>
+<fullyQualifiedTypeName name="org.test.plataform.services.ControllTest"/>
+<fullyQualifiedTypeName name="org.test.plataform.services.TurnOnTest"/>
+<fullyQualifiedTypeName name="org.deviceservice.controller.api.DeviceController"/>
+<fullyQualifiedTypeName name="org.device.switchbtn.api.SwitchService"/>
+<fullyQualifiedTypeName name="org.interface888.services.SensitivityPresence"/>
+<fullyQualifiedTypeName name="org.interface888.services.SensitivityRotation"/>
+<fullyQualifiedTypeName name="org.interface888.services.SensitivitySlider"/>
+<fullyQualifiedTypeName name="org.interface888.services.SensitivityTemperature"/>
+<fullyQualifiedTypeName name="org.interface888.services.SensitivityTouch"/>
+<fullyQualifiedTypeName name="org.interface888.services.SensitivityVibration"/>
+<fullyQualifiedTypeName name="java.util.Observer"/>
+<fullyQualifiedTypeName name="java.util.Observable"/>
+<fullyQualifiedTypeName name="org.interface888.impl.Interface888"/>
 </qualifiedTypeNameHistroy>

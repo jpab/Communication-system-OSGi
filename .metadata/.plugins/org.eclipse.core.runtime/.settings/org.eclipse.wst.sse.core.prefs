@@ -1,2 +1,2 @@
 eclipse.preferences.version=1
-task-tag-projects-already-scanned=Consumer-Bundle,cnf,ServletExample,system-test,Servers,WABND,fstjsf,org.device.api,org.device.sensing.api,phidget21bnd,wabnd.datahandler.api,PhidgetsInterface,org.device.controller.api,AdvancedServoPhidget,RFIDPhidget,org.device.switch.api,org.action.api,org.device.switch.opendoor.api
+task-tag-projects-already-scanned=Consumer-Bundle,cnf,ServletExample,system-test,Servers,WABND,fstjsf,org.device.api,org.device.sensing.api,phidget21bnd,wabnd.datahandler.api,PhidgetsInterface,org.device.controller.api,AdvancedServoPhidget,RFIDPhidget,org.device.switch.api,org.action.api,org.device.switch.opendoor.api,TestPlataformBundle,PhidgetsInterfaceVers2,RFIDPhidgetVers2

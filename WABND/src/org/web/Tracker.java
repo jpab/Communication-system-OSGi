@@ -44,14 +44,14 @@ public class Tracker {
 	private void initActionServicesTrack() {
 		at = new ServiceTracker(bc, ActionService.class.getName(), new ActionServicesTrackerCustomizer(bc));
 		at.open(true);
-		System.out.println("[TRACKER] Number of actions tracked: "+at.size()+" Tracked operations "+ sct.getTrackingCount());
+		System.out.println("[TRACKER] Number of actions tracked: "+at.size()+" Tracked operations "+ at.getTrackingCount());
 		
 	}
 
 	private void initSwitchServicesTrack() {
 		ss = new ServiceTracker(bc, SwitchService.class.getName(), new SwitchServicesTrackerCustomizer(bc));
 		ss.open(true);
-		System.out.println("[TRACKER] Number of switch tracked: "+ss.size()+" Tracked operations "+ sct.getTrackingCount());
+		System.out.println("[TRACKER] Number of switch tracked: "+ss.size()+" Tracked operations "+ ss.getTrackingCount());
 		
 	}
 

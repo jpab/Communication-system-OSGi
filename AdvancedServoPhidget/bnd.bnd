@@ -6,3 +6,5 @@ Bundle-Activator: org.advancedServo.impl.Activator
 Private-Package: org.advancedServo.impl,\
 	org.advancedServo.services,\
 	org.advancedServo.listners
+Device: AdvancedServo
+Bundle-Name: AdvancedServoPhidget
